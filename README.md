@@ -12,7 +12,7 @@ place.
 
 We have a number of sources of data:
 
-  - Iowa COVID site
+  - [Iowa COVID site](https://coronavirus.iowa.gov/pages/access)
   - NYT
   - Iowa population
 
