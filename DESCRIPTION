@@ -1,0 +1,20 @@
+Package: not.a.real.name
+Title: Iowa COVID data
+Authors@R:
+    c(
+      person(given = "Ian",
+             family = "Lyttle",
+             role = c("aut", "cre"),
+             email = "ian.lyttle@se.com",
+             comment = c(ORCID = "0000-0001-9962-4849"))
+    )
+Description: Documentation for the development of the temperature-compensation
+  algorithm.
+Encoding: UTF-8
+License: Creative Commons Attribution-NonCommercial 4.0 International 
+Depends:
+    R (>= 3.3)
+Imports:
+    iowa.covid
+Remotes:
+    ijlyttle/iowa.covid

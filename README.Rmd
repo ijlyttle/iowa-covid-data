@@ -21,8 +21,8 @@ The purpose of this repository is to collect Iowa COVID data in one place.
 We have a number of sources of data:
 
 - [Iowa COVID site](https://coronavirus.iowa.gov/pages/access)
-- NYT
-- Iowa population
+- [NYT](https://github.com/nytimes/covid-19-data)
+- [Iowa population](https://www.icip.iastate.edu/tables/population/counties-estimates)
 
 It would be easiest if the Iowa Department of Public Health could provide this data as CSV files. Perhaps this could serve as a template for what such datasets could look like.
 
