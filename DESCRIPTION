@@ -15,6 +15,9 @@ License: Creative Commons Attribution-NonCommercial 4.0 International
 Depends:
     R (>= 3.3)
 Imports:
-    iowa.covid
+    iowa.covid,
+    fs,
+    crrri
 Remotes:
     ijlyttle/iowa.covid
+    rlesur/crrri

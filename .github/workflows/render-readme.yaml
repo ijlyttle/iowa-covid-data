@@ -21,3 +21,7 @@ jobs:
         run: |
           git commit README.md -m 'Re-build README.Rmd' || echo "No changes to commit"
           git push origin || echo "No changes to commit"
+      - name: Find chrome
+        run: |
+          echo "::set-env name=HEADLESS_CHROME::$(Rscript -e 'cat(pagedown::find_chrome()[[1]])')"
+
