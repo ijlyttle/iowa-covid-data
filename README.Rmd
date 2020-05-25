@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The purpose of this repository is to collect Iowa COVID data in one place.
+The purpose of this repository is to collect Iowa COVID data in one place. 
 
 We have a number of sources of data:
 
