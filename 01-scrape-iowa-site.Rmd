@@ -5,7 +5,9 @@ output: github_document
 
 ```{r packages}
 library("fs")
+library("glue")
 library("crrri")
+library("lubridate")
 ```
 
 
@@ -16,14 +18,14 @@ dir_target <- path("data", "download-site")
 dir_create(dir_target)
 ```
 
-The data from the NYT is delayed by a day. It may be useful to scrape the Iowa Coronavirus site for the latest information.
-
 ```{r}
 url_access <- "https://coronavirus.iowa.gov/pages/access"
-html_file <- path(dir_target, "access.html")
+html_file <- 
+  path(
+    dir_target, 
+    glue("access-{today(tz = 'America/Chicago')}.html")
+  )
 css_selector <- "td"
-
-snapshot <- file_info(html_file <- path(dir_target, "access.html"))
 ```
 
 We are going to use [rvest](https://rvest.tidyverse.org/) to page, but there's a problem. The page is not a static HTML site; the data we want is injected into the site using JavaScript. This means that **rvest** would be looking for the css tags in a document that does not have the data table.

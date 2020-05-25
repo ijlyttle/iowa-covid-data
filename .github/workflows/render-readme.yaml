@@ -7,7 +7,7 @@ name: Render README
 
 jobs:
   render:
-    name: Render README
+    name: Get HTML file
     runs-on: macOS-latest
     steps:
       - uses: actions/checkout@v2
@@ -34,13 +34,14 @@ jobs:
           remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
 
-      - name: Render README
-        run: Rscript -e 'rmarkdown::render("README.Rmd")'
-      - name: Commit results
-        run: |
-          git commit README.md -m 'Re-build README.Rmd' || echo "No changes to commit"
-          git push origin || echo "No changes to commit"
       - name: Find chrome
         run: |
           export HEADLESS_CHROME=$(Rscript -e 'cat(pagedown::find_chrome()[[1]])')
           echo $HEADLESS_CHROME
+
+      - name: Render file
+        run: |
+          Rscript -e 'rmarkdown::render("01-scrape-iowa-site.Rmd")'
+          sleep 30
+          ls -l data/download-site
+

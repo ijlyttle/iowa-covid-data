@@ -19,7 +19,8 @@ Imports:
     rmarkdown,
     pagedown,
     fs,
-    crrri
+    crrri,
+    glue
 Remotes:
     ijlyttle/iowa.covid,
     rlesur/crrri
