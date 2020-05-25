@@ -25,5 +25,5 @@ jobs:
           git push origin || echo "No changes to commit"
       - name: Find chrome
         run: |
-          Rscript -e 'cat(pagedown::find_chrome()[[1]])'
-
+          echo "::set-env name=HEADLESS_CHROME::$(Rscript -e 'cat(pagedown::find_chrome()[[1]])')"
+          echo $HEADLESS_CHROME
