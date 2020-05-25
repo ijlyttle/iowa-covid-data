@@ -25,6 +25,7 @@ jobs:
           git push origin || echo "No changes to commit"
       - name: Find chrome
         run: |
-          echo foo
+          brew install brew-cask
+          brew cask install google-chrome
           echo "::set-env name=HEADLESS_CHROME::$(Rscript -e 'cat(pagedown::find_chrome()[[1]])')"
 
