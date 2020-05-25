@@ -16,8 +16,10 @@ Depends:
     R (>= 3.3)
 Imports:
     iowa.covid,
+    rmarkdown,
+    pagedown,
     fs,
     crrri
 Remotes:
-    ijlyttle/iowa.covid
+    ijlyttle/iowa.covid,
     rlesur/crrri
