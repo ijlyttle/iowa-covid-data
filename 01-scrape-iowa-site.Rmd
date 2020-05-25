@@ -66,11 +66,8 @@ dump_DOM <- function(client, url, html_file) {
 ```
 
 ```{r}
-client %...>% 
-  dump_DOM(url_access, html_file)
-```
-
-
-```{r}
-client
+hold(
+  client %...>% dump_DOM(url_access, html_file)  
+)
+chrome$close()
 ```

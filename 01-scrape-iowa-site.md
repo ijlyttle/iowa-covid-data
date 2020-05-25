@@ -50,17 +50,17 @@ background. To run Chrome, the **crrri** package will need to know where
 to *find* Chrome. You can use `pagedown::find_chrome()` to find the
 location on your computer (on mine, it is `"/Applications/Google
 Chrome.app/Contents/MacOS/Google Chrome"`). The **crrri** package uses
-the environment variable `HEADLESS_CHROME` to look for a default
-    value.
+the environment variable `HEADLESS_CHROME` to look for a default value.
 
 ``` r
-chrome <- Chrome$new()
+chrome <- Chrome$new(bin = pagedown::find_chrome())
 ```
 
-    ## Running '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --no-first-run --headless \
-    ##   '--user-data-dir=/Users/sesa19001/Library/Application Support/r-crrri/chrome-data-dir-qlfrwond' \
+    ## Running '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' \
+    ##   --no-first-run --headless \
+    ##   '--user-data-dir=/Users/sesa19001/Library/Application Support/r-crrri/chrome-data-dir-cwaqahms' \
     ##   '--remote-debugging-port=9222' '--proxy-server=http://127.0.0.1:9000' \
-    ##   '--proxy-bypass-list=localhost;127.0.0.1;github.schneider-electric.com;repo.continuum.io'
+    ##   '--proxy-bypass-list=localhost;127.0.0.1;github.schneider-electric.com;repo.continuum.io;10.171.39.139'
 
 ``` r
 client <- chrome$connect()
@@ -93,12 +93,13 @@ dump_DOM <- function(client, url, html_file) {
 ```
 
 ``` r
-client %...>% 
-  dump_DOM(url_access, html_file)
+hold(
+  client %...>% dump_DOM(url_access, html_file)  
+)
 ```
+
+    ## NULL
 
 ``` r
-client
+chrome$close()
 ```
-
-    ## <Promise [pending]>
