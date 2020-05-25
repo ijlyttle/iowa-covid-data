@@ -24,7 +24,8 @@ Imports:
     lubridate,
     magrittr,
     tibble,
-    readr
+    readr,
+    dplyr
 Remotes:
     ijlyttle/iowa.covid,
     rlesur/crrri
