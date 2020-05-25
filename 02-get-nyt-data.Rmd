@@ -1,0 +1,37 @@
+---
+title: Get NYT data
+output: github_document
+---
+
+The purpose of this document is to get the NYT data - filtered for Iowa.
+
+```{r}
+library("readr")
+library("dplyr")
+library("fs")
+```
+
+
+```{r dir}
+dir_create("data")
+
+dir_target <- path("data", "nyt")
+dir_create(dir_target)
+```
+
+```{r}
+iowa_county_data <- 
+  "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv" %>%
+  read_csv(col_types = "Dcciii") %>%
+  dplyr::filter(state == "Iowa") %>%
+  select(date, fips, county, cases, deaths) %>%
+  arrange(desc(date), desc(cases)) %>%
+  glimpse()
+```
+
+```{r}
+write_csv(
+  iowa_county_data,
+  path(dir_target, "nyt-iowa.csv")
+)
+```

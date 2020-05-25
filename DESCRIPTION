@@ -21,7 +21,10 @@ Imports:
     fs,
     crrri,
     glue,
-    lubridate
+    lubridate,
+    magrittr,
+    tibble,
+    readr
 Remotes:
     ijlyttle/iowa.covid,
     rlesur/crrri

@@ -34,14 +34,26 @@ jobs:
           remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
 
+      - name: Get population file
+        run: |
+          Rscript -e 'rmarkdown::render("00-population.Rmd")'
+          ls -l -R data/population
+
       - name: Get HTML file
         run: |
           Rscript -e 'rmarkdown::render("01-scrape-iowa-site.Rmd")'
           ls -l -R data/download-site
 
-      - name: Commit
+      - name: Get NYT county-data
+        run: |
+          Rscript -e 'rmarkdown::render("02-get-nyt-data.Rmd")'
+          ls -l -R data/nyt
+
+      - name: Git commit & push
         run: |
           git add '*.md'
+          git add 'data/nyt/nyt-iowa.csv'
+          git add 'data/population/iowa_county_population.csv'
           git add 'data/download-site/*'
           git commit -m 'daily run' || echo "No changes to commit"
           git push origin || echo "No changes to commit"
