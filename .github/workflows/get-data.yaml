@@ -1,13 +1,13 @@
 on:
-  push:
-    paths:
-      - README.Rmd
+  schedule:
+    # run at 16h00 UTC (11h00 Iowa, daylight-saving-time)
+    - cron:  '00 16 * * *'
 
-name: Render README
+name: Get data
 
 jobs:
   render:
-    name: Get HTML file
+    name: Get data
     runs-on: macOS-latest
     steps:
       - uses: actions/checkout@v2
@@ -34,13 +34,9 @@ jobs:
           remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
 
-      - name: Render file
+      - name: Get HTML file
         run: |
           Rscript -e 'rmarkdown::render("01-scrape-iowa-site.Rmd")'
-          sleep 30
-
-      - name: Check work
-        run: |
           ls -l -R data/download-site
 
       - name: Commit
