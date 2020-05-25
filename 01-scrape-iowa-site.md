@@ -58,7 +58,7 @@ chrome <- Chrome$new(bin = pagedown::find_chrome())
 
     ## Running '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' \
     ##   --no-first-run --headless \
-    ##   '--user-data-dir=/Users/sesa19001/Library/Application Support/r-crrri/chrome-data-dir-cwaqahms' \
+    ##   '--user-data-dir=/Users/sesa19001/Library/Application Support/r-crrri/chrome-data-dir-bqjtrsmo' \
     ##   '--remote-debugging-port=9222' '--proxy-server=http://127.0.0.1:9000' \
     ##   '--proxy-bypass-list=localhost;127.0.0.1;github.schneider-electric.com;repo.continuum.io;10.171.39.139'
 

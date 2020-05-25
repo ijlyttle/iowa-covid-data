@@ -40,6 +40,13 @@ jobs:
           sleep 30
 
       - name: Check work
-        run:
-          ls -l -R
+        run: |
+          ls -l -R data/download-site
+
+      - name: Commit
+        run: |
+          git add '*.md'
+          git add 'data/download-site/*'
+          git commit README.md -m 'daily run' || echo "No changes to commit"
+          git push origin || echo "No changes to commit"
 
