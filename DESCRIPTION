@@ -20,7 +20,8 @@ Imports:
     pagedown,
     fs,
     crrri,
-    glue
+    glue,
+    lubridate
 Remotes:
     ijlyttle/iowa.covid,
     rlesur/crrri
