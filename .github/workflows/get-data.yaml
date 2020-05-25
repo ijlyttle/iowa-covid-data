@@ -41,16 +41,19 @@ jobs:
       - name: Get population file
         run: |
           Rscript -e 'rmarkdown::render("00-population.Rmd")'
+          echo
           ls -l -R data/population
 
       - name: Get HTML file
         run: |
           Rscript -e 'rmarkdown::render("01-scrape-iowa-site.Rmd")'
+          echo
           ls -l -R data/download-site
 
       - name: Get NYT county-data
         run: |
           Rscript -e 'rmarkdown::render("02-get-nyt-data.Rmd")'
+          echo
           ls -l -R data/nyt
 
       - name: Git commit & push
