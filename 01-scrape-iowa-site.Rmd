@@ -35,7 +35,7 @@ We need another tool for the toolbox: [crrri](https://rlesur.github.io/crrri) - 
 The **crrri** package is not on CRAN, and it requires that you have Chrome installed on your computer, so that it can call it in the background. To run Chrome, the **crrri** package will need to know where to *find* Chrome. You can use `pagedown::find_chrome()` to find the location on your computer (on mine, it is `"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"`). The **crrri** package uses the environment variable `HEADLESS_CHROME` to look for a default value.
 
 ```{r}
-chrome <- Chrome$new()
+chrome <- Chrome$new(bin = pagedown::find_chrome())
 client <- chrome$connect()
 ```
 
