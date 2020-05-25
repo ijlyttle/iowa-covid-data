@@ -26,5 +26,5 @@ jobs:
       - name: Find chrome
         run: |
           export HEADLESS_CHROME=foo
-          echo "::set-env name=HEADLESS_CHROME::$(Rscript -e 'cat(pagedown::find_chrome()[[1]])')"
+          export HEADLESS_CHROME=$(Rscript -e 'cat(pagedown::find_chrome()[[1]])')
           echo $HEADLESS_CHROME
