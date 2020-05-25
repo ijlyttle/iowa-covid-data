@@ -1,4 +1,8 @@
 on:
+  push:
+    paths:
+      - README.Rmd
+
   schedule:
     # run at 16h00 UTC (11h00 Iowa, daylight-saving-time)
     - cron:  '00 16 * * *'
