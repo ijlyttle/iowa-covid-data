@@ -1,9 +1,9 @@
 ---
-title: Population data
+title: County metadata
 output: github_document
 ---
 
-The purpose of this document is to write out the 2019 estimate for the population of Iowa counties. 
+The purpose of this document is to write out the 2019 estimate for the population of Iowa counties, along with other metadata. 
 
 The source of this data is the [Iowa Community Indicators Program](https://www.icip.iastate.edu/tables/population/counties-estimates).
 

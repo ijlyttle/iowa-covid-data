@@ -54,9 +54,9 @@ jobs:
 
       - name: Get population file
         run: |
-          Rscript -e 'rmarkdown::render("00-population.Rmd")'
+          Rscript -e 'rmarkdown::render("00-county-meta.Rmd")'
           echo
-          ls -l -R data/population
+          ls -l -R data/meta
 
       - name: Get HTML file
         run: |
