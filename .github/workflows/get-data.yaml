@@ -1,6 +1,20 @@
+# This action is a blending of actions that:
+#
+#  - build and check an R package:
+#      https://github.com/r-lib/actions/blob/master/examples/check-standard.yaml
+#  - render a README.Rmd file:
+#      https://github.com/r-lib/actions/blob/master/examples/render-readme.yaml
+#
+# I use a "fake" DESCRIPTION file to collect the dependencies, then modify the
+# README.Rmd to trigger a build (as a test). Otherwise, the build is scheduled
+# to run at 11h00 Iowa time (expressed here as UTC, so will have to be
+# adjusted twice a year).
+#
+
 on:
   push:
     paths:
+      # use this to test the action
       - README.Rmd
 
   schedule:
@@ -60,7 +74,7 @@ jobs:
         run: |
           git add '*.md'
           git add 'data/nyt/nyt-iowa.csv'
-          git add 'data/population/iowa_county_population.csv'
+          git add 'data/meta/iowa_county_meta.csv'
           git add 'data/download-site/*'
           git commit -m 'daily run' || echo "No changes to commit"
           git push origin || echo "No changes to commit"

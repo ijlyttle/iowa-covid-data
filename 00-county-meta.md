@@ -32,7 +32,7 @@ library("readr")
 ``` r
 dir_create("data")
 
-dir_target <- path("data", "population")
+dir_target <- path("data", "meta")
 dir_create(dir_target)
 ```
 
