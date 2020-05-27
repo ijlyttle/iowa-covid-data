@@ -89,12 +89,12 @@ map_iowa_county <-
   glimpse()
 ```
 
-    ## Observations: 99
-    ## Variables: 4
-    ## $ county       <chr> "Adair", "Adams", "Allamakee", "Appanoose", "Audubon", "…
-    ## $ lat          <dbl> 82.66635, 82.06475, 86.59111, 81.50898, 83.37109, 84.173…
-    ## $ lon          <dbl> -188.9557, -189.4198, -182.6704, -185.7357, -189.8152, -…
-    ## $ abbreviation <chr> "ADA", "ADA", "ALL", "APP", "AUD", "BEN", "BLA", "BOO", …
+    ## Rows: 99
+    ## Columns: 4
+    ## $ county       [3m[90m<chr>[39m[23m "Adair", "Adams", "Allamakee", "Appanoose", "Audubon", "…
+    ## $ lat          [3m[90m<dbl>[39m[23m 82.66635, 82.06475, 86.59111, 81.50898, 83.37109, 84.173…
+    ## $ lon          [3m[90m<dbl>[39m[23m -188.9557, -189.4198, -182.6704, -185.7357, -189.8152, -…
+    ## $ abbreviation [3m[90m<chr>[39m[23m "ADA", "ADA", "ALL", "APP", "AUD", "BEN", "BLA", "BOO", …
 
 ``` r
 iowa_county_meta <-
@@ -113,16 +113,16 @@ iowa_county_meta <-
   glimpse()
 ```
 
-    ## Observations: 99
-    ## Variables: 8
-    ## $ fips             <dbl> 19153, 19113, 19163, 19103, 19013, 19193, 19061, 191…
-    ## $ county           <chr> "Polk", "Linn", "Scott", "Johnson", "Black Hawk", "W…
-    ## $ abbreviation     <chr> "POL", "LIN", "SCO", "JOH", "BLA", "WOO", "DUB", "ST…
-    ## $ lon              <dbl> -187.1567, -183.1746, -181.2036, -183.1746, -184.612…
-    ## $ lat              <dbl> 83.35390, 84.17323, 83.25650, 83.29660, 84.94672, 84…
-    ## $ population       <dbl> 490161, 226706, 172943, 151140, 131228, 103107, 9731…
-    ## $ population_group <fct> large, large, mid-large, mid-large, mid-large, mid-l…
-    ## $ opening          <date> 2020-05-15, 2020-05-15, 2020-05-15, 2020-05-15, 202…
+    ## Rows: 99
+    ## Columns: 8
+    ## $ fips             [3m[90m<dbl>[39m[23m 19153, 19113, 19163, 19103, 19013, 19193, 19061, 191…
+    ## $ county           [3m[90m<chr>[39m[23m "Polk", "Linn", "Scott", "Johnson", "Black Hawk", "W…
+    ## $ abbreviation     [3m[90m<chr>[39m[23m "POL", "LIN", "SCO", "JOH", "BLA", "WOO", "DUB", "ST…
+    ## $ lon              [3m[90m<dbl>[39m[23m -187.1567, -183.1746, -181.2036, -183.1746, -184.612…
+    ## $ lat              [3m[90m<dbl>[39m[23m 83.35390, 84.17323, 83.25650, 83.29660, 84.94672, 84…
+    ## $ population       [3m[90m<dbl>[39m[23m 490161, 226706, 172943, 151140, 131228, 103107, 9731…
+    ## $ population_group [3m[90m<fct>[39m[23m large, large, mid-large, mid-large, mid-large, mid-l…
+    ## $ opening          [3m[90m<date>[39m[23m 2020-05-15, 2020-05-15, 2020-05-15, 2020-05-15, 202…
 
 ``` r
 write_csv(
