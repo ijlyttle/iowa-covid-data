@@ -62,8 +62,8 @@ map_iowa_county <-
   filter(region == "iowa") %>%
   group_by(county = subregion) %>%
   summarise(
-    lat = mean(max(lat), min(lat)),
-    lon =  mean(max(long), min(long))
+    lat = (max(lat) + min(lat)) / 2,
+    lon =  (max(long) + min(long)) / 2
   ) %>%
   mutate(
     abbreviation = str_to_upper(county) %>% str_sub(1, 3),
