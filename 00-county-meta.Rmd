@@ -13,6 +13,8 @@ library("magrittr")
 library("iowa.covid")
 library("dplyr")
 library("readr")
+library("ggplot2")
+library("stringr")
 ```
 
 ```{r dir}
@@ -21,6 +23,8 @@ dir_create("data")
 dir_target <- path("data", "meta")
 dir_create(dir_target)
 ```
+
+In late April, Gov. Reynolds announced that she would partially re-open 77 counties effective May 1. The remaining 22 counties were similarly re-opened May 15. These are the 22 "later" counties:
 
 ```{r}
 county_closed <- 
@@ -50,6 +54,23 @@ county_closed <-
   )
 ```
 
+We also want to compute the approximate centers of the counties.
+
+```{r}
+map_iowa_county <-
+  map_data("county") %>%
+  filter(region == "iowa") %>%
+  group_by(county = subregion) %>%
+  summarise(
+    lat = mean(max(lat) + min(lat)),
+    long =  mean(max(long) + min(long))
+  ) %>%
+  mutate(
+    county = str_to_title(county),
+    county = ifelse(county == "Obrien", "O'Brien", county)
+  ) %>%
+  glimpse()
+```
 
 ```{r}
 iowa_county_meta <-
@@ -60,8 +81,14 @@ iowa_county_meta <-
       ifelse(county %in% county_closed, "2020-05-15", "2020-05-01") %>%
       as.Date()
   ) %>%
+  left_join(
+    map_iowa_county, 
+    by = "county"
+  ) %>%
+  select(fips, county, lat, long, everything()) %>%
   glimpse()
 ```
+
 
 ```{r}
 write_csv(

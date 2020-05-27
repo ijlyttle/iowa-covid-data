@@ -25,7 +25,9 @@ Imports:
     magrittr,
     tibble,
     readr,
-    dplyr
+    dplyr,
+    ggplot2,
+    stringr
 Remotes:
     ijlyttle/iowa.covid,
     rlesur/crrri
