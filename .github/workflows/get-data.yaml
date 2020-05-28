@@ -60,7 +60,7 @@ jobs:
 
       - name: Get HTML file
         run: |
-          Rscript -e 'rmarkdown::render("01-scrape-iowa-site.Rmd")'
+          Rscript -e 'rmarkdown::render("01-download-iowa-site.Rmd")'
           echo
           ls -l -R data/download-site
 

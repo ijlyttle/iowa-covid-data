@@ -1,0 +1,83 @@
+---
+title: Scrape Iowa site
+output: github_document
+---
+
+```{r packages}
+library("rvest")
+library("here")
+library("fs")
+library("stringr")
+```
+
+```{r}
+dir_source_rel <- path("data", "download-site")
+
+dir_source <- here(dir_source_rel)
+```
+
+```{r}
+extract_date <- function(html) {
+  
+  text <- html_text(html)
+  
+  str_date_year <- str_extract(text, "\\d{1,2}/\\d{1,2}/\\d{4}")[[1]]
+  str_date_no_year <- str_extract(text, '\\d{1,2}/\\d{1,2}(?= )')[[1]]
+
+  str_date <- NA_character_
+  
+  if (!is.na(str_date_year)) {
+    str_date <- str_date_year
+  }
+  
+  if (!is.na(str_date_no_year)) {
+    str_date <- glue::glue("{str_date_no_year}/2020")
+  }
+  
+  date <- readr::parse_date(str_date, format = "%m/%d/%Y")
+  
+  date
+}
+```
+
+```{r}
+extract_data <- function(html, date) {
+  
+  content <-
+    html %>%
+    rvest::html_nodes("td") %>%
+    purrr::map_chr(rvest::html_text)
+  
+  ind_counties <- 
+    which(content %in% iowa.covid::iowa_county_population$county)
+  
+  iowa_data <- 
+    tibble(
+      date = date,
+      county = content[ind_counties],
+      tests = as.numeric(content[ind_counties + 1]),
+      cases = as.numeric(content[ind_counties + 2]),
+      recovered = as.numeric(content[ind_counties + 3]),
+      deaths = as.numeric(content[ind_counties + 4])
+    ) %>%
+    mutate(
+      tests = ifelse(is.na(tests), 0, tests),
+      cases = ifelse(is.na(cases), 0, cases),
+      recovered = ifelse(is.na(recovered), 0, recovered),
+      deaths = ifelse(is.na(deaths), 0, deaths),
+    )
+  
+  iowa_data
+}
+```
+
+
+```{r}
+html <- read_html(path(dir_source, "access-2020-05-26.html"))
+
+date <- extract_date(html)
+```
+
+```{r}
+extract_data(html, date)
+```

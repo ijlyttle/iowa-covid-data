@@ -28,7 +28,9 @@ Imports:
     dplyr,
     ggplot2,
     stringr,
-    maps
+    maps,
+    rvest,
+    here
 Remotes:
     ijlyttle/iowa.covid,
     rlesur/crrri
