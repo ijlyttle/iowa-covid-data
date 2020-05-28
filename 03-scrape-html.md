@@ -1,19 +1,33 @@
----
-title: Scrape Iowa site
-output: github_document
----
+Scrape Iowa site
+================
 
-```{r packages}
+``` r
 library("rvest")
+```
+
+    ## Loading required package: xml2
+
+``` r
 library("tibble")
-library("dplyr")
 library("here")
+```
+
+    ## here() starts at /Users/sesa19001/Documents/repos/public/graphics-group/iowa-covid-data
+
+``` r
 library("fs")
 library("stringr")
 library("purrr")
 ```
 
-```{r}
+    ## 
+    ## Attaching package: 'purrr'
+
+    ## The following object is masked from 'package:rvest':
+    ## 
+    ##     pluck
+
+``` r
 dir_source_rel <- path("data", "download-site")
 dir_target_rel <- path("data", "scrape-site")
 
@@ -23,7 +37,7 @@ dir_target <- here(dir_target_rel)
 dir_create(dir_target)
 ```
 
-```{r}
+``` r
 extract_date <- function(html) {
   
   text <- html_text(html)
@@ -47,7 +61,7 @@ extract_date <- function(html) {
 }
 ```
 
-```{r}
+``` r
 extract_data <- function(html, date) {
   
   content <-
@@ -78,11 +92,12 @@ extract_data <- function(html, date) {
 }
 ```
 
-Let's find out what data we have already scraped.
+Let’s find out what data we have already scraped.
 
-We want a function, given a directory, returns a named vector of candidate files.
+We want a function, given a directory, returns a named vector of
+candidate files.
 
-```{r}
+``` r
 get_date_files <- function(dir) {
   
   regex_date <- ".*access-(\\d{4}-\\d{2}-\\d{2})\\.(csv|html)$"
@@ -96,7 +111,7 @@ get_date_files <- function(dir) {
 } 
 ```
 
-```{r}
+``` r
 files_source <- get_date_files(dir_source)
 files_target <- get_date_files(dir_target)
 
@@ -107,9 +122,16 @@ files_needed <- files_source[dates_needed]
 files_needed
 ```
 
-Now, we need a function, given a filepath to an html file, and a target directory, scrape the html file and write a CSV file in the target directory.
+    ## /Users/sesa19001/Documents/repos/public/graphics-group/iowa-covid-data/data/download-site/access-2020-05-25.html
+    ## /Users/sesa19001/Documents/repos/public/graphics-group/iowa-covid-data/data/download-site/access-2020-05-26.html
+    ## /Users/sesa19001/Documents/repos/public/graphics-group/iowa-covid-data/data/download-site/access-2020-05-27.html
+    ## /Users/sesa19001/Documents/repos/public/graphics-group/iowa-covid-data/data/download-site/access-2020-05-28.html
 
-```{r}
+Now, we need a function, given a filepath to an html file, and a target
+directory, scrape the html file and write a CSV file in the target
+directory.
+
+``` r
 write_file <- function(file_html, dir_target) {
   
   html <- xml2::read_html(file_html)
@@ -123,16 +145,31 @@ write_file <- function(file_html, dir_target) {
 }
 ```
 
-```{r}
+``` r
 html <- read_html(path(dir_source, "access-2020-05-28.html"))
 
 date <- extract_date(html)
 ```
 
-```{r}
+``` r
 extract_data(html, date)
 ```
 
-```{r}
+    ## # A tibble: 99 x 6
+    ##    date       county      tests cases recovered deaths
+    ##    <date>     <chr>       <dbl> <dbl>     <dbl>  <dbl>
+    ##  1 2020-05-28 Polk        22393  3920      1637    118
+    ##  2 2020-05-28 Woodbury    10737  2668      1405     31
+    ##  3 2020-05-28 Black Hawk   8833  1716       979     43
+    ##  4 2020-05-28 Linn         8688   941       760     76
+    ##  5 2020-05-28 Marshall     3388   882       498     15
+    ##  6 2020-05-28 Dallas       4536   876       557     17
+    ##  7 2020-05-28 Buena Vista  3906   701        58      0
+    ##  8 2020-05-28 Johnson      6717   607       383      8
+    ##  9 2020-05-28 Muscatine    2925   549       384     41
+    ## 10 2020-05-28 Wapello      2225   542       218      4
+    ## # … with 89 more rows
+
+``` r
 walk(files_needed, write_file, dir_target)
 ```

@@ -70,6 +70,12 @@ jobs:
           echo
           ls -l -R data/nyt
 
+      - name: Scrape county-data
+        run: |
+          Rscript -e 'rmarkdown::render("03-scrape-html.Rmd")'
+          echo
+          ls -l -R data/scrape-site
+
       - name: Git commit & push
         run: |
           git add '*.md'
