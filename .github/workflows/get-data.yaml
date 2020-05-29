@@ -83,6 +83,7 @@ jobs:
           git add 'data/meta/iowa_county_meta.csv'
           git add 'data/download-site/*.html'
           git add 'data/scrape-site/*.csv'
+          git add 'data/merged/*.csv'
           git commit -m 'daily run' || echo "No changes to commit"
           git push origin || echo "No changes to commit"
 
