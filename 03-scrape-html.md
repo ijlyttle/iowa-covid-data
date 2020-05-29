@@ -30,7 +30,7 @@ library("dplyr")
 library("here")
 ```
 
-    ## here() starts at /Users/sesa19001/Documents/repos/public/graphics-group/iowa-covid-data
+    ## here() starts at /Users/runner/runners/2.262.1/work/iowa-covid-data/iowa-covid-data
 
 ``` r
 library("fs")
@@ -169,10 +169,7 @@ files_needed <- files_source[dates_needed]
 files_needed
 ```
 
-    ## /Users/sesa19001/Documents/repos/public/graphics-group/iowa-covid-data/data/download-site/access-2020-05-25.html
-    ## /Users/sesa19001/Documents/repos/public/graphics-group/iowa-covid-data/data/download-site/access-2020-05-26.html
-    ## /Users/sesa19001/Documents/repos/public/graphics-group/iowa-covid-data/data/download-site/access-2020-05-27.html
-    ## /Users/sesa19001/Documents/repos/public/graphics-group/iowa-covid-data/data/download-site/access-2020-05-28.html
+    ## character(0)
 
 Finally, we need a function, given a filepath to an html file, and a
 target directory, scrape the html file and write a CSV file in the
@@ -204,20 +201,20 @@ date <- extract_date(html)
 extract_data(html, date)
 ```
 
-    ## # A tibble: 99 x 7
+    ## [90m# A tibble: 99 x 7[39m
     ##    date        fips county      tests cases recovered deaths
-    ##    <date>     <dbl> <chr>       <dbl> <dbl>     <dbl>  <dbl>
-    ##  1 2020-05-28 19153 Polk        22393  3920      1637    118
-    ##  2 2020-05-28 19193 Woodbury    10737  2668      1405     31
-    ##  3 2020-05-28 19013 Black Hawk   8833  1716       979     43
-    ##  4 2020-05-28 19113 Linn         8688   941       760     76
-    ##  5 2020-05-28 19127 Marshall     3388   882       498     15
-    ##  6 2020-05-28 19049 Dallas       4536   876       557     17
-    ##  7 2020-05-28 19021 Buena Vista  3906   701        58      0
-    ##  8 2020-05-28 19103 Johnson      6717   607       383      8
-    ##  9 2020-05-28 19139 Muscatine    2925   549       384     41
-    ## 10 2020-05-28 19179 Wapello      2225   542       218      4
-    ## # … with 89 more rows
+    ##    [3m[90m<date>[39m[23m     [3m[90m<dbl>[39m[23m [3m[90m<chr>[39m[23m       [3m[90m<dbl>[39m[23m [3m[90m<dbl>[39m[23m     [3m[90m<dbl>[39m[23m  [3m[90m<dbl>[39m[23m
+    ## [90m 1[39m 2020-05-28 [4m1[24m[4m9[24m153 Polk        [4m2[24m[4m2[24m393  [4m3[24m920      [4m1[24m637    118
+    ## [90m 2[39m 2020-05-28 [4m1[24m[4m9[24m193 Woodbury    [4m1[24m[4m0[24m737  [4m2[24m668      [4m1[24m405     31
+    ## [90m 3[39m 2020-05-28 [4m1[24m[4m9[24m013 Black Hawk   [4m8[24m833  [4m1[24m716       979     43
+    ## [90m 4[39m 2020-05-28 [4m1[24m[4m9[24m113 Linn         [4m8[24m688   941       760     76
+    ## [90m 5[39m 2020-05-28 [4m1[24m[4m9[24m127 Marshall     [4m3[24m388   882       498     15
+    ## [90m 6[39m 2020-05-28 [4m1[24m[4m9[24m049 Dallas       [4m4[24m536   876       557     17
+    ## [90m 7[39m 2020-05-28 [4m1[24m[4m9[24m021 Buena Vista  [4m3[24m906   701        58      0
+    ## [90m 8[39m 2020-05-28 [4m1[24m[4m9[24m103 Johnson      [4m6[24m717   607       383      8
+    ## [90m 9[39m 2020-05-28 [4m1[24m[4m9[24m139 Muscatine    [4m2[24m925   549       384     41
+    ## [90m10[39m 2020-05-28 [4m1[24m[4m9[24m179 Wapello      [4m2[24m225   542       218      4
+    ## [90m# … with 89 more rows[39m
 
 Finally, create the new CSV files.
 
