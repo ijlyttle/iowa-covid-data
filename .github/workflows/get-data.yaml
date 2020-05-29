@@ -76,6 +76,12 @@ jobs:
           echo
           ls -l -R data/scrape-site
 
+      - name: Merge data
+        run: |
+          Rscript -e 'rmarkdown::render("04-merge-data.Rmd")'
+          echo
+          ls -l -R data/merged
+
       - name: Git commit & push
         run: |
           git add '*.md'
