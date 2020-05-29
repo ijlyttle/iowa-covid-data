@@ -1,6 +1,9 @@
 Scrape Iowa site
 ================
 
+The purpose of this document is to scrape the downloaded pages into csv
+files.
+
 ``` r
 library("rvest")
 ```
@@ -27,7 +30,7 @@ library("dplyr")
 library("here")
 ```
 
-    ## here() starts at /Users/runner/runners/2.262.1/work/iowa-covid-data/iowa-covid-data
+    ## here() starts at /Users/sesa19001/Documents/repos/public/graphics-group/iowa-covid-data
 
 ``` r
 library("fs")
@@ -43,6 +46,12 @@ library("purrr")
     ##     pluck
 
 ``` r
+library("iowa.covid")
+```
+
+First, we define the source and target directories.
+
+``` r
 dir_source_rel <- path("data", "download-site")
 dir_target_rel <- path("data", "scrape-site")
 
@@ -51,6 +60,11 @@ dir_target <- here(dir_target_rel)
 
 dir_create(dir_target)
 ```
+
+Next we define some local functions.
+
+First, a function that, given the HTML for the state’s page, returns the
+date tag embedded in the page.
 
 ``` r
 extract_date <- function(html) {
@@ -75,6 +89,17 @@ extract_date <- function(html) {
   date
 }
 ```
+
+Next, a function that, given the HTML, returns a data-frame with:
+
+  - `date`
+  - `county`
+  - `tests`
+  - `cases`
+  - `recovered`
+  - `deaths`
+
+All values are cumulative.
 
 ``` r
 extract_data <- function(html, date) {
@@ -101,16 +126,20 @@ extract_data <- function(html, date) {
       cases = ifelse(is.na(cases), 0, cases),
       recovered = ifelse(is.na(recovered), 0, recovered),
       deaths = ifelse(is.na(deaths), 0, deaths),
-    )
+    ) %>% 
+    dplyr::left_join(
+      iowa.covid::iowa_county_population %>% dplyr::select(fips, county),
+      by = "county"
+    ) %>%
+    dplyr::select(date, fips, county, everything())
+    
   
   iowa_data
 }
 ```
 
-Let’s find out what data we have already scraped.
-
-We want a function, given a directory, returns a named vector of
-candidate files.
+A function that, given a directory, returns a named vector of candidate
+files:
 
 ``` r
 get_date_files <- function(dir) {
@@ -126,6 +155,9 @@ get_date_files <- function(dir) {
 } 
 ```
 
+Let’s determine the HTML files we need to scrape; these are the files
+that do not have corresponding CSV files in the target directory.
+
 ``` r
 files_source <- get_date_files(dir_source)
 files_target <- get_date_files(dir_target)
@@ -137,11 +169,14 @@ files_needed <- files_source[dates_needed]
 files_needed
 ```
 
-    ## /Users/runner/runners/2.262.1/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2020-05-28.html
+    ## /Users/sesa19001/Documents/repos/public/graphics-group/iowa-covid-data/data/download-site/access-2020-05-25.html
+    ## /Users/sesa19001/Documents/repos/public/graphics-group/iowa-covid-data/data/download-site/access-2020-05-26.html
+    ## /Users/sesa19001/Documents/repos/public/graphics-group/iowa-covid-data/data/download-site/access-2020-05-27.html
+    ## /Users/sesa19001/Documents/repos/public/graphics-group/iowa-covid-data/data/download-site/access-2020-05-28.html
 
-Now, we need a function, given a filepath to an html file, and a target
-directory, scrape the html file and write a CSV file in the target
-directory.
+Finally, we need a function, given a filepath to an html file, and a
+target directory, scrape the html file and write a CSV file in the
+target directory.
 
 ``` r
 write_file <- function(file_html, dir_target) {
@@ -157,6 +192,8 @@ write_file <- function(file_html, dir_target) {
 }
 ```
 
+Test some of our functions:
+
 ``` r
 html <- read_html(path(dir_source, "access-2020-05-28.html"))
 
@@ -167,20 +204,22 @@ date <- extract_date(html)
 extract_data(html, date)
 ```
 
-    ## [90m# A tibble: 99 x 6[39m
-    ##    date       county      tests cases recovered deaths
-    ##    [3m[90m<date>[39m[23m     [3m[90m<chr>[39m[23m       [3m[90m<dbl>[39m[23m [3m[90m<dbl>[39m[23m     [3m[90m<dbl>[39m[23m  [3m[90m<dbl>[39m[23m
-    ## [90m 1[39m 2020-05-28 Polk        [4m2[24m[4m2[24m393  [4m3[24m920      [4m1[24m637    118
-    ## [90m 2[39m 2020-05-28 Woodbury    [4m1[24m[4m0[24m737  [4m2[24m668      [4m1[24m405     31
-    ## [90m 3[39m 2020-05-28 Black Hawk   [4m8[24m833  [4m1[24m716       979     43
-    ## [90m 4[39m 2020-05-28 Linn         [4m8[24m688   941       760     76
-    ## [90m 5[39m 2020-05-28 Marshall     [4m3[24m388   882       498     15
-    ## [90m 6[39m 2020-05-28 Dallas       [4m4[24m536   876       557     17
-    ## [90m 7[39m 2020-05-28 Buena Vista  [4m3[24m906   701        58      0
-    ## [90m 8[39m 2020-05-28 Johnson      [4m6[24m717   607       383      8
-    ## [90m 9[39m 2020-05-28 Muscatine    [4m2[24m925   549       384     41
-    ## [90m10[39m 2020-05-28 Wapello      [4m2[24m225   542       218      4
-    ## [90m# … with 89 more rows[39m
+    ## # A tibble: 99 x 7
+    ##    date        fips county      tests cases recovered deaths
+    ##    <date>     <dbl> <chr>       <dbl> <dbl>     <dbl>  <dbl>
+    ##  1 2020-05-28 19153 Polk        22393  3920      1637    118
+    ##  2 2020-05-28 19193 Woodbury    10737  2668      1405     31
+    ##  3 2020-05-28 19013 Black Hawk   8833  1716       979     43
+    ##  4 2020-05-28 19113 Linn         8688   941       760     76
+    ##  5 2020-05-28 19127 Marshall     3388   882       498     15
+    ##  6 2020-05-28 19049 Dallas       4536   876       557     17
+    ##  7 2020-05-28 19021 Buena Vista  3906   701        58      0
+    ##  8 2020-05-28 19103 Johnson      6717   607       383      8
+    ##  9 2020-05-28 19139 Muscatine    2925   549       384     41
+    ## 10 2020-05-28 19179 Wapello      2225   542       218      4
+    ## # … with 89 more rows
+
+Finally, create the new CSV files.
 
 ``` r
 walk(files_needed, write_file, dir_target)

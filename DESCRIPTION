@@ -30,7 +30,8 @@ Imports:
     stringr,
     maps,
     rvest,
-    here
+    here,
+    vroom
 Remotes:
     ijlyttle/iowa.covid,
     rlesur/crrri

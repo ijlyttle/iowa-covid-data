@@ -1,0 +1,88 @@
+---
+title: Merge data
+output: github_document
+---
+
+The purpose of this document is to merge the data from all the sources into some useful tables.
+
+```{r}
+library("here")
+library("vroom")
+library("fs")
+library("purrr")
+library("dplyr")
+library("conflicted")
+library("readr")
+
+conflict_prefer("filter", "dplyr")
+```
+
+Let's define the directories and create the target directory.
+
+```{r}
+dirs <- 
+  list(
+    source_state = path("data", "scrape-site"),
+    source_nyt = path("data", "nyt"),
+    target = path("data", "merged")  
+  ) %>%
+  map(here)
+
+dir_create(dirs$target)
+```
+
+Let's read in the NYT data:
+
+```{r}
+nyt_data <- vroom(path(dirs$source_nyt, "nyt-iowa.csv"))
+```
+
+And the state data:
+
+```{r}
+state_data <- vroom(dir_ls(dirs$source_state))
+```
+
+Get the dates in the state dataset and exclude those from the NYT dataset.
+
+```{r}
+dates_state <- unique(state_data$date) %>% print() 
+```
+
+```{r}
+nyt_data_abridged <- 
+  nyt_data %>%
+  filter(!date %in% dates_state)
+```
+
+Now we can bind the data frames together. I take into consideration:
+
+- discarding rows unknown counties; these eventually get counted. 
+- `cases`, `deaths`, `tests`, and `recovered` must always be increasing. Given a current value, all earlier values can be no greater than this value.
+- `active_cases` is the number of `cases` less `deaths` and `recovered`
+
+```{r}
+merged <- 
+  bind_rows(nyt_data_abridged, state_data) %>%
+  arrange(desc(date), desc(cases)) %>%
+  filter(!is.na(fips)) %>%
+  group_by(county) %>%
+  mutate(
+    cases = cummin(cases),
+    deaths = cummin(deaths),
+    tests = cummin(tests),
+    recovered = cummin(recovered),
+    active_cases = cases - deaths - recovered
+  ) %>%
+  ungroup() %>%
+  print()
+```
+
+Let's write this out:
+
+```{r}
+write_csv(
+  merged,
+  path(dirs$target, "merged.csv")
+)
+```
