@@ -31,7 +31,8 @@ Imports:
     maps,
     rvest,
     here,
-    vroom
+    vroom,
+    conflicted
 Remotes:
     ijlyttle/iowa.covid,
     rlesur/crrri
