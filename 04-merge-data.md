@@ -2,14 +2,13 @@ Merge data
 ================
 
 The purpose of this document is to merge the data from all the sources
-into some useful
-    tables.
+into some useful tables.
 
 ``` r
 library("here")
 ```
 
-    ## here() starts at /Users/sesa19001/Documents/repos/public/graphics-group/iowa-covid-data
+    ## here() starts at /Users/runner/runners/2.263.0/work/iowa-covid-data/iowa-covid-data
 
 ``` r
 library("vroom")
@@ -47,7 +46,7 @@ library("readr")
 conflict_prefer("filter", "dplyr")
 ```
 
-    ## [conflicted] Will prefer dplyr::filter over any other package
+    ## [conflicted] Will prefer [34mdplyr::filter[39m over any other package
 
 Let’s define the directories and create the target directory.
 
@@ -69,15 +68,15 @@ Let’s read in the NYT data:
 nyt_data <- vroom(path(dirs$source_nyt, "nyt-iowa.csv"))
 ```
 
-    ## Rows: 5,477
-    ## Columns: 5
-    ## Delimiter: ","
-    ## chr  [1]: county
-    ## dbl  [3]: fips, cases, deaths
-    ## date [1]: date
+    ## [1mRows:[22m 5,677
+    ## [1mColumns:[22m 5
+    ## [1mDelimiter:[22m ","
+    ## [31mchr[39m  [1]: county
+    ## [32mdbl[39m  [3]: fips, cases, deaths
+    ## [34mdate[39m [1]: date
     ## 
-    ## Use `spec()` to retrieve the guessed column specification
-    ## Pass a specification to the `col_types` argument to quiet this message
+    ## [90mUse `spec()` to retrieve the guessed column specification[39m
+    ## [90mPass a specification to the `col_types` argument to quiet this message[39m
 
 And the state data:
 
@@ -85,15 +84,15 @@ And the state data:
 state_data <- vroom(dir_ls(dirs$source_state))
 ```
 
-    ## Rows: 396
-    ## Columns: 7
-    ## Delimiter: ","
-    ## chr  [1]: county
-    ## dbl  [5]: fips, tests, cases, recovered, deaths
-    ## date [1]: date
+    ## [1mRows:[22m 594
+    ## [1mColumns:[22m 7
+    ## [1mDelimiter:[22m ","
+    ## [31mchr[39m  [1]: county
+    ## [32mdbl[39m  [5]: fips, tests, cases, recovered, deaths
+    ## [34mdate[39m [1]: date
     ## 
-    ## Use `spec()` to retrieve the guessed column specification
-    ## Pass a specification to the `col_types` argument to quiet this message
+    ## [90mUse `spec()` to retrieve the guessed column specification[39m
+    ## [90mPass a specification to the `col_types` argument to quiet this message[39m
 
 Get the dates in the state dataset and exclude those from the NYT
 dataset.
@@ -102,7 +101,8 @@ dataset.
 dates_state <- unique(state_data$date) %>% print() 
 ```
 
-    ## [1] "2020-05-25" "2020-05-26" "2020-05-27" "2020-05-28"
+    ## [1] "2020-05-25" "2020-05-26" "2020-05-27" "2020-05-28" "2020-05-29"
+    ## [6] "2020-05-30"
 
 ``` r
 nyt_data_abridged <- 
@@ -138,20 +138,20 @@ merged <-
   print()
 ```
 
-    ## # A tibble: 5,544 x 8
+    ## [90m# A tibble: 5,742 x 8[39m
     ##    date        fips county      cases deaths tests recovered active_cases
-    ##    <date>     <dbl> <chr>       <dbl>  <dbl> <dbl>     <dbl>        <dbl>
-    ##  1 2020-05-28 19153 Polk         3920    118 22393      1637         2165
-    ##  2 2020-05-28 19193 Woodbury     2668     31 10737      1405         1232
-    ##  3 2020-05-28 19013 Black Hawk   1716     43  8833       979          694
-    ##  4 2020-05-28 19113 Linn          941     76  8688       760          105
-    ##  5 2020-05-28 19127 Marshall      882     15  3388       498          369
-    ##  6 2020-05-28 19049 Dallas        876     17  4536       557          302
-    ##  7 2020-05-28 19021 Buena Vista   701      0  3906        58          643
-    ##  8 2020-05-28 19103 Johnson       607      8  6717       383          216
-    ##  9 2020-05-28 19139 Muscatine     549     41  2925       384          124
-    ## 10 2020-05-28 19179 Wapello       542      4  2225       218          320
-    ## # … with 5,534 more rows
+    ##    [3m[90m<date>[39m[23m     [3m[90m<dbl>[39m[23m [3m[90m<chr>[39m[23m       [3m[90m<dbl>[39m[23m  [3m[90m<dbl>[39m[23m [3m[90m<dbl>[39m[23m     [3m[90m<dbl>[39m[23m        [3m[90m<dbl>[39m[23m
+    ## [90m 1[39m 2020-05-30 [4m1[24m[4m9[24m153 Polk         [4m4[24m124    123 [4m2[24m[4m3[24m587      [4m1[24m762         [4m2[24m239
+    ## [90m 2[39m 2020-05-30 [4m1[24m[4m9[24m193 Woodbury     [4m2[24m733     34 [4m1[24m[4m1[24m174      [4m1[24m596         [4m1[24m103
+    ## [90m 3[39m 2020-05-30 [4m1[24m[4m9[24m013 Black Hawk   [4m1[24m734     44  [4m9[24m191       997          693
+    ## [90m 4[39m 2020-05-30 [4m1[24m[4m9[24m113 Linn          947     76  [4m9[24m147       771          100
+    ## [90m 5[39m 2020-05-30 [4m1[24m[4m9[24m049 Dallas        892     20  [4m4[24m688       573          299
+    ## [90m 6[39m 2020-05-30 [4m1[24m[4m9[24m127 Marshall      892     16  [4m3[24m460       523          353
+    ## [90m 7[39m 2020-05-30 [4m1[24m[4m9[24m021 Buena Vista   731      0  [4m4[24m028        68          663
+    ## [90m 8[39m 2020-05-30 [4m1[24m[4m9[24m103 Johnson       613      9  [4m6[24m960       406          198
+    ## [90m 9[39m 2020-05-30 [4m1[24m[4m9[24m179 Wapello       557      8  [4m2[24m301       267          282
+    ## [90m10[39m 2020-05-30 [4m1[24m[4m9[24m139 Muscatine     556     41  [4m2[24m993       418           97
+    ## [90m# … with 5,732 more rows[39m
 
 Let’s write this out:
 

@@ -89,6 +89,8 @@ map_iowa_county <-
   glimpse()
 ```
 
+    ## `summarise()` ungrouping output (override with `.groups` argument)
+
     ## Rows: 99
     ## Columns: 4
     ## $ county       [3m[90m<chr>[39m[23m "Adair", "Adams", "Allamakee", "Appanoose", "Audubon", "…
