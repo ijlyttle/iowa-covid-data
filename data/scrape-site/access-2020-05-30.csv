@@ -91,6 +91,7 @@ date,fips,county,tests,cases,recovered,deaths
 2020-05-30,19003,Adams,117,7,3,0
 2020-05-30,19137,Montgomery,317,6,5,0
 2020-05-30,19147,Palo Alto,159,6,2,0
+2020-05-30,NA,Pending Investigation,406,5,0,0
 2020-05-30,19131,Mitchell,352,4,4,0
 2020-05-30,19159,Ringgold,167,4,2,0
 2020-05-30,19071,Fremont,132,4,2,0

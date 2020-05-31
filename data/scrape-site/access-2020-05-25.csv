@@ -88,6 +88,7 @@ date,fips,county,tests,cases,recovered,deaths
 2020-05-25,19175,Union,347,7,1,0
 2020-05-25,19117,Lucas,177,6,1,0
 2020-05-25,19137,Montgomery,234,6,5,0
+2020-05-25,NA,Pending Investigation,353,6,1,0
 2020-05-25,19003,Adams,93,5,1,0
 2020-05-25,19071,Fremont,119,4,2,0
 2020-05-25,19131,Mitchell,320,4,4,0

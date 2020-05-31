@@ -96,5 +96,6 @@ date,fips,county,tests,cases,recovered,deaths
 2020-05-29,19195,Worth,285,3,3,0
 2020-05-29,19147,Palo Alto,154,3,2,0
 2020-05-29,19025,Calhoun,289,2,2,0
+2020-05-29,NA,Pending Investigation,268,1,0,0
 2020-05-29,19053,Decatur,207,1,0,0
 2020-05-29,19185,Wayne,123,1,1,0

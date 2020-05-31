@@ -7,7 +7,7 @@
 #
 # I use a "fake" DESCRIPTION file to collect the dependencies, then modify the
 # README.Rmd to trigger a build (as a test). Otherwise, the build is scheduled
-# to run at 11h00 Iowa time (expressed here as UTC, so will have to be
+# to run at 11h15 Iowa time (expressed here as UTC, so will have to be
 # adjusted twice a year).
 #
 

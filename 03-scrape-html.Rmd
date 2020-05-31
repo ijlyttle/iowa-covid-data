@@ -69,14 +69,17 @@ All values are cumulative.
 
 ```{r}
 extract_data <- function(html, date) {
-  
+
   content <-
     html %>%
     rvest::html_nodes("td") %>%
     purrr::map_chr(rvest::html_text)
   
   ind_counties <- 
-    which(content %in% iowa.covid::iowa_county_population$county)
+    which(
+      content %in% iowa.covid::iowa_county_population$county |
+      str_detect(content, regex("^pending", ignore_case = TRUE))  
+    )
   
   iowa_data <- 
     tibble::tibble(
@@ -152,13 +155,14 @@ write_file <- function(file_html, dir_target) {
 Test some of our functions:
 
 ```{r}
-html <- read_html(path(dir_source, "access-2020-05-28.html"))
+html <- read_html(path(dir_source, "access-2020-05-26.html"))
 
 date <- extract_date(html)
 ```
 
 ```{r}
-extract_data(html, date)
+data <- extract_data(html, date)
+print(data)
 ```
 
 Finally, create the new CSV files.

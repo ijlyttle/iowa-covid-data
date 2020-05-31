@@ -52,6 +52,7 @@ date,fips,county,tests,cases,recovered,deaths
 2020-05-26,19023,Butler,495,15,12,0
 2020-05-26,19097,Jackson,490,12,8,0
 2020-05-26,19083,Hardin,470,13,9,0
+2020-05-26,NA,Pending Investigation,453,3,1,0
 2020-05-26,19121,Madison,452,25,11,1
 2020-05-26,19081,Hancock,428,13,4,0
 2020-05-26,19161,Sac,420,13,4,0

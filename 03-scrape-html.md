@@ -30,7 +30,7 @@ library("dplyr")
 library("here")
 ```
 
-    ## here() starts at /Users/runner/runners/2.263.0/work/iowa-covid-data/iowa-covid-data
+    ## here() starts at /Users/sesa19001/Documents/repos/public/graphics-group/iowa-covid-data
 
 ``` r
 library("fs")
@@ -103,14 +103,17 @@ All values are cumulative.
 
 ``` r
 extract_data <- function(html, date) {
-  
+
   content <-
     html %>%
     rvest::html_nodes("td") %>%
     purrr::map_chr(rvest::html_text)
   
   ind_counties <- 
-    which(content %in% iowa.covid::iowa_county_population$county)
+    which(
+      content %in% iowa.covid::iowa_county_population$county |
+      str_detect(content, regex("^pending", ignore_case = TRUE))  
+    )
   
   iowa_data <- 
     tibble::tibble(
@@ -169,7 +172,12 @@ files_needed <- files_source[dates_needed]
 files_needed
 ```
 
-    ## /Users/runner/runners/2.263.0/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2020-05-30.html
+    ## /Users/sesa19001/Documents/repos/public/graphics-group/iowa-covid-data/data/download-site/access-2020-05-25.html
+    ## /Users/sesa19001/Documents/repos/public/graphics-group/iowa-covid-data/data/download-site/access-2020-05-26.html
+    ## /Users/sesa19001/Documents/repos/public/graphics-group/iowa-covid-data/data/download-site/access-2020-05-27.html
+    ## /Users/sesa19001/Documents/repos/public/graphics-group/iowa-covid-data/data/download-site/access-2020-05-28.html
+    ## /Users/sesa19001/Documents/repos/public/graphics-group/iowa-covid-data/data/download-site/access-2020-05-29.html
+    ## /Users/sesa19001/Documents/repos/public/graphics-group/iowa-covid-data/data/download-site/access-2020-05-30.html
 
 Finally, we need a function, given a filepath to an html file, and a
 target directory, scrape the html file and write a CSV file in the
@@ -192,29 +200,30 @@ write_file <- function(file_html, dir_target) {
 Test some of our functions:
 
 ``` r
-html <- read_html(path(dir_source, "access-2020-05-28.html"))
+html <- read_html(path(dir_source, "access-2020-05-26.html"))
 
 date <- extract_date(html)
 ```
 
 ``` r
-extract_data(html, date)
+data <- extract_data(html, date)
+print(data)
 ```
 
-    ## [90m# A tibble: 99 x 7[39m
-    ##    date        fips county      tests cases recovered deaths
-    ##    [3m[90m<date>[39m[23m     [3m[90m<dbl>[39m[23m [3m[90m<chr>[39m[23m       [3m[90m<dbl>[39m[23m [3m[90m<dbl>[39m[23m     [3m[90m<dbl>[39m[23m  [3m[90m<dbl>[39m[23m
-    ## [90m 1[39m 2020-05-28 [4m1[24m[4m9[24m153 Polk        [4m2[24m[4m2[24m393  [4m3[24m920      [4m1[24m637    118
-    ## [90m 2[39m 2020-05-28 [4m1[24m[4m9[24m193 Woodbury    [4m1[24m[4m0[24m737  [4m2[24m668      [4m1[24m405     31
-    ## [90m 3[39m 2020-05-28 [4m1[24m[4m9[24m013 Black Hawk   [4m8[24m833  [4m1[24m716       979     43
-    ## [90m 4[39m 2020-05-28 [4m1[24m[4m9[24m113 Linn         [4m8[24m688   941       760     76
-    ## [90m 5[39m 2020-05-28 [4m1[24m[4m9[24m127 Marshall     [4m3[24m388   882       498     15
-    ## [90m 6[39m 2020-05-28 [4m1[24m[4m9[24m049 Dallas       [4m4[24m536   876       557     17
-    ## [90m 7[39m 2020-05-28 [4m1[24m[4m9[24m021 Buena Vista  [4m3[24m906   701        58      0
-    ## [90m 8[39m 2020-05-28 [4m1[24m[4m9[24m103 Johnson      [4m6[24m717   607       383      8
-    ## [90m 9[39m 2020-05-28 [4m1[24m[4m9[24m139 Muscatine    [4m2[24m925   549       384     41
-    ## [90m10[39m 2020-05-28 [4m1[24m[4m9[24m179 Wapello      [4m2[24m225   542       218      4
-    ## [90m# … with 89 more rows[39m
+    ## # A tibble: 100 x 7
+    ##    date        fips county     tests cases recovered deaths
+    ##    <date>     <dbl> <chr>      <dbl> <dbl>     <dbl>  <dbl>
+    ##  1 2020-05-26 19153 Polk       21506  3815      1500    109
+    ##  2 2020-05-26 19193 Woodbury   10458  2638      1286     24
+    ##  3 2020-05-26 19013 Black Hawk  8530  1690       969     40
+    ##  4 2020-05-26 19113 Linn        8379   936       760     75
+    ##  5 2020-05-26 19103 Johnson     6487   604       339      7
+    ##  6 2020-05-26 19163 Scott       5801   340       287      9
+    ##  7 2020-05-26 19061 Dubuque     4808   323       147     16
+    ##  8 2020-05-26 19049 Dallas      4410   865       525     15
+    ##  9 2020-05-26 19127 Marshall    3325   872       456     11
+    ## 10 2020-05-26 19139 Muscatine   2881   545       356     40
+    ## # … with 90 more rows
 
 Finally, create the new CSV files.
 
