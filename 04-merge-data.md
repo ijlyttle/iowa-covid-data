@@ -69,7 +69,7 @@ Let’s read in the NYT data:
 nyt_data <- vroom(path(dirs$source_nyt, "nyt-iowa.csv"))
 ```
 
-    ## Rows: 5,677
+    ## Rows: 5,776
     ## Columns: 5
     ## Delimiter: ","
     ## chr  [1]: county
@@ -85,7 +85,7 @@ And the state data:
 state_data <- vroom(dir_ls(dirs$source_state))
 ```
 
-    ## Rows: 600
+    ## Rows: 699
     ## Columns: 7
     ## Delimiter: ","
     ## chr  [1]: county
@@ -103,7 +103,7 @@ dates_state <- unique(state_data$date) %>% print()
 ```
 
     ## [1] "2020-05-25" "2020-05-26" "2020-05-27" "2020-05-28" "2020-05-29"
-    ## [6] "2020-05-30"
+    ## [6] "2020-05-30" "2020-05-31"
 
 ``` r
 nyt_data_abridged <- 
@@ -141,20 +141,20 @@ merged <-
   print()
 ```
 
-    ## # A tibble: 5,779 x 8
+    ## # A tibble: 5,878 x 8
     ##    date        fips county      cases deaths tests recovered active_cases
     ##    <date>     <dbl> <chr>       <dbl>  <dbl> <dbl>     <dbl>        <dbl>
-    ##  1 2020-05-30 19153 Polk         4124    123 23587      1762         2239
-    ##  2 2020-05-30 19193 Woodbury     2733     34 11174      1596         1103
-    ##  3 2020-05-30 19013 Black Hawk   1734     44  9191       997          693
-    ##  4 2020-05-30 19113 Linn          947     76  9147       771          100
-    ##  5 2020-05-30 19049 Dallas        892     20  4688       573          299
-    ##  6 2020-05-30 19127 Marshall      892     16  3460       523          353
-    ##  7 2020-05-30 19021 Buena Vista   731      0  4028        68          663
-    ##  8 2020-05-30 19103 Johnson       613      9  6960       406          198
-    ##  9 2020-05-30 19179 Wapello       557      8  2301       267          282
-    ## 10 2020-05-30 19139 Muscatine     556     41  2993       418           97
-    ## # … with 5,769 more rows
+    ##  1 2020-05-31 19153 Polk         4225    126 24588      1798         2301
+    ##  2 2020-05-31 19193 Woodbury     2748     34 11259      1647         1067
+    ##  3 2020-05-31 19013 Black Hawk   1744     44  9374       999          701
+    ##  4 2020-05-31 19113 Linn          953     77  9491       771          105
+    ##  5 2020-05-31 19049 Dallas        902     20  4821       579          303
+    ##  6 2020-05-31 19127 Marshall      894     16  3474       530          348
+    ##  7 2020-05-31 19021 Buena Vista   754      0  4234        71          683
+    ##  8 2020-05-31 19103 Johnson       613      9  7122       415          189
+    ##  9 2020-05-31 19179 Wapello       589      9  2560       267          313
+    ## 10 2020-05-31 19139 Muscatine     557     41  3024       418           98
+    ## # … with 5,868 more rows
 
 Let’s write this out:
 
