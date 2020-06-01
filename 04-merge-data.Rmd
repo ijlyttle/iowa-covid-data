@@ -59,8 +59,8 @@ nyt_data_abridged <-
 Now we can bind the data frames together. I take into consideration:
 
 - discarding rows unknown counties; these eventually get counted. 
-- `cases`, `deaths`, `tests`, and `recovered` must always be increasing. Given a current value, all earlier values can be no greater than this value.
-- `active_cases` is the number of `cases` less `deaths` and `recovered`
+- `cases`, `deaths`, `tests`, and `recovered` must always be increasing. Given a current value, all earlier values can be no greater than this value. Also keep in mind that this is true *only* for a county - not for the pending results (county is `NA`).
+- `active_cases` is the number of `cases` less `deaths` and `recovered`.
 
 ```{r}
 merged <- 
