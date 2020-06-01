@@ -13,6 +13,7 @@ library("purrr")
 library("dplyr")
 library("conflicted")
 library("readr")
+library("iowa.covid")
 
 conflict_prefer("filter", "dplyr")
 ```
@@ -70,10 +71,10 @@ merged <-
   ) %>%
   group_by(county) %>%
   mutate(
-    cases = cummin(cases),
-    deaths = cummin(deaths),
-    tests = cummin(tests),
-    recovered = cummin(recovered),
+    across(
+      c(cases, deaths, tests, recovered),
+      ~ifelse(!is.na(county), cummin(.x), .x)
+    ),
     active_cases = cases - deaths - recovered
   ) %>%
   ungroup() %>%

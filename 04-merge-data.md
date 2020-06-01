@@ -44,6 +44,8 @@ library("readr")
     ##   str.col_spec     vroom
 
 ``` r
+library("iowa.covid")
+
 conflict_prefer("filter", "dplyr")
 ```
 
@@ -85,7 +87,7 @@ And the state data:
 state_data <- vroom(dir_ls(dirs$source_state))
 ```
 
-    ## Rows: 699
+    ## Rows: 700
     ## Columns: 7
     ## Delimiter: ","
     ## chr  [1]: county
@@ -131,17 +133,17 @@ merged <-
   ) %>%
   group_by(county) %>%
   mutate(
-    cases = cummin(cases),
-    deaths = cummin(deaths),
-    tests = cummin(tests),
-    recovered = cummin(recovered),
+    across(
+      c(cases, deaths, tests, recovered),
+      ~ifelse(!is.na(county), cummin(.x), .x)
+    ),
     active_cases = cases - deaths - recovered
   ) %>%
   ungroup() %>%
   print()
 ```
 
-    ## # A tibble: 5,878 x 8
+    ## # A tibble: 5,879 x 8
     ##    date        fips county      cases deaths tests recovered active_cases
     ##    <date>     <dbl> <chr>       <dbl>  <dbl> <dbl>     <dbl>        <dbl>
     ##  1 2020-05-31 19153 Polk         4225    126 24588      1798         2301
@@ -154,7 +156,7 @@ merged <-
     ##  8 2020-05-31 19103 Johnson       613      9  7122       415          189
     ##  9 2020-05-31 19179 Wapello       589      9  2560       267          313
     ## 10 2020-05-31 19139 Muscatine     557     41  3024       418           98
-    ## # … with 5,868 more rows
+    ## # … with 5,869 more rows
 
 Let’s write this out:
 
