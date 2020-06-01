@@ -172,7 +172,7 @@ files_needed <- files_source[dates_needed]
 files_needed
 ```
 
-    ## character(0)
+    ## /Users/sesa19001/Documents/repos/public/graphics-group/iowa-covid-data/data/download-site/access-2020-05-31.html
 
 Finally, we need a function, given a filepath to an html file, and a
 target directory, scrape the html file and write a CSV file in the
@@ -195,7 +195,7 @@ write_file <- function(file_html, dir_target) {
 Test some of our functions:
 
 ``` r
-html <- read_html(path(dir_source, "access-2020-05-26.html"))
+html <- read_html(path(dir_source, "access-2020-05-31.html"))
 
 date <- extract_date(html)
 ```
@@ -206,18 +206,18 @@ print(data)
 ```
 
     ## # A tibble: 100 x 7
-    ##    date        fips county     tests cases recovered deaths
-    ##    <date>     <dbl> <chr>      <dbl> <dbl>     <dbl>  <dbl>
-    ##  1 2020-05-26 19153 Polk       21506  3815      1500    109
-    ##  2 2020-05-26 19193 Woodbury   10458  2638      1286     24
-    ##  3 2020-05-26 19013 Black Hawk  8530  1690       969     40
-    ##  4 2020-05-26 19113 Linn        8379   936       760     75
-    ##  5 2020-05-26 19103 Johnson     6487   604       339      7
-    ##  6 2020-05-26 19163 Scott       5801   340       287      9
-    ##  7 2020-05-26 19061 Dubuque     4808   323       147     16
-    ##  8 2020-05-26 19049 Dallas      4410   865       525     15
-    ##  9 2020-05-26 19127 Marshall    3325   872       456     11
-    ## 10 2020-05-26 19139 Muscatine   2881   545       356     40
+    ##    date        fips county      tests cases recovered deaths
+    ##    <date>     <dbl> <chr>       <dbl> <dbl>     <dbl>  <dbl>
+    ##  1 2020-05-31 19153 Polk        24588  4225      1798    126
+    ##  2 2020-05-31 19193 Woodbury    11259  2748      1647     34
+    ##  3 2020-05-31 19013 Black Hawk   9374  1744       999     44
+    ##  4 2020-05-31 19113 Linn         9491   953       771     77
+    ##  5 2020-05-31 19049 Dallas       4821   902       579     20
+    ##  6 2020-05-31 19127 Marshall     3474   894       530     16
+    ##  7 2020-05-31 19021 Buena Vista  4234   754        71      0
+    ##  8 2020-05-31 19103 Johnson      7122   613       415      9
+    ##  9 2020-05-31 19179 Wapello      2560   589       267      9
+    ## 10 2020-05-31 19139 Muscatine    3024   557       418     41
     ## # … with 90 more rows
 
 Finally, create the new CSV files.
