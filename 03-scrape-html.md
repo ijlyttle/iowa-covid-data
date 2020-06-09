@@ -172,7 +172,7 @@ files_needed <- files_source[dates_needed]
 files_needed
 ```
 
-    ## /Users/runner/runners/2.263.0/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2020-06-08.html
+    ## /Users/runner/runners/2.263.0/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2020-06-09.html
 
 Finally, we need a function, given a filepath to an html file, and a
 target directory, scrape the html file and write a CSV file in the
