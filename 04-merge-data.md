@@ -8,7 +8,7 @@ into some useful tables.
 library("here")
 ```
 
-    ## here() starts at /Users/runner/runners/2.263.0/work/iowa-covid-data/iowa-covid-data
+    ## here() starts at /Users/runner/work/iowa-covid-data/iowa-covid-data
 
 ``` r
 library("vroom")
@@ -70,7 +70,7 @@ Let’s read in the NYT data:
 nyt_data <- vroom(path(dirs$source_nyt, "nyt-iowa.csv"))
 ```
 
-    ## [1mRows:[22m 8,174
+    ## [1mRows:[22m 8,274
     ## [1mColumns:[22m 5
     ## [1mDelimiter:[22m ","
     ## [31mchr[39m  [1]: county
@@ -86,7 +86,7 @@ And the state data:
 state_data <- vroom(dir_ls(dirs$source_state))
 ```
 
-    ## [1mRows:[22m 3,001
+    ## [1mRows:[22m 3,101
     ## [1mColumns:[22m 7
     ## [1mDelimiter:[22m ","
     ## [31mchr[39m  [1]: county
@@ -109,6 +109,7 @@ dates_state <- unique(state_data$date) %>% print()
     ## [16] "2020-06-09" "2020-06-10" "2020-06-11" "2020-06-12" "2020-06-13"
     ## [21] "2020-06-14" "2020-06-15" "2020-06-16" "2020-06-17" "2020-06-18"
     ## [26] "2020-06-19" "2020-06-20" "2020-06-21" "2020-06-23" "2020-06-24"
+    ## [31] "2020-06-25"
 
 ``` r
 nyt_data_abridged <- 
@@ -147,20 +148,20 @@ merged <-
   print()
 ```
 
-    ## [90m# A tibble: 8,280 x 8[39m
-    ##    date        fips county      cases deaths tests recovered active_cases
-    ##    [3m[90m<date>[39m[23m     [3m[90m<dbl>[39m[23m [3m[90m<chr>[39m[23m       [3m[90m<dbl>[39m[23m  [3m[90m<dbl>[39m[23m [3m[90m<dbl>[39m[23m     [3m[90m<dbl>[39m[23m        [3m[90m<dbl>[39m[23m
-    ## [90m 1[39m 2020-06-24 [4m1[24m[4m9[24m153 Polk         [4m5[24m593    169 [4m4[24m[4m3[24m242      [4m2[24m745         [4m2[24m679
-    ## [90m 2[39m 2020-06-24 [4m1[24m[4m9[24m193 Woodbury     [4m3[24m087     43 [4m1[24m[4m5[24m155      [4m2[24m631          413
-    ## [90m 3[39m 2020-06-24 [4m1[24m[4m9[24m013 Black Hawk   [4m1[24m919     56 [4m1[24m[4m3[24m394      [4m1[24m173          690
-    ## [90m 4[39m 2020-06-24 [4m1[24m[4m9[24m021 Buena Vista  [4m1[24m673     10  [4m6[24m747       533         [4m1[24m130
-    ## [90m 5[39m 2020-06-24 [4m1[24m[4m9[24m113 Linn         [4m1[24m112     80 [4m1[24m[4m6[24m734       875          157
-    ## [90m 6[39m 2020-06-24 [4m1[24m[4m9[24m049 Dallas       [4m1[24m084     29  [4m8[24m420       695          360
-    ## [90m 7[39m 2020-06-24 [4m1[24m[4m9[24m127 Marshall      988     18  [4m5[24m227       613          357
-    ## [90m 8[39m 2020-06-24 [4m1[24m[4m9[24m103 Johnson       833      8 [4m1[24m[4m2[24m174       510          315
-    ## [90m 9[39m 2020-06-24 [4m1[24m[4m9[24m179 Wapello       691     28  [4m3[24m904       606           57
-    ## [90m10[39m 2020-06-24 [4m1[24m[4m9[24m047 Crawford      643      2  [4m2[24m695       381          260
-    ## [90m# … with 8,270 more rows[39m
+    ## [90m# A tibble: 8,380 x 8[39m
+    ##    date        fips county        cases deaths tests recovered active_cases
+    ##    [3m[90m<date>[39m[23m     [3m[90m<dbl>[39m[23m [3m[90m<chr>[39m[23m         [3m[90m<dbl>[39m[23m  [3m[90m<dbl>[39m[23m [3m[90m<dbl>[39m[23m     [3m[90m<dbl>[39m[23m        [3m[90m<dbl>[39m[23m
+    ## [90m 1[39m 2020-06-25 [4m1[24m[4m9[24m153 Polk           [4m5[24m680    171 [4m4[24m[4m4[24m449      [4m2[24m781         [4m2[24m728
+    ## [90m 2[39m 2020-06-25 [4m1[24m[4m9[24m193 Woodbury       [4m3[24m095     43 [4m1[24m[4m5[24m258      [4m2[24m641          411
+    ## [90m 3[39m 2020-06-25 [4m1[24m[4m9[24m013 Black Hawk     [4m1[24m937     56 [4m1[24m[4m3[24m651      [4m1[24m187          694
+    ## [90m 4[39m 2020-06-25 [4m1[24m[4m9[24m021 Buena Vista    [4m1[24m675     10  [4m6[24m782       552         [4m1[24m113
+    ## [90m 5[39m 2020-06-25 [4m1[24m[4m9[24m113 Linn           [4m1[24m136     80 [4m1[24m[4m7[24m193       886          170
+    ## [90m 6[39m 2020-06-25 [4m1[24m[4m9[24m049 Dallas         [4m1[24m097     29  [4m8[24m705       696          372
+    ## [90m 7[39m 2020-06-25 [4m1[24m[4m9[24m127 Marshall        990     18  [4m5[24m271       615          357
+    ## [90m 8[39m 2020-06-25 [4m1[24m[4m9[24m103 Johnson         884      9 [4m1[24m[4m2[24m646       521          354
+    ## [90m 9[39m 2020-06-25 [4m1[24m[4m9[24m179 Wapello         693     28  [4m3[24m954       609           56
+    ## [90m10[39m 2020-06-25 [4m1[24m[4m9[24m155 Pottawattamie   648     11  [4m8[24m153       449          188
+    ## [90m# … with 8,370 more rows[39m
 
 Let’s write this out:
 
