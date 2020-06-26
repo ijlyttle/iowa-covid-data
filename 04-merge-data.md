@@ -70,7 +70,7 @@ Let’s read in the NYT data:
 nyt_data <- vroom(path(dirs$source_nyt, "nyt-iowa.csv"))
 ```
 
-    ## [1mRows:[22m 8,274
+    ## [1mRows:[22m 8,373
     ## [1mColumns:[22m 5
     ## [1mDelimiter:[22m ","
     ## [31mchr[39m  [1]: county
@@ -148,7 +148,7 @@ merged <-
   print()
 ```
 
-    ## [90m# A tibble: 8,480 x 8[39m
+    ## [90m# A tibble: 8,479 x 8[39m
     ##    date        fips county        cases deaths tests recovered active_cases
     ##    [3m[90m<date>[39m[23m     [3m[90m<dbl>[39m[23m [3m[90m<chr>[39m[23m         [3m[90m<dbl>[39m[23m  [3m[90m<dbl>[39m[23m [3m[90m<dbl>[39m[23m     [3m[90m<dbl>[39m[23m        [3m[90m<dbl>[39m[23m
     ## [90m 1[39m 2020-06-26 [4m1[24m[4m9[24m153 Polk           [4m5[24m758    174 [4m4[24m[4m5[24m523      [4m2[24m810         [4m2[24m774
@@ -161,7 +161,7 @@ merged <-
     ## [90m 8[39m 2020-06-26 [4m1[24m[4m9[24m103 Johnson         945      8 [4m1[24m[4m3[24m087       524          413
     ## [90m 9[39m 2020-06-26 [4m1[24m[4m9[24m179 Wapello         692     28  [4m3[24m983       609           55
     ## [90m10[39m 2020-06-26 [4m1[24m[4m9[24m155 Pottawattamie   656     11  [4m8[24m296       469          176
-    ## [90m# … with 8,470 more rows[39m
+    ## [90m# … with 8,469 more rows[39m
 
 Let’s write this out:
 
