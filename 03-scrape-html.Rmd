@@ -155,7 +155,7 @@ write_file <- function(file_html, dir_target) {
 Test some of our functions:
 
 ```{r}
-html <- read_html(path(dir_source, "access-2020-06-21.html"))
+html <- read_html(path(dir_source, "access-2020-06-22.html"))
 
 date <- extract_date(html)
 ```
