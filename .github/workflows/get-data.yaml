@@ -59,6 +59,10 @@ jobs:
           echo
           ls -l -R data/meta
 
+      - name: test
+        run: |
+          curl https://coronavirus.iowa.gov/pages/access
+
       - name: Get HTML file
         run: |
           Rscript -e 'rmarkdown::render("01-download-iowa-site.Rmd")'
