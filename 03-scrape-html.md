@@ -172,7 +172,7 @@ files_needed <- files_source[dates_needed]
 files_needed
 ```
 
-    ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2020-07-10.html
+    ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2020-07-11.html
 
 Finally, we need a function, given a filepath to an html file, and a
 target directory, scrape the html file and write a CSV file in the
@@ -204,14 +204,6 @@ date <- extract_date(html)
 data <- extract_data(html, date)
 print(data)
 ```
-
-    ## Warning: `...` is not empty.
-    ## 
-    ## We detected these problematic arguments:
-    ## * `needs_dots`
-    ## 
-    ## These dots only exist to allow future extensions and should be empty.
-    ## Did you misspecify an argument?
 
     ## [90m# A tibble: 100 x 7[39m
     ##    date        fips county      tests cases recovered deaths
