@@ -90,7 +90,7 @@ jobs:
       - name: Git commit & push
         run: |
           git config --global user.email "ijlyttle@me.com"
-          git config --global user.name "Ian Lyttle"
+          git config --global user.name "Ian-bot"
           git add '*.md'
           git add 'data/nyt/nyt-iowa.csv'
           git add 'data/meta/iowa_county_meta.csv'
