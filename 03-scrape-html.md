@@ -30,7 +30,7 @@ library("dplyr")
 library("here")
 ```
 
-    ## here() starts at /Users/runner/work/iowa-covid-data/iowa-covid-data
+    ## here() starts at /Users/sesa19001/Documents/repos/public/graphics-group/iowa-covid-data
 
 ``` r
 library("fs")
@@ -163,7 +163,9 @@ that do not have corresponding CSV files in the target directory.
 
 ``` r
 files_source <- get_date_files(dir_source)
-files_target <- get_date_files(dir_target)
+files_target <- 
+  get_date_files(dir_target) %>%
+  head(-1) # always parse the most-recent file
 
 dates_needed <- 
   names(files_source)[!names(files_source) %in% names(files_target)]
@@ -172,7 +174,7 @@ files_needed <- files_source[dates_needed]
 files_needed
 ```
 
-    ## character(0)
+    ## /Users/sesa19001/Documents/repos/public/graphics-group/iowa-covid-data/data/download-site/access-2020-07-24.html
 
 Finally, we need a function, given a filepath to an html file, and a
 target directory, scrape the html file and write a CSV file in the
@@ -205,20 +207,20 @@ data <- extract_data(html, date)
 print(data)
 ```
 
-    ## [90m# A tibble: 100 x 7[39m
+    ## # A tibble: 100 x 7
     ##    date        fips county      tests cases recovered deaths
-    ##    [3m[90m<date>[39m[23m     [3m[90m<dbl>[39m[23m [3m[90m<chr>[39m[23m       [3m[90m<dbl>[39m[23m [3m[90m<dbl>[39m[23m     [3m[90m<dbl>[39m[23m  [3m[90m<dbl>[39m[23m
-    ## [90m 1[39m 2020-06-22 [4m1[24m[4m9[24m153 Polk        [4m4[24m[4m2[24m147  [4m5[24m510      [4m2[24m669    167
-    ## [90m 2[39m 2020-06-22 [4m1[24m[4m9[24m193 Woodbury    [4m1[24m[4m4[24m893  [4m3[24m069      [4m2[24m587     42
-    ## [90m 3[39m 2020-06-22 [4m1[24m[4m9[24m013 Black Hawk  [4m1[24m[4m3[24m042  [4m1[24m896      [4m1[24m160     56
-    ## [90m 4[39m 2020-06-22 [4m1[24m[4m9[24m021 Buena Vista  [4m6[24m655  [4m1[24m667       476     10
-    ## [90m 5[39m 2020-06-22 [4m1[24m[4m9[24m113 Linn        [4m1[24m[4m6[24m349  [4m1[24m097       857     80
-    ## [90m 6[39m 2020-06-22 [4m1[24m[4m9[24m049 Dallas       [4m8[24m207  [4m1[24m075       689     29
-    ## [90m 7[39m 2020-06-22 [4m1[24m[4m9[24m127 Marshall     [4m5[24m100   974       608     18
-    ## [90m 8[39m 2020-06-22 [4m1[24m[4m9[24m103 Johnson     [4m1[24m[4m1[24m612   770       497      8
-    ## [90m 9[39m 2020-06-22 [4m1[24m[4m9[24m179 Wapello      [4m3[24m815   689       555     27
-    ## [90m10[39m 2020-06-22 [4m1[24m[4m9[24m047 Crawford     [4m2[24m651   640       376      2
-    ## [90m# … with 90 more rows[39m
+    ##    <date>     <dbl> <chr>       <dbl> <dbl>     <dbl>  <dbl>
+    ##  1 2020-06-22 19153 Polk        42147  5510      2669    167
+    ##  2 2020-06-22 19193 Woodbury    14893  3069      2587     42
+    ##  3 2020-06-22 19013 Black Hawk  13042  1896      1160     56
+    ##  4 2020-06-22 19021 Buena Vista  6655  1667       476     10
+    ##  5 2020-06-22 19113 Linn        16349  1097       857     80
+    ##  6 2020-06-22 19049 Dallas       8207  1075       689     29
+    ##  7 2020-06-22 19127 Marshall     5100   974       608     18
+    ##  8 2020-06-22 19103 Johnson     11612   770       497      8
+    ##  9 2020-06-22 19179 Wapello      3815   689       555     27
+    ## 10 2020-06-22 19047 Crawford     2651   640       376      2
+    ## # … with 90 more rows
 
 Finally, create the new CSV files.
 

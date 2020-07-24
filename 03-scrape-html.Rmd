@@ -127,7 +127,9 @@ Let's determine the HTML files we need to scrape; these are the files that do no
 
 ```{r}
 files_source <- get_date_files(dir_source)
-files_target <- get_date_files(dir_target)
+files_target <- 
+  get_date_files(dir_target) %>%
+  head(-1) # always parse the most-recent file
 
 dates_needed <- 
   names(files_source)[!names(files_source) %in% names(files_target)]
