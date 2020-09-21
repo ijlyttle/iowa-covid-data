@@ -174,7 +174,6 @@ files_needed <- files_source[dates_needed]
 files_needed
 ```
 
-    ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2020-09-20.html
     ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2020-09-21.html
 
 Finally, we need a function, given a filepath to an html file, and a
