@@ -70,7 +70,7 @@ Let’s read in the NYT data:
 nyt_data <- vroom(path(dirs$source_nyt, "nyt-iowa.csv"))
 ```
 
-    ## [1mRows:[22m 19,670
+    ## [1mRows:[22m 19,770
     ## [1mColumns:[22m 5
     ## [1mDelimiter:[22m ","
     ## [31mchr[39m  [1]: county
@@ -86,7 +86,7 @@ And the state data:
 state_data <- vroom(dir_ls(dirs$source_state))
 ```
 
-    ## [1mRows:[22m 14,601
+    ## [1mRows:[22m 14,701
     ## [1mColumns:[22m 7
     ## [1mDelimiter:[22m ","
     ## [31mchr[39m  [1]: county
@@ -132,7 +132,7 @@ dates_state <- unique(state_data$date) %>% print()
     ## [131] "2020-10-02" "2020-10-03" "2020-10-04" "2020-10-05" "2020-10-06"
     ## [136] "2020-10-07" "2020-10-08" "2020-10-09" "2020-10-10" "2020-10-11"
     ## [141] "2020-10-12" "2020-10-13" "2020-10-14" "2020-10-15" "2020-10-16"
-    ## [146] "2020-10-17"
+    ## [146] "2020-10-17" NA
 
 ``` r
 nyt_data_abridged <- 
@@ -171,7 +171,7 @@ merged <-
   print()
 ```
 
-    ## [90m# A tibble: 19,779 x 8[39m
+    ## [90m# A tibble: 19,879 x 8[39m
     ##    date        fips county        cases deaths  tests recovered active_cases
     ##    [3m[90m<date>[39m[23m     [3m[90m<dbl>[39m[23m [3m[90m<chr>[39m[23m         [3m[90m<dbl>[39m[23m  [3m[90m<dbl>[39m[23m  [3m[90m<dbl>[39m[23m     [3m[90m<dbl>[39m[23m        [3m[90m<dbl>[39m[23m
     ## [90m 1[39m 2020-10-17 [4m1[24m[4m9[24m153 Polk          [4m1[24m[4m7[24m791    281 [4m1[24m[4m4[24m[4m6[24m569     [4m1[24m[4m5[24m109         [4m2[24m401
@@ -184,7 +184,7 @@ merged <-
     ## [90m 8[39m 2020-10-17 [4m1[24m[4m9[24m169 Story          [4m3[24m820     17  [4m3[24m[4m2[24m383      [4m3[24m290          513
     ## [90m 9[39m 2020-10-17 [4m1[24m[4m9[24m049 Dallas         [4m3[24m269     43  [4m2[24m[4m8[24m865      [4m2[24m666          560
     ## [90m10[39m 2020-10-17 [4m1[24m[4m9[24m155 Pottawattamie  [4m2[24m900     44  [4m2[24m[4m4[24m911      [4m2[24m116          740
-    ## [90m# … with 19,769 more rows[39m
+    ## [90m# … with 19,869 more rows[39m
 
 Let’s write this out:
 
