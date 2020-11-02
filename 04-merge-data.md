@@ -70,7 +70,7 @@ Let’s read in the NYT data:
 nyt_data <- vroom(path(dirs$source_nyt, "nyt-iowa.csv"))
 ```
 
-    ## [1mRows:[22m 21,170
+    ## [1mRows:[22m 21,270
     ## [1mColumns:[22m 5
     ## [1mDelimiter:[22m ","
     ## [31mchr[39m  [1]: county
