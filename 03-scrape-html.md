@@ -177,8 +177,8 @@ files_needed
     ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2020-11-07.html
     ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-01-12.html
     ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-01-18.html
-    ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-02-13.html
     ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-02-14.html
+    ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-02-15.html
 
 Finally, we need a function, given a filepath to an html file, and a
 target directory, scrape the html file and write a CSV file in the
@@ -234,5 +234,3 @@ walk(files_needed, write_file, dir_target)
 
     ## Warning: The `path` argument of `write_csv()` is deprecated as of readr 1.4.0.
     ## Please use the `file` argument instead.
-    ## [90mThis warning is displayed once every 8 hours.[39m
-    ## [90mCall `lifecycle::last_warnings()` to see where this warning was generated.[39m
