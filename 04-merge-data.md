@@ -48,7 +48,7 @@ library("iowa.covid")
 conflict_prefer("filter", "dplyr")
 ```
 
-    ## [conflicted] Will prefer [34mdplyr::filter[39m over any other package
+    ## [conflicted] Will prefer dplyr::filter over any other package
 
 Let’s define the directories and create the target directory.
 
@@ -70,15 +70,15 @@ Let’s read in the NYT data:
 nyt_data <- vroom(path(dirs$source_nyt, "nyt-iowa.csv"))
 ```
 
-    ## [1mRows:[22m 32,370
-    ## [1mColumns:[22m 5
-    ## [1mDelimiter:[22m ","
-    ## [31mchr[39m  [1]: county
-    ## [32mdbl[39m  [3]: fips, cases, deaths
-    ## [34mdate[39m [1]: date
+    ## Rows: 32,470
+    ## Columns: 5
+    ## Delimiter: ","
+    ## chr  [1]: county
+    ## dbl  [3]: fips, cases, deaths
+    ## date [1]: date
     ## 
-    ## [90mUse `spec()` to retrieve the guessed column specification[39m
-    ## [90mPass a specification to the `col_types` argument to quiet this message[39m
+    ## Use `spec()` to retrieve the guessed column specification
+    ## Pass a specification to the `col_types` argument to quiet this message
 
 And the state data:
 
@@ -86,15 +86,15 @@ And the state data:
 state_data <- vroom(dir_ls(dirs$source_state))
 ```
 
-    ## [1mRows:[22m 27,007
-    ## [1mColumns:[22m 7
-    ## [1mDelimiter:[22m ","
-    ## [31mchr[39m  [1]: county
-    ## [32mdbl[39m  [5]: fips, tests, cases, recovered, deaths
-    ## [34mdate[39m [1]: date
+    ## Rows: 27,107
+    ## Columns: 7
+    ## Delimiter: ","
+    ## chr  [1]: county
+    ## dbl  [5]: fips, tests, cases, recovered, deaths
+    ## date [1]: date
     ## 
-    ## [90mUse `spec()` to retrieve the guessed column specification[39m
-    ## [90mPass a specification to the `col_types` argument to quiet this message[39m
+    ## Use `spec()` to retrieve the guessed column specification
+    ## Pass a specification to the `col_types` argument to quiet this message
 
 Get the dates in the state dataset and exclude those from the NYT
 dataset.
@@ -156,7 +156,8 @@ dates_state <- unique(state_data$date) %>% print()
     ## [251] "2021-02-03" "2021-02-04" "2021-02-05" "2021-02-06" "2021-02-07"
     ## [256] "2021-02-08" "2021-02-09" "2021-02-10" "2021-02-11" "2021-02-12"
     ## [261] "2021-02-13" "2021-02-14" "2021-02-15" "2021-02-16" "2021-02-17"
-    ## [266] "2021-02-18" "2021-02-19" "2021-02-20" "2021-02-21" NA
+    ## [266] "2021-02-18" "2021-02-19" "2021-02-20" "2021-02-21" "2021-02-22"
+    ## [271] NA
 
 ``` r
 nyt_data_abridged <- 
@@ -195,20 +196,20 @@ merged <-
   print()
 ```
 
-    ## [90m# A tibble: 32,585 x 8[39m
+    ## # A tibble: 32,685 x 8
     ##    date        fips county        cases deaths  tests recovered active_cases
-    ##    [3m[90m<date>[39m[23m     [3m[90m<dbl>[39m[23m [3m[90m<chr>[39m[23m         [3m[90m<dbl>[39m[23m  [3m[90m<dbl>[39m[23m  [3m[90m<dbl>[39m[23m     [3m[90m<dbl>[39m[23m        [3m[90m<dbl>[39m[23m
-    ## [90m 1[39m 2021-02-21 [4m1[24m[4m9[24m153 Polk          [4m5[24m[4m0[24m716    537 [4m2[24m[4m5[24m[4m2[24m480     [4m4[24m[4m6[24m501         [4m3[24m678
-    ## [90m 2[39m 2021-02-21 [4m1[24m[4m9[24m113 Linn          [4m1[24m[4m9[24m241    305 [4m1[24m[4m0[24m[4m7[24m789     [4m1[24m[4m7[24m796         [4m1[24m140
-    ## [90m 3[39m 2021-02-21 [4m1[24m[4m9[24m163 Scott         [4m1[24m[4m6[24m879    200  [4m7[24m[4m9[24m185     [4m1[24m[4m5[24m709          970
-    ## [90m 4[39m 2021-02-21 [4m1[24m[4m9[24m013 Black Hawk    [4m1[24m[4m4[24m778    284  [4m6[24m[4m5[24m575     [4m1[24m[4m3[24m846          648
-    ## [90m 5[39m 2021-02-21 [4m1[24m[4m9[24m193 Woodbury      [4m1[24m[4m3[24m585    210  [4m5[24m[4m5[24m019     [4m1[24m[4m2[24m968          407
-    ## [90m 6[39m 2021-02-21 [4m1[24m[4m9[24m103 Johnson       [4m1[24m[4m2[24m938     72  [4m7[24m[4m3[24m414     [4m1[24m[4m2[24m215          651
-    ## [90m 7[39m 2021-02-21 [4m1[24m[4m9[24m061 Dubuque       [4m1[24m[4m2[24m233    191  [4m5[24m[4m3[24m279     [4m1[24m[4m1[24m481          561
-    ## [90m 8[39m 2021-02-21 [4m1[24m[4m9[24m049 Dallas         [4m9[24m934     88  [4m4[24m[4m9[24m715      [4m9[24m037          809
-    ## [90m 9[39m 2021-02-21 [4m1[24m[4m9[24m155 Pottawattamie  [4m9[24m690    140  [4m4[24m[4m4[24m066      [4m9[24m067          483
-    ## [90m10[39m 2021-02-21 [4m1[24m[4m9[24m169 Story          [4m9[24m391     45  [4m5[24m[4m2[24m441      [4m8[24m780          566
-    ## [90m# … with 32,575 more rows[39m
+    ##    <date>     <dbl> <chr>         <dbl>  <dbl>  <dbl>     <dbl>        <dbl>
+    ##  1 2021-02-22 19153 Polk          50742    542 252692     46582         3618
+    ##  2 2021-02-22 19113 Linn          19253    309 107908     17814         1130
+    ##  3 2021-02-22 19163 Scott         16886    202  79248     15729          955
+    ##  4 2021-02-22 19013 Black Hawk    14782    285  65607     13865          632
+    ##  5 2021-02-22 19193 Woodbury      13590    211  55052     12976          403
+    ##  6 2021-02-22 19103 Johnson       12947     72  73497     12236          639
+    ##  7 2021-02-22 19061 Dubuque       12240    192  53323     11495          553
+    ##  8 2021-02-22 19049 Dallas         9939     89  49746      9056          794
+    ##  9 2021-02-22 19155 Pottawattamie  9692    140  44089      9081          471
+    ## 10 2021-02-22 19169 Story          9395     45  52454      8791          559
+    ## # … with 32,675 more rows
 
 Let’s write this out:
 
