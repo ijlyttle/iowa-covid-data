@@ -10,7 +10,7 @@ Authors@R:
     )
 Description: Collection of RMarkdown docs for collecting Iowa Covid data.
 Encoding: UTF-8
-License: Creative Commons Attribution-NonCommercial 4.0 International 
+License: CC0
 Depends:
     R (>= 3.3)
 Imports:
