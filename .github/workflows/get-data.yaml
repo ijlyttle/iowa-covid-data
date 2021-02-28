@@ -18,8 +18,8 @@ on:
       - README.Rmd
 
   schedule:
-    # run at 16h15 UTC (11h15 Iowa, daylight-saving-time)
-    - cron:  '15 16 * * *'
+    # run at 17h15 UTC (11h15 Iowa, standard time)
+    - cron:  '15 17 * * *'
     - cron:  '00 20 * * *' # later in the day, just to be safe
 
 name: Get data
