@@ -177,7 +177,6 @@ files_needed
     ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2020-11-07.html
     ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-01-12.html
     ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-01-18.html
-    ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-02-27.html
     ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-02-28.html
 
 Finally, we need a function, given a filepath to an html file, and a
