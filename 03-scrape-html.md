@@ -6,11 +6,6 @@ files.
 
 ``` r
 library("rvest")
-```
-
-    ## Loading required package: xml2
-
-``` r
 library("tibble")
 library("dplyr")
 ```
@@ -36,16 +31,6 @@ library("here")
 library("fs")
 library("stringr")
 library("purrr")
-```
-
-    ## 
-    ## Attaching package: 'purrr'
-
-    ## The following object is masked from 'package:rvest':
-    ## 
-    ##     pluck
-
-``` r
 library("iowa.covid")
 ```
 
@@ -178,7 +163,6 @@ files_needed
     ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-01-12.html
     ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-01-18.html
     ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-03-06.html
-    ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-03-08.html
     ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-03-09.html
 
 Finally, we need a function, given a filepath to an html file, and a
