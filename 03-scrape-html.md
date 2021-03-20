@@ -163,8 +163,8 @@ files_needed
     ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-01-12.html
     ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-01-18.html
     ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-03-06.html
-    ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-03-18.html
     ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-03-19.html
+    ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-03-20.html
 
 Finally, we need a function, given a filepath to an html file, and a
 target directory, scrape the html file and write a CSV file in the
