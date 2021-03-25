@@ -70,7 +70,7 @@ Let’s read in the NYT data:
 nyt_data <- vroom(path(dirs$source_nyt, "nyt-iowa.csv"))
 ```
 
-    ## Rows: 35,470
+    ## Rows: 35,570
     ## Columns: 5
     ## Delimiter: ","
     ## chr  [1]: county
@@ -86,7 +86,7 @@ And the state data:
 state_data <- vroom(dir_ls(dirs$source_state))
 ```
 
-    ## Rows: 30,007
+    ## Rows: 29,907
     ## Columns: 7
     ## Delimiter: ","
     ## chr  [1]: county
@@ -162,7 +162,7 @@ dates_state <- unique(state_data$date) %>% print()
     ## [281] "2021-03-05" "2021-03-07" "2021-03-08" "2021-03-09" "2021-03-10"
     ## [286] "2021-03-11" "2021-03-12" "2021-03-13" "2021-03-14" "2021-03-15"
     ## [291] "2021-03-16" "2021-03-17" "2021-03-18" "2021-03-19" "2021-03-20"
-    ## [296] "2021-03-21" "2021-03-22" "2021-03-23" "2021-03-24" NA
+    ## [296] "2021-03-21" "2021-03-22" "2021-03-23" "2021-03-24"
 
 ``` r
 nyt_data_abridged <- 
@@ -201,7 +201,7 @@ merged <-
   print()
 ```
 
-    ## # A tibble: 35,685 x 8
+    ## # A tibble: 35,585 x 8
     ##    date        fips county        cases deaths  tests recovered active_cases
     ##    <date>     <dbl> <chr>         <dbl>  <dbl>  <dbl>     <dbl>        <dbl>
     ##  1 2021-03-24 19153 Polk          53713    577 267496     50632         2504
@@ -214,7 +214,7 @@ merged <-
     ##  8 2021-03-24 19049 Dallas        10515     93  52667      9957          465
     ##  9 2021-03-24 19155 Pottawattamie 10152    149  46142      9621          382
     ## 10 2021-03-24 19169 Story          9887     46  54780      9416          425
-    ## # … with 35,675 more rows
+    ## # … with 35,575 more rows
 
 Let’s write this out:
 
