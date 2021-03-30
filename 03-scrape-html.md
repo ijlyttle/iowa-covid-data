@@ -163,7 +163,6 @@ files_needed
     ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-01-12.html
     ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-01-18.html
     ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-03-06.html
-    ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-03-28.html
     ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-03-29.html
     ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-03-30.html
 
