@@ -70,15 +70,17 @@ Let’s read in the NYT data:
 nyt_data <- vroom(path(dirs$source_nyt, "nyt-iowa.csv"))
 ```
 
-    ## Rows: 43,570
-    ## Columns: 5
+    ## Rows: 43670 Columns: 5
+
+    ## ── Column specification ────────────────────────────────────────────────────────
     ## Delimiter: ","
-    ## chr  [1]: county
-    ## dbl  [3]: fips, cases, deaths
-    ## date [1]: date
+    ## chr  (1): county
+    ## dbl  (3): fips, cases, deaths
+    ## date (1): date
+
     ## 
-    ## Use `spec()` to retrieve the guessed column specification
-    ## Pass a specification to the `col_types` argument to quiet this message
+    ## ℹ Use `spec()` to retrieve the full column specification for this data.
+    ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 
 And the state data:
 
@@ -86,15 +88,17 @@ And the state data:
 state_data <- vroom(dir_ls(dirs$source_state))
 ```
 
-    ## Rows: 37,707
-    ## Columns: 7
+    ## Rows: 37807 Columns: 7
+
+    ## ── Column specification ────────────────────────────────────────────────────────
     ## Delimiter: ","
-    ## chr  [1]: county
-    ## dbl  [5]: fips, tests, cases, recovered, deaths
-    ## date [1]: date
+    ## chr  (1): county
+    ## dbl  (5): fips, tests, cases, recovered, deaths
+    ## date (1): date
+
     ## 
-    ## Use `spec()` to retrieve the guessed column specification
-    ## Pass a specification to the `col_types` argument to quiet this message
+    ## ℹ Use `spec()` to retrieve the full column specification for this data.
+    ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 
 Get the dates in the state dataset and exclude those from the NYT
 dataset.
@@ -178,7 +182,7 @@ dates_state <- unique(state_data$date) %>% print()
     ## [361] "2021-05-27" "2021-05-28" "2021-05-29" "2021-05-30" "2021-05-31"
     ## [366] "2021-06-01" "2021-06-02" "2021-06-04" "2021-06-05" "2021-06-06"
     ## [371] "2021-06-07" "2021-06-08" "2021-06-09" "2021-06-10" "2021-06-11"
-    ## [376] "2021-06-12" "2021-06-13"
+    ## [376] "2021-06-12" "2021-06-13" "2021-06-14"
 
 ``` r
 nyt_data_abridged <- 
@@ -217,20 +221,20 @@ merged <-
   print()
 ```
 
-    ## # A tibble: 43,685 x 8
+    ## # A tibble: 43,785 x 8
     ##    date        fips county        cases deaths  tests recovered active_cases
     ##    <date>     <dbl> <chr>         <dbl>  <dbl>  <dbl>     <dbl>        <dbl>
-    ##  1 2021-06-13 19153 Polk          58185    638 295647     57121          426
-    ##  2 2021-06-13 19113 Linn          21180    339 125859     20588          253
-    ##  3 2021-06-13 19163 Scott         20286    245  93860     19867          174
-    ##  4 2021-06-13 19013 Black Hawk    16066    312  74609     15536          218
-    ##  5 2021-06-13 19193 Woodbury      15226    230  63448     14939           57
-    ##  6 2021-06-13 19103 Johnson       14607     85  86327     14413          109
-    ##  7 2021-06-13 19061 Dubuque       13495    211  60546     13171          113
-    ##  8 2021-06-13 19049 Dallas        11283     99  57778     11096           88
-    ##  9 2021-06-13 19155 Pottawattamie 11214    173  50193     10985           56
-    ## 10 2021-06-13 19169 Story         10708     48  59078     10578           82
-    ## # … with 43,675 more rows
+    ##  1 2021-06-14 19153 Polk          58190    638 295844     57138          414
+    ##  2 2021-06-14 19113 Linn          21186    339 125937     20596          251
+    ##  3 2021-06-14 19163 Scott         20289    246  93917     19877          166
+    ##  4 2021-06-14 19013 Black Hawk    16075    312  74652     15541          222
+    ##  5 2021-06-14 19193 Woodbury      15229    230  63477     14942           57
+    ##  6 2021-06-14 19103 Johnson       14610     85  86384     14419          106
+    ##  7 2021-06-14 19061 Dubuque       13498    211  60567     13175          112
+    ##  8 2021-06-14 19049 Dallas        11285     99  57800     11100           86
+    ##  9 2021-06-14 19155 Pottawattamie 11218    173  50205     10988           57
+    ## 10 2021-06-14 19169 Story         10707     48  59107     10581           78
+    ## # … with 43,775 more rows
 
 Let’s write this out:
 
