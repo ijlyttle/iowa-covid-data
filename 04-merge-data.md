@@ -34,13 +34,15 @@ library("readr")
 ```
 
     ## Registered S3 methods overwritten by 'readr':
-    ##   method           from 
-    ##   format.col_spec  vroom
-    ##   print.col_spec   vroom
-    ##   print.collector  vroom
-    ##   print.date_names vroom
-    ##   print.locale     vroom
-    ##   str.col_spec     vroom
+    ##   method                    from 
+    ##   as.data.frame.spec_tbl_df vroom
+    ##   as_tibble.spec_tbl_df     vroom
+    ##   format.col_spec           vroom
+    ##   print.col_spec            vroom
+    ##   print.collector           vroom
+    ##   print.date_names          vroom
+    ##   print.locale              vroom
+    ##   str.col_spec              vroom
 
 ``` r
 library("iowa.covid")
@@ -70,7 +72,7 @@ Let’s read in the NYT data:
 nyt_data <- vroom(path(dirs$source_nyt, "nyt-iowa.csv"))
 ```
 
-    ## Rows: 47170 Columns: 5
+    ## Rows: 47270 Columns: 5
 
     ## ── Column specification ────────────────────────────────────────────────────────
     ## Delimiter: ","
@@ -88,7 +90,7 @@ And the state data:
 state_data <- vroom(dir_ls(dirs$source_state))
 ```
 
-    ## Rows: 41308 Columns: 7
+    ## Rows: 41408 Columns: 7
 
     ## ── Column specification ────────────────────────────────────────────────────────
     ## Delimiter: ","
@@ -189,7 +191,7 @@ dates_state <- unique(state_data$date) %>% print()
     ## [396] "2021-07-02" "2021-07-03" "2021-07-04" "2021-07-05" "2021-07-06"
     ## [401] "2021-07-07" "2021-07-08" "2021-07-09" "2021-07-10" "2021-07-11"
     ## [406] "2021-07-12" "2021-07-13" "2021-07-14" "2021-07-15" "2021-07-16"
-    ## [411] "2021-07-17" "2021-07-18" "2021-07-19"
+    ## [411] "2021-07-17" "2021-07-18" "2021-07-19" "2021-07-20"
 
 ``` r
 nyt_data_abridged <- 
@@ -228,20 +230,20 @@ merged <-
   print()
 ```
 
-    ## # A tibble: 47,286 x 8
+    ## # A tibble: 47,386 x 8
     ##    date        fips county        cases deaths  tests recovered active_cases
     ##    <date>     <dbl> <chr>         <dbl>  <dbl>  <dbl>     <dbl>        <dbl>
-    ##  1 2021-07-19 19153 Polk          58809    644 301753     57853          312
-    ##  2 2021-07-19 19113 Linn          21428    342 128450     20943          143
-    ##  3 2021-07-19 19163 Scott         20408    250  95936     20081           77
-    ##  4 2021-07-19 19013 Black Hawk    16630    316  76512     15897          417
-    ##  5 2021-07-19 19193 Woodbury      15300    230  64521     15004           66
-    ##  6 2021-07-19 19103 Johnson       14723     86  88615     14545           92
-    ##  7 2021-07-19 19061 Dubuque       13585    213  61555     13315           57
-    ##  8 2021-07-19 19049 Dallas        11417     99  58992     11252           66
-    ##  9 2021-07-19 19155 Pottawattamie 11296    177  50911     11063           56
-    ## 10 2021-07-19 19169 Story         10808     48  59938     10704           56
-    ## # … with 47,276 more rows
+    ##  1 2021-07-20 19153 Polk          58848    644 302021     57863          341
+    ##  2 2021-07-20 19113 Linn          21437    342 128565     20953          142
+    ##  3 2021-07-20 19163 Scott         20416    250  96004     20081           85
+    ##  4 2021-07-20 19013 Black Hawk    16662    316  76604     15920          426
+    ##  5 2021-07-20 19193 Woodbury      15306    230  64556     15004           72
+    ##  6 2021-07-20 19103 Johnson       14728     86  88700     14544           98
+    ##  7 2021-07-20 19061 Dubuque       13589    213  61602     13321           55
+    ##  8 2021-07-20 19049 Dallas        11430     99  59066     11255           76
+    ##  9 2021-07-20 19155 Pottawattamie 11302    177  50926     11064           61
+    ## 10 2021-07-20 19169 Story         10821     48  59991     10703           70
+    ## # … with 47,376 more rows
 
 Let’s write this out:
 
