@@ -167,6 +167,7 @@ files_needed
     ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-06-03.html
     ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-07-21.html
     ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-07-22.html
+    ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-07-23.html
 
 Finally, we need a function, given a filepath to an html file, and a
 target directory, scrape the html file and write a CSV file in the
@@ -199,7 +200,7 @@ data <- extract_data(html, date)
 print(data)
 ```
 
-    ## # A tibble: 100 x 7
+    ## # A tibble: 100 × 7
     ##    date        fips county      tests cases recovered deaths
     ##    <date>     <dbl> <chr>       <dbl> <dbl>     <dbl>  <dbl>
     ##  1 2020-06-22 19153 Polk        42147  5510      2669    167
