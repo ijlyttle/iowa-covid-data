@@ -72,7 +72,7 @@ Let’s read in the NYT data:
 nyt_data <- vroom(path(dirs$source_nyt, "nyt-iowa.csv"))
 ```
 
-    ## Rows: 48070 Columns: 5
+    ## Rows: 48170 Columns: 5
 
     ## ── Column specification ────────────────────────────────────────────────────────
     ## Delimiter: ","
