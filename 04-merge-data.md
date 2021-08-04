@@ -72,7 +72,7 @@ Let’s read in the NYT data:
 nyt_data <- vroom(path(dirs$source_nyt, "nyt-iowa.csv"))
 ```
 
-    ## Rows: 48670 Columns: 5
+    ## Rows: 48770 Columns: 5
 
     ## ── Column specification ────────────────────────────────────────────────────────
     ## Delimiter: ","
@@ -231,20 +231,20 @@ merged <-
   print()
 ```
 
-    ## # A tibble: 48,686 × 8
+    ## # A tibble: 48,786 × 8
     ##    date        fips county        cases deaths tests recovered active_cases
     ##    <date>     <dbl> <chr>         <dbl>  <dbl> <dbl>     <dbl>        <dbl>
-    ##  1 2021-08-02 19153 Polk          59215    646    NA        NA           NA
-    ##  2 2021-08-02 19113 Linn          21567    342    NA        NA           NA
-    ##  3 2021-08-02 19163 Scott         20530    250    NA        NA           NA
-    ##  4 2021-08-02 19013 Black Hawk    16850    320    NA        NA           NA
-    ##  5 2021-08-02 19193 Woodbury      15378    230    NA        NA           NA
-    ##  6 2021-08-02 19103 Johnson       14795     86    NA        NA           NA
-    ##  7 2021-08-02 19061 Dubuque       13627    215    NA        NA           NA
-    ##  8 2021-08-02 19049 Dallas        11506     99    NA        NA           NA
-    ##  9 2021-08-02 19155 Pottawattamie 11393    177    NA        NA           NA
-    ## 10 2021-08-02 19169 Story         10925     48    NA        NA           NA
-    ## # … with 48,676 more rows
+    ##  1 2021-08-03 19153 Polk          59215    646    NA        NA           NA
+    ##  2 2021-08-03 19113 Linn          21567    342    NA        NA           NA
+    ##  3 2021-08-03 19163 Scott         20530    250    NA        NA           NA
+    ##  4 2021-08-03 19013 Black Hawk    16850    320    NA        NA           NA
+    ##  5 2021-08-03 19193 Woodbury      15378    230    NA        NA           NA
+    ##  6 2021-08-03 19103 Johnson       14795     86    NA        NA           NA
+    ##  7 2021-08-03 19061 Dubuque       13627    215    NA        NA           NA
+    ##  8 2021-08-03 19049 Dallas        11506     99    NA        NA           NA
+    ##  9 2021-08-03 19155 Pottawattamie 11393    177    NA        NA           NA
+    ## 10 2021-08-03 19169 Story         10925     48    NA        NA           NA
+    ## # … with 48,776 more rows
 
 Let’s write this out:
 
