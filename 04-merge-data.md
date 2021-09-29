@@ -90,7 +90,7 @@ And the state data:
 state_data <- vroom(dir_ls(dirs$source_state))
 ```
 
-    ## Rows: 41808 Columns: 7
+    ## Rows: 41908 Columns: 7
 
     ## ── Column specification ────────────────────────────────────────────────────────
     ## Delimiter: ","
@@ -192,7 +192,7 @@ dates_state <- unique(state_data$date) %>% print()
     ## [401] "2021-07-07" "2021-07-08" "2021-07-09" "2021-07-10" "2021-07-11"
     ## [406] "2021-07-12" "2021-07-13" "2021-07-14" "2021-07-15" "2021-07-16"
     ## [411] "2021-07-17" "2021-07-18" "2021-07-19" "2021-07-20" "2021-07-21"
-    ## [416] "2021-07-28" "2021-08-04" NA
+    ## [416] "2021-07-28" "2021-08-04" "2021-09-28" NA
 
 ``` r
 nyt_data_abridged <- 
@@ -232,18 +232,18 @@ merged <-
 ```
 
     ## # A tibble: 54,486 × 8
-    ##    date        fips county        cases deaths tests recovered active_cases
-    ##    <date>     <dbl> <chr>         <dbl>  <dbl> <dbl>     <dbl>        <dbl>
-    ##  1 2021-09-28 19153 Polk          69512    683    NA        NA           NA
-    ##  2 2021-09-28 19113 Linn          26655    363    NA        NA           NA
-    ##  3 2021-09-28 19163 Scott         23329    265    NA        NA           NA
-    ##  4 2021-09-28 19013 Black Hawk    19408    338    NA        NA           NA
-    ##  5 2021-09-28 19193 Woodbury      17507    233    NA        NA           NA
-    ##  6 2021-09-28 19103 Johnson       17004     92    NA        NA           NA
-    ##  7 2021-09-28 19061 Dubuque       14795    221    NA        NA           NA
-    ##  8 2021-09-28 19155 Pottawattamie 13371    186    NA        NA           NA
-    ##  9 2021-09-28 19049 Dallas        13056    102    NA        NA           NA
-    ## 10 2021-09-28 19169 Story         12119     48    NA        NA           NA
+    ##    date        fips county        cases deaths  tests recovered active_cases
+    ##    <date>     <dbl> <chr>         <dbl>  <dbl>  <dbl>     <dbl>        <dbl>
+    ##  1 2021-09-28 19153 Polk          71109    695 339030     63308         7106
+    ##  2 2021-09-28 19113 Linn          27380    367 145045     23657         3356
+    ##  3 2021-09-28 19163 Scott         23792    266 106467     21919         1607
+    ##  4 2021-09-28 19013 Black Hawk    19654    344  86060     18185         1125
+    ##  5 2021-09-28 19193 Woodbury      17979    239  70731     16012         1728
+    ##  6 2021-09-28 19103 Johnson       17348     95 100303     15747         1506
+    ##  7 2021-09-28 19061 Dubuque       15013    224  67150     13948          841
+    ##  8 2021-09-28 19155 Pottawattamie 13607    190  56494     12355         1062
+    ##  9 2021-09-28 19049 Dallas        13358    102  66054     12193         1063
+    ## 10 2021-09-28 19169 Story         12364     48  65498     11462          854
     ## # … with 54,476 more rows
 
 Let’s write this out:
