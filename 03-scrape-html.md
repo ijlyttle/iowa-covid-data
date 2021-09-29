@@ -171,7 +171,6 @@ files_needed
     ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-07-25.html
     ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-07-26.html
     ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-07-27.html
-    ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-07-28.html
     ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-07-29.html
     ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-07-30.html
     ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-07-31.html
@@ -180,6 +179,7 @@ files_needed
     ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-08-03.html
     ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-08-04.html
     ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-08-05.html
+    ## /Users/runner/work/iowa-covid-data/iowa-covid-data/data/download-site/access-2021-09-29.html
 
 Finally, we need a function, given a filepath to an html file, and a
 target directory, scrape the html file and write a CSV file in the
@@ -235,3 +235,5 @@ walk(files_needed, write_file, dir_target)
 
     ## Warning: The `path` argument of `write_csv()` is deprecated as of readr 1.4.0.
     ## Please use the `file` argument instead.
+    ## This warning is displayed once every 8 hours.
+    ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.
