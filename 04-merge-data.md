@@ -72,7 +72,7 @@ Let’s read in the NYT data:
 nyt_data <- vroom(path(dirs$source_nyt, "nyt-iowa.csv"))
 ```
 
-    ## Rows: 54970 Columns: 5
+    ## Rows: 55070 Columns: 5
 
     ## ── Column specification ────────────────────────────────────────────────────────
     ## Delimiter: ","
@@ -90,7 +90,7 @@ And the state data:
 state_data <- vroom(dir_ls(dirs$source_state))
 ```
 
-    ## Rows: 41908 Columns: 7
+    ## Rows: 42008 Columns: 7
 
     ## ── Column specification ────────────────────────────────────────────────────────
     ## Delimiter: ","
@@ -192,7 +192,7 @@ dates_state <- unique(state_data$date) %>% print()
     ## [401] "2021-07-07" "2021-07-08" "2021-07-09" "2021-07-10" "2021-07-11"
     ## [406] "2021-07-12" "2021-07-13" "2021-07-14" "2021-07-15" "2021-07-16"
     ## [411] "2021-07-17" "2021-07-18" "2021-07-19" "2021-07-20" "2021-07-21"
-    ## [416] "2021-07-28" "2021-08-04" "2021-09-28" NA
+    ## [416] "2021-07-28" "2021-08-04" "2021-09-28" "2021-10-05" NA
 
 ``` r
 nyt_data_abridged <- 
@@ -231,20 +231,20 @@ merged <-
   print()
 ```
 
-    ## # A tibble: 55,086 × 8
-    ##    date        fips county        cases deaths tests recovered active_cases
-    ##    <date>     <dbl> <chr>         <dbl>  <dbl> <dbl>     <dbl>        <dbl>
-    ##  1 2021-10-04 19153 Polk          71219    695    NA        NA           NA
-    ##  2 2021-10-04 19113 Linn          27427    367    NA        NA           NA
-    ##  3 2021-10-04 19163 Scott         23799    266    NA        NA           NA
-    ##  4 2021-10-04 19013 Black Hawk    19659    344    NA        NA           NA
-    ##  5 2021-10-04 19193 Woodbury      18019    239    NA        NA           NA
-    ##  6 2021-10-04 19103 Johnson       17358     95    NA        NA           NA
-    ##  7 2021-10-04 19061 Dubuque       15022    224    NA        NA           NA
-    ##  8 2021-10-04 19155 Pottawattamie 13607    190    NA        NA           NA
-    ##  9 2021-10-04 19049 Dallas        13384    102    NA        NA           NA
-    ## 10 2021-10-04 19169 Story         12371     48    NA        NA           NA
-    ## # … with 55,076 more rows
+    ## # A tibble: 55,186 × 8
+    ##    date        fips county        cases deaths  tests recovered active_cases
+    ##    <date>     <dbl> <chr>         <dbl>  <dbl>  <dbl>     <dbl>        <dbl>
+    ##  1 2021-10-05 19153 Polk          72521    709 342874     64879         6933
+    ##  2 2021-10-05 19113 Linn          28135    375 146834     24393         3367
+    ##  3 2021-10-05 19163 Scott         24169    270 107586     22289         1610
+    ##  4 2021-10-05 19013 Black Hawk    19873    345  86808     18499         1029
+    ##  5 2021-10-05 19193 Woodbury      18415    241  71508     16277         1897
+    ##  6 2021-10-05 19103 Johnson       17613     98 101464     16078         1437
+    ##  7 2021-10-05 19061 Dubuque       15262    226  67749     14094          942
+    ##  8 2021-10-05 19155 Pottawattamie 13841    192  57078     12593         1056
+    ##  9 2021-10-05 19049 Dallas        13672    102  66965     12397         1173
+    ## 10 2021-10-05 19169 Story         12590     48  66144     11606          936
+    ## # … with 55,176 more rows
 
 Let’s write this out:
 
