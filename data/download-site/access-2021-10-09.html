@@ -1,0 +1,2212 @@
+<html lang="en-us" calcite-hydrated="" hydrated="" style="--vh:6px;"><head><style id="ace_searchbox">.ace_search {background-color: #ddd;color: #666;border: 1px solid #cbcbcb;border-top: 0 none;overflow: hidden;margin: 0;padding: 4px 6px 0 4px;position: absolute;top: 0;z-index: 99;white-space: normal;}.ace_search.left {border-left: 0 none;border-radius: 0px 0px 5px 0px;left: 0;}.ace_search.right {border-radius: 0px 0px 0px 5px;border-right: 0 none;right: 0;}.ace_search_form, .ace_replace_form {margin: 0 20px 4px 0;overflow: hidden;line-height: 1.9;}.ace_replace_form {margin-right: 0;}.ace_search_form.ace_nomatch {outline: 1px solid red;}.ace_search_field {border-radius: 3px 0 0 3px;background-color: white;color: black;border: 1px solid #cbcbcb;border-right: 0 none;outline: 0;padding: 0;font-size: inherit;margin: 0;line-height: inherit;padding: 0 6px;min-width: 17em;vertical-align: top;min-height: 1.8em;box-sizing: content-box;}.ace_searchbtn {border: 1px solid #cbcbcb;line-height: inherit;display: inline-block;padding: 0 6px;background: #fff;border-right: 0 none;border-left: 1px solid #dcdcdc;cursor: pointer;margin: 0;position: relative;color: #666;}.ace_searchbtn:last-child {border-radius: 0 3px 3px 0;border-right: 1px solid #cbcbcb;}.ace_searchbtn:disabled {background: none;cursor: default;}.ace_searchbtn:hover {background-color: #eef1f6;}.ace_searchbtn.prev, .ace_searchbtn.next {padding: 0px 0.7em}.ace_searchbtn.prev:after, .ace_searchbtn.next:after {content: "";border: solid 2px #888;width: 0.5em;height: 0.5em;border-width:  2px 0 0 2px;display:inline-block;transform: rotate(-45deg);}.ace_searchbtn.next:after {border-width: 0 2px 2px 0 ;}.ace_searchbtn_close {background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAcCAYAAABRVo5BAAAAZ0lEQVR42u2SUQrAMAhDvazn8OjZBilCkYVVxiis8H4CT0VrAJb4WHT3C5xU2a2IQZXJjiQIRMdkEoJ5Q2yMqpfDIo+XY4k6h+YXOyKqTIj5REaxloNAd0xiKmAtsTHqW8sR2W5f7gCu5nWFUpVjZwAAAABJRU5ErkJggg==) no-repeat 50% 0;border-radius: 50%;border: 0 none;color: #656565;cursor: pointer;font: 16px/16px Arial;padding: 0;height: 14px;width: 14px;top: 9px;right: 7px;position: absolute;}.ace_searchbtn_close:hover {background-color: #656565;background-position: 50% 100%;color: white;}.ace_button {margin-left: 2px;cursor: pointer;-webkit-user-select: none;-moz-user-select: none;-o-user-select: none;-ms-user-select: none;user-select: none;overflow: hidden;opacity: 0.7;border: 1px solid rgba(100,100,100,0.23);padding: 1px;box-sizing:    border-box!important;color: black;}.ace_button:hover {background-color: #eee;opacity:1;}.ace_button:active {background-color: #ddd;}.ace_button.checked {border-color: #3399ff;opacity:1;}.ace_search_options{margin-bottom: 3px;text-align: right;-webkit-user-select: none;-moz-user-select: none;-o-user-select: none;-ms-user-select: none;user-select: none;clear: both;}.ace_search_counter {float: left;font-family: arial;padding: 0 8px;}
+/*# sourceURL=ace/css/ace_searchbox */</style><style id="autocompletion.css">.ace_editor.ace_autocomplete .ace_marker-layer .ace_active-line {    background-color: #CAD6FA;    z-index: 1;}.ace_dark.ace_editor.ace_autocomplete .ace_marker-layer .ace_active-line {    background-color: #3a674e;}.ace_editor.ace_autocomplete .ace_line-hover {    border: 1px solid #abbffe;    margin-top: -1px;    background: rgba(233,233,253,0.4);    position: absolute;    z-index: 2;}.ace_dark.ace_editor.ace_autocomplete .ace_line-hover {    border: 1px solid rgba(109, 150, 13, 0.8);    background: rgba(58, 103, 78, 0.62);}.ace_completion-meta {    opacity: 0.5;    margin: 0.9em;}.ace_completion-message {    color: blue;}.ace_editor.ace_autocomplete .ace_completion-highlight{    color: #2d69c7;}.ace_dark.ace_editor.ace_autocomplete .ace_completion-highlight{    color: #93ca12;}.ace_editor.ace_autocomplete {    width: 300px;    z-index: 200000;    border: 1px lightgray solid;    position: fixed;    box-shadow: 2px 3px 5px rgba(0,0,0,.2);    line-height: 1.4;    background: #fefefe;    color: #111;}.ace_dark.ace_editor.ace_autocomplete {    border: 1px #484747 solid;    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.51);    line-height: 1.4;    background: #25282c;    color: #c1c1c1;}
+/*# sourceURL=ace/css/autocompletion.css */</style><style>.ace_snippet-marker {    -moz-box-sizing: border-box;    box-sizing: border-box;    background: rgba(194, 193, 208, 0.09);    border: 1px dotted rgba(211, 208, 235, 0.62);    position: absolute;}</style><style>    .error_widget_wrapper {        background: inherit;        color: inherit;        border:none    }    .error_widget {        border-top: solid 2px;        border-bottom: solid 2px;        margin: 5px 0;        padding: 10px 40px;        white-space: pre-wrap;    }    .error_widget.ace_error, .error_widget_arrow.ace_error{        border-color: #ff5a5a    }    .error_widget.ace_warning, .error_widget_arrow.ace_warning{        border-color: #F1D817    }    .error_widget.ace_info, .error_widget_arrow.ace_info{        border-color: #5a5a5a    }    .error_widget.ace_ok, .error_widget_arrow.ace_ok{        border-color: #5aaa5a    }    .error_widget_arrow {        position: absolute;        border: solid 5px;        border-top-color: transparent!important;        border-right-color: transparent!important;        border-left-color: transparent!important;        top: -5px;    }</style><style id="ace-tm">.ace-tm .ace_gutter {background: #f0f0f0;color: #333;}.ace-tm .ace_print-margin {width: 1px;background: #e8e8e8;}.ace-tm .ace_fold {background-color: #6B72E6;}.ace-tm {background-color: #FFFFFF;color: black;}.ace-tm .ace_cursor {color: black;}.ace-tm .ace_invisible {color: rgb(191, 191, 191);}.ace-tm .ace_storage,.ace-tm .ace_keyword {color: blue;}.ace-tm .ace_constant {color: rgb(197, 6, 11);}.ace-tm .ace_constant.ace_buildin {color: rgb(88, 72, 246);}.ace-tm .ace_constant.ace_language {color: rgb(88, 92, 246);}.ace-tm .ace_constant.ace_library {color: rgb(6, 150, 14);}.ace-tm .ace_invalid {background-color: rgba(255, 0, 0, 0.1);color: red;}.ace-tm .ace_support.ace_function {color: rgb(60, 76, 114);}.ace-tm .ace_support.ace_constant {color: rgb(6, 150, 14);}.ace-tm .ace_support.ace_type,.ace-tm .ace_support.ace_class {color: rgb(109, 121, 222);}.ace-tm .ace_keyword.ace_operator {color: rgb(104, 118, 135);}.ace-tm .ace_string {color: rgb(3, 106, 7);}.ace-tm .ace_comment {color: rgb(76, 136, 107);}.ace-tm .ace_comment.ace_doc {color: rgb(0, 102, 255);}.ace-tm .ace_comment.ace_doc.ace_tag {color: rgb(128, 159, 191);}.ace-tm .ace_constant.ace_numeric {color: rgb(0, 0, 205);}.ace-tm .ace_variable {color: rgb(49, 132, 149);}.ace-tm .ace_xml-pe {color: rgb(104, 104, 91);}.ace-tm .ace_entity.ace_name.ace_function {color: #0000A2;}.ace-tm .ace_heading {color: rgb(12, 7, 255);}.ace-tm .ace_list {color:rgb(185, 6, 144);}.ace-tm .ace_meta.ace_tag {color:rgb(0, 22, 142);}.ace-tm .ace_string.ace_regex {color: rgb(255, 0, 0)}.ace-tm .ace_marker-layer .ace_selection {background: rgb(181, 213, 255);}.ace-tm.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px white;}.ace-tm .ace_marker-layer .ace_step {background: rgb(252, 255, 0);}.ace-tm .ace_marker-layer .ace_stack {background: rgb(164, 229, 101);}.ace-tm .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid rgb(192, 192, 192);}.ace-tm .ace_marker-layer .ace_active-line {background: rgba(0, 0, 0, 0.07);}.ace-tm .ace_gutter-active-line {background-color : #dcdcdc;}.ace-tm .ace_marker-layer .ace_selected-word {background: rgb(250, 250, 255);border: 1px solid rgb(200, 200, 250);}.ace-tm .ace_indent-guide {background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==") right repeat-y;}
+/*# sourceURL=ace/css/ace-tm */</style><style id="ace_editor.css">.ace_br1 {border-top-left-radius    : 3px;}.ace_br2 {border-top-right-radius   : 3px;}.ace_br3 {border-top-left-radius    : 3px; border-top-right-radius:    3px;}.ace_br4 {border-bottom-right-radius: 3px;}.ace_br5 {border-top-left-radius    : 3px; border-bottom-right-radius: 3px;}.ace_br6 {border-top-right-radius   : 3px; border-bottom-right-radius: 3px;}.ace_br7 {border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px;}.ace_br8 {border-bottom-left-radius : 3px;}.ace_br9 {border-top-left-radius    : 3px; border-bottom-left-radius:  3px;}.ace_br10{border-top-right-radius   : 3px; border-bottom-left-radius:  3px;}.ace_br11{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-left-radius:  3px;}.ace_br12{border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br13{border-top-left-radius    : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br14{border-top-right-radius   : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br15{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px;}.ace_editor {position: relative;overflow: hidden;font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;direction: ltr;text-align: left;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}.ace_scroller {position: absolute;overflow: hidden;top: 0;bottom: 0;background-color: inherit;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;cursor: text;}.ace_content {position: absolute;box-sizing: border-box;min-width: 100%;contain: style size layout;}.ace_dragging .ace_scroller:before{position: absolute;top: 0;left: 0;right: 0;bottom: 0;content: '';background: rgba(250, 250, 250, 0.01);z-index: 1000;}.ace_dragging.ace_dark .ace_scroller:before{background: rgba(0, 0, 0, 0.01);}.ace_selecting, .ace_selecting * {cursor: text !important;}.ace_gutter {position: absolute;overflow : hidden;width: auto;top: 0;bottom: 0;left: 0;cursor: default;z-index: 4;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;contain: style size layout;}.ace_gutter-active-line {position: absolute;left: 0;right: 0;}.ace_scroller.ace_scroll-left {box-shadow: 17px 0 16px -16px rgba(0, 0, 0, 0.4) inset;}.ace_gutter-cell {position: absolute;top: 0;left: 0;right: 0;padding-left: 19px;padding-right: 6px;background-repeat: no-repeat;}.ace_gutter-cell.ace_error {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABOFBMVEX/////////QRswFAb/Ui4wFAYwFAYwFAaWGAfDRymzOSH/PxswFAb/SiUwFAYwFAbUPRvjQiDllog5HhHdRybsTi3/Tyv9Tir+Syj/UC3////XurebMBIwFAb/RSHbPx/gUzfdwL3kzMivKBAwFAbbvbnhPx66NhowFAYwFAaZJg8wFAaxKBDZurf/RB6mMxb/SCMwFAYwFAbxQB3+RB4wFAb/Qhy4Oh+4QifbNRcwFAYwFAYwFAb/QRzdNhgwFAYwFAbav7v/Uy7oaE68MBK5LxLewr/r2NXewLswFAaxJw4wFAbkPRy2PyYwFAaxKhLm1tMwFAazPiQwFAaUGAb/QBrfOx3bvrv/VC/maE4wFAbRPBq6MRO8Qynew8Dp2tjfwb0wFAbx6eju5+by6uns4uH9/f36+vr/GkHjAAAAYnRSTlMAGt+64rnWu/bo8eAA4InH3+DwoN7j4eLi4xP99Nfg4+b+/u9B/eDs1MD1mO7+4PHg2MXa347g7vDizMLN4eG+Pv7i5evs/v79yu7S3/DV7/498Yv24eH+4ufQ3Ozu/v7+y13sRqwAAADLSURBVHjaZc/XDsFgGIBhtDrshlitmk2IrbHFqL2pvXf/+78DPokj7+Fz9qpU/9UXJIlhmPaTaQ6QPaz0mm+5gwkgovcV6GZzd5JtCQwgsxoHOvJO15kleRLAnMgHFIESUEPmawB9ngmelTtipwwfASilxOLyiV5UVUyVAfbG0cCPHig+GBkzAENHS0AstVF6bacZIOzgLmxsHbt2OecNgJC83JERmePUYq8ARGkJx6XtFsdddBQgZE2nPR6CICZhawjA4Fb/chv+399kfR+MMMDGOQAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: 2px center;}.ace_gutter-cell.ace_warning {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAmVBMVEX///8AAAD///8AAAAAAABPSzb/5sAAAAB/blH/73z/ulkAAAAAAAD85pkAAAAAAAACAgP/vGz/rkDerGbGrV7/pkQICAf////e0IsAAAD/oED/qTvhrnUAAAD/yHD/njcAAADuv2r/nz//oTj/p064oGf/zHAAAAA9Nir/tFIAAAD/tlTiuWf/tkIAAACynXEAAAAAAAAtIRW7zBpBAAAAM3RSTlMAABR1m7RXO8Ln31Z36zT+neXe5OzooRDfn+TZ4p3h2hTf4t3k3ucyrN1K5+Xaks52Sfs9CXgrAAAAjklEQVR42o3PbQ+CIBQFYEwboPhSYgoYunIqqLn6/z8uYdH8Vmdnu9vz4WwXgN/xTPRD2+sgOcZjsge/whXZgUaYYvT8QnuJaUrjrHUQreGczuEafQCO/SJTufTbroWsPgsllVhq3wJEk2jUSzX3CUEDJC84707djRc5MTAQxoLgupWRwW6UB5fS++NV8AbOZgnsC7BpEAAAAABJRU5ErkJggg==");background-position: 2px center;}.ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAJ0Uk5TAAB2k804AAAAPklEQVQY02NgIB68QuO3tiLznjAwpKTgNyDbMegwisCHZUETUZV0ZqOquBpXj2rtnpSJT1AEnnRmL2OgGgAAIKkRQap2htgAAAAASUVORK5CYII=");background-position: 2px center;}.ace_dark .ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAJFBMVEUAAAChoaGAgIAqKiq+vr6tra1ZWVmUlJSbm5s8PDxubm56enrdgzg3AAAAAXRSTlMAQObYZgAAAClJREFUeNpjYMAPdsMYHegyJZFQBlsUlMFVCWUYKkAZMxZAGdxlDMQBAG+TBP4B6RyJAAAAAElFTkSuQmCC");}.ace_scrollbar {contain: strict;position: absolute;right: 0;bottom: 0;z-index: 6;}.ace_scrollbar-inner {position: absolute;cursor: text;left: 0;top: 0;}.ace_scrollbar-v{overflow-x: hidden;overflow-y: scroll;top: 0;}.ace_scrollbar-h {overflow-x: scroll;overflow-y: hidden;left: 0;}.ace_print-margin {position: absolute;height: 100%;}.ace_text-input {position: absolute;z-index: 0;width: 0.5em;height: 1em;opacity: 0;background: transparent;-moz-appearance: none;appearance: none;border: none;resize: none;outline: none;overflow: hidden;font: inherit;padding: 0 1px;margin: 0 -1px;contain: strict;-ms-user-select: text;-moz-user-select: text;-webkit-user-select: text;user-select: text;white-space: pre!important;}.ace_text-input.ace_composition {background: transparent;color: inherit;z-index: 1000;opacity: 1;}.ace_composition_placeholder { color: transparent }.ace_composition_marker { border-bottom: 1px solid;position: absolute;border-radius: 0;margin-top: 1px;}[ace_nocontext=true] {transform: none!important;filter: none!important;perspective: none!important;clip-path: none!important;mask : none!important;contain: none!important;perspective: none!important;mix-blend-mode: initial!important;z-index: auto;}.ace_layer {z-index: 1;position: absolute;overflow: hidden;word-wrap: normal;white-space: pre;height: 100%;width: 100%;box-sizing: border-box;pointer-events: none;}.ace_gutter-layer {position: relative;width: auto;text-align: right;pointer-events: auto;height: 1000000px;contain: style size layout;}.ace_text-layer {font: inherit !important;position: absolute;height: 1000000px;width: 1000000px;contain: style size layout;}.ace_text-layer > .ace_line, .ace_text-layer > .ace_line_group {contain: style size layout;position: absolute;top: 0;left: 0;right: 0;}.ace_hidpi .ace_text-layer,.ace_hidpi .ace_gutter-layer,.ace_hidpi .ace_content,.ace_hidpi .ace_gutter {contain: strict;will-change: transform;}.ace_hidpi .ace_text-layer > .ace_line, .ace_hidpi .ace_text-layer > .ace_line_group {contain: strict;}.ace_cjk {display: inline-block;text-align: center;}.ace_cursor-layer {z-index: 4;}.ace_cursor {z-index: 4;position: absolute;box-sizing: border-box;border-left: 2px solid;transform: translatez(0);}.ace_multiselect .ace_cursor {border-left-width: 1px;}.ace_slim-cursors .ace_cursor {border-left-width: 1px;}.ace_overwrite-cursors .ace_cursor {border-left-width: 0;border-bottom: 1px solid;}.ace_hidden-cursors .ace_cursor {opacity: 0.2;}.ace_smooth-blinking .ace_cursor {transition: opacity 0.18s;}.ace_animate-blinking .ace_cursor {animation-duration: 1000ms;animation-timing-function: step-end;animation-name: blink-ace-animate;animation-iteration-count: infinite;}.ace_animate-blinking.ace_smooth-blinking .ace_cursor {animation-duration: 1000ms;animation-timing-function: ease-in-out;animation-name: blink-ace-animate-smooth;}@keyframes blink-ace-animate {from, to { opacity: 1; }60% { opacity: 0; }}@keyframes blink-ace-animate-smooth {from, to { opacity: 1; }45% { opacity: 1; }60% { opacity: 0; }85% { opacity: 0; }}.ace_marker-layer .ace_step, .ace_marker-layer .ace_stack {position: absolute;z-index: 3;}.ace_marker-layer .ace_selection {position: absolute;z-index: 5;}.ace_marker-layer .ace_bracket {position: absolute;z-index: 6;}.ace_marker-layer .ace_active-line {position: absolute;z-index: 2;}.ace_marker-layer .ace_selected-word {position: absolute;z-index: 4;box-sizing: border-box;}.ace_line .ace_fold {box-sizing: border-box;display: inline-block;height: 11px;margin-top: -2px;vertical-align: middle;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACJJREFUeNpi+P//fxgTAwPDBxDxD078RSX+YeEyDFMCIMAAI3INmXiwf2YAAAAASUVORK5CYII=");background-repeat: no-repeat, repeat-x;background-position: center center, top left;color: transparent;border: 1px solid black;border-radius: 2px;cursor: pointer;pointer-events: auto;}.ace_dark .ace_fold {}.ace_fold:hover{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACBJREFUeNpi+P//fz4TAwPDZxDxD5X4i5fLMEwJgAADAEPVDbjNw87ZAAAAAElFTkSuQmCC");}.ace_tooltip {background-color: #FFF;background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));border: 1px solid gray;border-radius: 1px;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);color: black;max-width: 100%;padding: 3px 4px;position: fixed;z-index: 999999;box-sizing: border-box;cursor: default;white-space: pre;word-wrap: break-word;line-height: normal;font-style: normal;font-weight: normal;letter-spacing: normal;pointer-events: none;}.ace_folding-enabled > .ace_gutter-cell {padding-right: 13px;}.ace_fold-widget {box-sizing: border-box;margin: 0 -12px 0 1px;display: none;width: 11px;vertical-align: top;background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42mWKsQ0AMAzC8ixLlrzQjzmBiEjp0A6WwBCSPgKAXoLkqSot7nN3yMwR7pZ32NzpKkVoDBUxKAAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: center;border-radius: 3px;border: 1px solid transparent;cursor: pointer;}.ace_folding-enabled .ace_fold-widget {display: inline-block;   }.ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42m3HwQkAMAhD0YzsRchFKI7sAikeWkrxwScEB0nh5e7KTPWimZki4tYfVbX+MNl4pyZXejUO1QAAAABJRU5ErkJggg==");}.ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAGCAYAAAAG5SQMAAAAOUlEQVR42jXKwQkAMAgDwKwqKD4EwQ26sSOkVWjgIIHAzPiCgaqiqnJHZnKICBERHN194O5b9vbLuAVRL+l0YWnZAAAAAElFTkSuQmCCXA==");}.ace_fold-widget:hover {border: 1px solid rgba(0, 0, 0, 0.3);background-color: rgba(255, 255, 255, 0.2);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);}.ace_fold-widget:active {border: 1px solid rgba(0, 0, 0, 0.4);background-color: rgba(0, 0, 0, 0.05);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);}.ace_dark .ace_fold-widget {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHklEQVQIW2P4//8/AzoGEQ7oGCaLLAhWiSwB146BAQCSTPYocqT0AAAAAElFTkSuQmCC");}.ace_dark .ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAH0lEQVQIW2P4//8/AxQ7wNjIAjDMgC4AxjCVKBirIAAF0kz2rlhxpAAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAFCAYAAACAcVaiAAAAHElEQVQIW2P4//+/AxAzgDADlOOAznHAKgPWAwARji8UIDTfQQAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget:hover {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);background-color: rgba(255, 255, 255, 0.1);}.ace_dark .ace_fold-widget:active {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);}.ace_inline_button {border: 1px solid lightgray;display: inline-block;margin: -1px 8px;padding: 0 5px;pointer-events: auto;cursor: pointer;}.ace_inline_button:hover {border-color: gray;background: rgba(200,200,200,0.2);display: inline-block;pointer-events: auto;}.ace_fold-widget.ace_invalid {background-color: #FFB4B4;border-color: #DE5555;}.ace_fade-fold-widgets .ace_fold-widget {transition: opacity 0.4s ease 0.05s;opacity: 0;}.ace_fade-fold-widgets:hover .ace_fold-widget {transition: opacity 0.05s ease 0.05s;opacity:1;}.ace_underline {text-decoration: underline;}.ace_bold {font-weight: bold;}.ace_nobold .ace_bold {font-weight: normal;}.ace_italic {font-style: italic;}.ace_error-marker {background-color: rgba(255, 0, 0,0.2);position: absolute;z-index: 9;}.ace_highlight-marker {background-color: rgba(255, 255, 0,0.2);position: absolute;z-index: 8;}.ace_mobile-menu {position: absolute;line-height: 1.5;border-radius: 4px;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;background: white;box-shadow: 1px 3px 2px grey;border: 1px solid #dcdcdc;color: black;}.ace_dark > .ace_mobile-menu {background: #333;color: #ccc;box-shadow: 1px 3px 2px grey;border: 1px solid #444;}.ace_mobile-button {padding: 2px;cursor: pointer;overflow: hidden;}.ace_mobile-button:hover {background-color: #eee;opacity:1;}.ace_mobile-button:active {background-color: #ddd;}
+/*# sourceURL=ace/css/ace_editor.css */</style><title>access | Iowa COVID-19 Information</title><meta name="twitter:title" content="access"><meta property="og:title" content="access"><meta name="description" content="Current Cases Accessibility&nbsp;Page This page is designed to work with screen reader technology. Note the change in update time. Data is published every Wednesday. IACOVID19 Demographics IACOVID19Cases_Demographics Data as of IA COVID19 Cases ia_covid19_county Total Confirmed Cases IACOVID19 Demographics IACOVID19Cases_Demographics Deceased IACOVID19 Demographics IACOVID19Cases_Demographics Hospitalized IACOVID19 Demographics IACOVID19Cases_Demographics Recovering IACOVID19 Demographics IACOVID19Cases_Demographics Child Cases (0-17) IACOVID19 Demographics IACOVID19Cases_Demographics Adult Cases (18-40) IACOVID19 Demographics IACOVID19Cases_Demographics Middle Aged Cases (41-60) IACOVID19 Demographics IACOVID19Cases_Demographics Older Adult Cases (61-80) IACOVID19 Demographics IACOVID19Cases_Demographics Elderly Cases (81 or Older) IACOVID19 Demographics IACOVID19Cases_Demographics Male Cases IACOVID19 Demographics IACOVID19Cases_Demographics Female Cases IACOVID19 Demographics IACOVID19Cases_Demographics Individuals Tested COVID19_RMCC_Hospitalization COVID19_RMCC_Hospitalization COVID-19 Patients Admitted in last 24 hrs COVID19_RMCC_Hospitalization COVID19_RMCC_Hospitalization COVID-19 Patients in ICU COVID19_RMCC_Hospitalization COVID19_RMCC_Hospitalization Total Ventilators Available COVID19_RMCC_Hospitalization COVID19_RMCC_Hospitalization COVID-19 Patients on Ventilators"><meta name="twitter:description" content="Current Cases Accessibility&nbsp;Page This page is designed to work with screen reader technology. Note the change in update time. Data is published every Wednesday. IACOVID19 Demographics IACOVID19Cases_Demographics Data as of IA COVID19 Cases ia_covid19_county Total Confirmed Cases IACOVID19 Demographics IACOVID19Cases_Demographics Deceased IACOVID19 Demographics IACOVID19Cases_Demographics Hospitalized IACOVID19 Demographics IACOVID19Cases_Demographics Recovering IACOVID19 Demographics IACOVID19Cases_Demographics Child Cases (0-17) IACOVID19 Demographics IACOVID19Cases_Demographics Adult Cases (18-40) IACOVID19 Demographics IACOVID19Cases_Demographics Middle Aged Cases (41-60) IACOVID19 Demographics IACOVID19Cases_Demographics Older Adult Cases (61-80) IACOVID19 Demographics IACOVID19Cases_Demographics Elderly Cases (81 or Older) IACOVID19 Demographics IACOVID19Cases_Demographics Male Cases IACOVID19 Demographics IACOVID19Cases_Demographics Female Cases IACOVID19 Demographics IACOVID19Cases_Demographics Individuals Tested COVID19_RMCC_Hospitalization COVID19_RMCC_Hospitalization COVID-19 Patients Admitted in last 24 hrs COVID19_RMCC_Hospitalization COVID19_RMCC_Hospitalization COVID-19 Patients in ICU COVID19_RMCC_Hospitalization COVID19_RMCC_Hospitalization Total Ventilators Available COVID19_RMCC_Hospitalization COVID19_RMCC_Hospitalization COVID-19 Patients on Ventilators"><meta property="og:description" content="Current Cases Accessibility&nbsp;Page This page is designed to work with screen reader technology. Note the change in update time. Data is published every Wednesday. IACOVID19 Demographics IACOVID19Cases_Demographics Data as of IA COVID19 Cases ia_covid19_county Total Confirmed Cases IACOVID19 Demographics IACOVID19Cases_Demographics Deceased IACOVID19 Demographics IACOVID19Cases_Demographics Hospitalized IACOVID19 Demographics IACOVID19Cases_Demographics Recovering IACOVID19 Demographics IACOVID19Cases_Demographics Child Cases (0-17) IACOVID19 Demographics IACOVID19Cases_Demographics Adult Cases (18-40) IACOVID19 Demographics IACOVID19Cases_Demographics Middle Aged Cases (41-60) IACOVID19 Demographics IACOVID19Cases_Demographics Older Adult Cases (61-80) IACOVID19 Demographics IACOVID19Cases_Demographics Elderly Cases (81 or Older) IACOVID19 Demographics IACOVID19Cases_Demographics Male Cases IACOVID19 Demographics IACOVID19Cases_Demographics Female Cases IACOVID19 Demographics IACOVID19Cases_Demographics Individuals Tested COVID19_RMCC_Hospitalization COVID19_RMCC_Hospitalization COVID-19 Patients Admitted in last 24 hrs COVID19_RMCC_Hospitalization COVID19_RMCC_Hospitalization COVID-19 Patients in ICU COVID19_RMCC_Hospitalization COVID19_RMCC_Hospitalization Total Ventilators Available COVID19_RMCC_Hospitalization COVID19_RMCC_Hospitalization COVID-19 Patients on Ventilators"><meta name="twitter:image" content="https://www.arcgis.com/sharing/rest/content/items/d83ad06141fe4acd9a0461020f9d9d8e/resources/iowa.png"><meta property="og:image" content="https://www.arcgis.com/sharing/rest/content/items/d83ad06141fe4acd9a0461020f9d9d8e/resources/iowa.png"><meta name="twitter:card" content="summary"><meta property="og:url" content="https://coronavirus.iowa.gov/pages/access"><meta property="og:type" content="website">
+    <meta charset="utf-8"><style data-styles="">calcite-color-picker,hub-download-card,calcite-block,calcite-action-bar,calcite-action-pad,calcite-input-date-picker,calcite-input-time-picker,calcite-panel,hub-event,calcite-value-list-item,hub-multiselect,arcgis-hub-content-view,arcgis-hub-team-view,arcgis-notebook,calcite-fab,calcite-filter,calcite-inline-editable,calcite-tip,calcite-tip-manager,calcite-block-section,calcite-rating,hub-metadata-editor,calcite-select,calcite-combobox-item-group,calcite-list-item,calcite-list-item-group,calcite-option-group,calcite-pick-list-group,calcite-shell-center-row,arcgis-hub-content-gallery,arcgis-hub-list,arcgis-hub-team-gallery,calcite-avatar,calcite-flow,calcite-list,calcite-option,calcite-pick-list,calcite-shell,calcite-shell-panel,calcite-sortable-list,calcite-tip-group,calcite-value-list,calcite-date-picker,calcite-pick-list-item,calcite-handle,calcite-time-picker,hub-metadata-editor-field,calcite-radio,calcite-action-group,calcite-color-picker-swatch,hub-download-notice,calcite-color-picker-hex-input,calcite-date-picker-month,calcite-date-picker-month-header,calcite-date-picker-day,calcite-action,calcite-action-menu{visibility:hidden}[hydrated]{visibility:inherit}</style><style data-styles="">calcite-card,calcite-icon,calcite-split-button,calcite-modal,calcite-tile-select,calcite-accordion-item,calcite-accordion,calcite-popover,calcite-popover-manager,calcite-radio-group-item,calcite-radio-group,calcite-stepper-item,calcite-stepper,calcite-tree-item,calcite-tree,calcite-alert,calcite-input-message,calcite-chip,calcite-combobox,calcite-combobox-item,calcite-notice,calcite-pagination,calcite-radio-button,calcite-slider,calcite-tooltip,calcite-tooltip-manager,calcite-radio-button-group,calcite-switch,calcite-tile-select-group,calcite-tile,calcite-dropdown-item,calcite-dropdown-group,calcite-dropdown,calcite-checkbox,calcite-scrim,calcite-graph,calcite-button,calcite-link,calcite-progress,calcite-input,calcite-label,calcite-tab-title,calcite-tab,calcite-tab-nav,calcite-tabs,calcite-loader,calcite-color,calcite-color-hex-input,calcite-color-swatch,calcite-date,calcite-date-month,calcite-date-month-header,calcite-date-day{visibility:hidden}[calcite-hydrated]{visibility:inherit}</style>
+    <meta name="google-site-verification" content="V9SzvB895BKr2ff7JVvaJQM1CIgPqOL5FPooX1aqENo">
+    <meta name="msvalidate.01" content="217F0EED65C5B131219477CE2CEAAF8E">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script async="" src="//www.google-analytics.com/analytics.js"></script><script>
+      (function () {
+        // check for unsupported browsers
+        function isIE () {
+          return (
+            (navigator.appName === 'Microsoft Internet Explorer') ||
+            ((navigator.appName === 'Netscape') && (new RegExp('Trident/.*rv:([0-9]{1,}[.0-9]{0,})').exec(navigator.userAgent) != null))
+          );
+        }
+        function isEdge () {
+          return navigator.userAgent.toLowerCase().includes('edge');
+        }
+        if (isIE() || isEdge()) {
+          window.location.replace('./unsupported.html');
+        }
+      })();
+    </script>
+    
+<meta name="activation-engine/config/environment" content="%7B%22modulePrefix%22%3A%22activation-engine%22%2C%22environment%22%3A%22production%22%2C%22ember-do-forms%22%3A%7B%22defaultClasses%22%3A%7B%22field%22%3A%5B%22field%22%5D%2C%22label%22%3A%5B%22label%22%5D%2C%22control%22%3A%5B%22control%22%5D%2C%22feedback%22%3A%5B%22feedback%22%5D%2C%22hint%22%3A%5B%22hint%22%5D%7D%2C%22validationClasses%22%3A%7B%22fieldSuccess%22%3A%5B%22field-success%22%5D%2C%22fieldError%22%3A%5B%22field-error%22%5D%2C%22controlSuccess%22%3A%5B%22control-success%22%5D%2C%22controlError%22%3A%5B%22control-error%22%5D%7D%7D%7D">
+<meta name="community-engine/config/environment" content="%7B%22modulePrefix%22%3A%22community-engine%22%2C%22environment%22%3A%22production%22%7D">
+<meta name="content-library-engine/config/environment" content="%7B%22modulePrefix%22%3A%22content-library-engine%22%2C%22environment%22%3A%22production%22%2C%22ember-do-forms%22%3A%7B%22defaultClasses%22%3A%7B%22field%22%3A%5B%22field%22%5D%2C%22label%22%3A%5B%22label%22%5D%2C%22control%22%3A%5B%22control%22%5D%2C%22feedback%22%3A%5B%22feedback%22%5D%2C%22hint%22%3A%5B%22hint%22%5D%7D%2C%22validationClasses%22%3A%7B%22fieldSuccess%22%3A%5B%22field-success%22%5D%2C%22fieldError%22%3A%5B%22field-error%22%5D%2C%22controlSuccess%22%3A%5B%22control-success%22%5D%2C%22controlError%22%3A%5B%22control-error%22%5D%7D%7D%7D">
+<meta name="events-engine/config/environment" content="%7B%22modulePrefix%22%3A%22events-engine%22%2C%22environment%22%3A%22production%22%2C%22ember-do-forms%22%3A%7B%22defaultClasses%22%3A%7B%22field%22%3A%5B%22field%22%5D%2C%22label%22%3A%5B%22label%22%5D%2C%22control%22%3A%5B%22control%22%5D%2C%22feedback%22%3A%5B%22feedback%22%5D%2C%22hint%22%3A%5B%22hint%22%5D%7D%2C%22validationClasses%22%3A%7B%22fieldSuccess%22%3A%5B%22field-success%22%5D%2C%22fieldError%22%3A%5B%22field-error%22%5D%2C%22controlSuccess%22%3A%5B%22control-success%22%5D%2C%22controlError%22%3A%5B%22control-error%22%5D%7D%7D%7D">
+<meta name="feedback-engine/config/environment" content="%7B%22modulePrefix%22%3A%22feedback-engine%22%2C%22environment%22%3A%22production%22%7D">
+<meta name="initiative-editor-engine/config/environment" content="%7B%22modulePrefix%22%3A%22initiative-editor-engine%22%2C%22environment%22%3A%22production%22%7D">
+<meta name="layout-editor-engine/config/environment" content="%7B%22modulePrefix%22%3A%22layout-editor-engine%22%2C%22environment%22%3A%22production%22%2C%22cedar%22%3A%7B%22amCharts%22%3A%7B%22dependencies%22%3A%5B%22amcharts.js%22%2C%22serial.js%22%2C%22xy.js%22%2C%22pie.js%22%2C%22radar.js%22%2C%22https%3A//unpkg.com/@esri/cedar@1.0.0-beta.9/dist/umd/themes/amCharts/calcite.js%22%5D%2C%22baseUrl%22%3A%22https%3A//www.amcharts.com/lib/3%22%7D%7D%2C%22ember-do-forms%22%3A%7B%22defaultClasses%22%3A%7B%22field%22%3A%5B%22field%22%5D%2C%22label%22%3A%5B%22label%22%5D%2C%22control%22%3A%5B%22control%22%5D%2C%22feedback%22%3A%5B%22feedback%22%5D%2C%22hint%22%3A%5B%22hint%22%5D%7D%2C%22validationClasses%22%3A%7B%22fieldSuccess%22%3A%5B%22field-success%22%5D%2C%22fieldError%22%3A%5B%22field-error%22%5D%2C%22controlSuccess%22%3A%5B%22control-success%22%5D%2C%22controlError%22%3A%5B%22control-error%22%5D%7D%7D%7D">
+<meta name="overview-engine/config/environment" content="%7B%22modulePrefix%22%3A%22overview-engine%22%2C%22environment%22%3A%22production%22%7D">
+<meta name="solutions-engine/config/environment" content="%7B%22modulePrefix%22%3A%22solutions-engine%22%2C%22environment%22%3A%22production%22%2C%22ember-do-forms%22%3A%7B%22defaultClasses%22%3A%7B%22field%22%3A%5B%22field%22%5D%2C%22label%22%3A%5B%22label%22%5D%2C%22control%22%3A%5B%22control%22%5D%2C%22feedback%22%3A%5B%22feedback%22%5D%2C%22hint%22%3A%5B%22hint%22%5D%7D%2C%22validationClasses%22%3A%7B%22fieldSuccess%22%3A%5B%22field-success%22%5D%2C%22fieldError%22%3A%5B%22field-error%22%5D%2C%22controlSuccess%22%3A%5B%22control-success%22%5D%2C%22controlError%22%3A%5B%22control-error%22%5D%7D%7D%7D">
+<meta name="teams-engine/config/environment" content="%7B%22modulePrefix%22%3A%22teams-engine%22%2C%22environment%22%3A%22production%22%2C%22ember-do-forms%22%3A%7B%22defaultClasses%22%3A%7B%22field%22%3A%5B%22field%22%5D%2C%22label%22%3A%5B%22label%22%5D%2C%22control%22%3A%5B%22control%22%5D%2C%22feedback%22%3A%5B%22feedback%22%5D%2C%22hint%22%3A%5B%22hint%22%5D%7D%2C%22validationClasses%22%3A%7B%22fieldSuccess%22%3A%5B%22field-success%22%5D%2C%22fieldError%22%3A%5B%22field-error%22%5D%2C%22controlSuccess%22%3A%5B%22control-success%22%5D%2C%22controlError%22%3A%5B%22control-error%22%5D%7D%7D%7D">
+    <link rel="stylesheet" href="https://hubcdn.arcgis.com/opendata-ui/assets/assets/vendor-69bc6ae8c78d99fe5a16fdd10a005ee9.css">
+    <!-- [begin custom site css injection point] - please do not remove this -->
+
+    <!-- FOR LTR DEVELOPMENT/TESTING: Un-Comment the next section -->
+    <!-- <link rel="stylesheet" href="/assets/opendata-base.css"> -->
+    <!-- FOR RTL TESTING: Un-Comment the next section -->
+    <!-- <link rel="stylesheet" href="https://hubcdn.arcgis.com/opendata-ui/assets/assets/opendata-rtl-afb6536832a06d6cdff2eb6d631e1e30.css">
+    <link rel="stylesheet" href="//cdn.rawgit.com/morteza/bootstrap-rtl/v3.3.4/dist/css/bootstrap-rtl.min.css"> -->
+
+    <!-- [end custom site css injection point] - please do not remove this -->
+
+    <script src="https://hubcdn.arcgis.com/opendata-ui/assets/assets/esri-loader.min-a4e7aabd633bd620073497c7ccae43f5.js"></script>
+<meta name="opendata-ui/config/asset-manifest" content="%7B%22bundles%22%3A%7B%22activation-engine%22%3A%7B%22assets%22%3A%5B%7B%22uri%22%3A%22https%3A//hubcdn.arcgis.com/opendata-ui/assets/engines-dist/activation-engine/assets/engine-bf7e20683dfa46672cbbe0b57cca7837.js%22%2C%22type%22%3A%22js%22%7D%2C%7B%22uri%22%3A%22https%3A//hubcdn.arcgis.com/opendata-ui/assets/engines-dist/activation-engine/config/environment-d06aa04d2f36ff47a188be6bd303a346.js%22%2C%22type%22%3A%22js%22%7D%5D%7D%2C%22community-engine%22%3A%7B%22assets%22%3A%5B%7B%22uri%22%3A%22https%3A//hubcdn.arcgis.com/opendata-ui/assets/engines-dist/community-engine/assets/engine-cc92b871a5b84d5ee225301466bb7022.js%22%2C%22type%22%3A%22js%22%7D%2C%7B%22uri%22%3A%22https%3A//hubcdn.arcgis.com/opendata-ui/assets/engines-dist/community-engine/assets/engine-vendor-c1387b487912896a47ed725a8e4e02c5.js%22%2C%22type%22%3A%22js%22%7D%2C%7B%22uri%22%3A%22https%3A//hubcdn.arcgis.com/opendata-ui/assets/engines-dist/community-engine/config/environment-cee635c8d4963be55eba4dc314f4a3f6.js%22%2C%22type%22%3A%22js%22%7D%5D%7D%2C%22content-library-engine%22%3A%7B%22assets%22%3A%5B%7B%22uri%22%3A%22https%3A//hubcdn.arcgis.com/opendata-ui/assets/engines-dist/content-library-engine/assets/engine-31b6624aa3c95e371015dd91b1519475.js%22%2C%22type%22%3A%22js%22%7D%2C%7B%22uri%22%3A%22https%3A//hubcdn.arcgis.com/opendata-ui/assets/engines-dist/content-library-engine/assets/engine-vendor-3bd825c2dcf373d8e4266c35441299c4.js%22%2C%22type%22%3A%22js%22%7D%2C%7B%22uri%22%3A%22https%3A//hubcdn.arcgis.com/opendata-ui/assets/engines-dist/content-library-engine/config/environment-bc42c7494bbb84b2f488c47f3b5599d1.js%22%2C%22type%22%3A%22js%22%7D%5D%7D%2C%22events-engine%22%3A%7B%22assets%22%3A%5B%7B%22uri%22%3A%22https%3A//hubcdn.arcgis.com/opendata-ui/assets/engines-dist/events-engine/assets/engine-d21b29b886f020c179b95bbc92679525.js%22%2C%22type%22%3A%22js%22%7D%2C%7B%22uri%22%3A%22https%3A//hubcdn.arcgis.com/opendata-ui/assets/engines-dist/events-engine/assets/engine-vendor-7197c0ddab24773c8da47c13a5fffe45.js%22%2C%22type%22%3A%22js%22%7D%2C%7B%22uri%22%3A%22https%3A//hubcdn.arcgis.com/opendata-ui/assets/engines-dist/events-engine/config/environment-adb3009a3a9f7bd51fb74c8edbd02f76.js%22%2C%22type%22%3A%22js%22%7D%5D%7D%2C%22feedback-engine%22%3A%7B%22assets%22%3A%5B%7B%22uri%22%3A%22https%3A//hubcdn.arcgis.com/opendata-ui/assets/engines-dist/feedback-engine/assets/engine-4822e6ecc81265765af83650013bd4c9.js%22%2C%22type%22%3A%22js%22%7D%2C%7B%22uri%22%3A%22https%3A//hubcdn.arcgis.com/opendata-ui/assets/engines-dist/feedback-engine/assets/engine-vendor-a1e895b0e38d8a898eb520d08cedd775.js%22%2C%22type%22%3A%22js%22%7D%2C%7B%22uri%22%3A%22https%3A//hubcdn.arcgis.com/opendata-ui/assets/engines-dist/feedback-engine/config/environment-3e4e0d4892548d2df52b217db4028ece.js%22%2C%22type%22%3A%22js%22%7D%5D%7D%2C%22initiative-editor-engine%22%3A%7B%22assets%22%3A%5B%7B%22uri%22%3A%22https%3A//hubcdn.arcgis.com/opendata-ui/assets/engines-dist/initiative-editor-engine/assets/engine-065ff19140aedebb5911b5d962958152.js%22%2C%22type%22%3A%22js%22%7D%2C%7B%22uri%22%3A%22https%3A//hubcdn.arcgis.com/opendata-ui/assets/engines-dist/initiative-editor-engine/assets/engine-vendor-c1387b487912896a47ed725a8e4e02c5.js%22%2C%22type%22%3A%22js%22%7D%2C%7B%22uri%22%3A%22https%3A//hubcdn.arcgis.com/opendata-ui/assets/engines-dist/initiative-editor-engine/config/environment-fe39675255839d5c76c2e992853c1496.js%22%2C%22type%22%3A%22js%22%7D%5D%7D%2C%22layout-editor-engine%22%3A%7B%22assets%22%3A%5B%7B%22uri%22%3A%22https%3A//hubcdn.arcgis.com/opendata-ui/assets/engines-dist/layout-editor-engine/assets/engine-6c926d63a83f932d0578ef267aaf9650.js%22%2C%22type%22%3A%22js%22%7D%2C%7B%22uri%22%3A%22https%3A//hubcdn.arcgis.com/opendata-ui/assets/engines-dist/layout-editor-engine/assets/engine-vendor-188819a7da922d27c286dd640266d1a3.css%22%2C%22type%22%3A%22css%22%7D%2C%7B%22uri%22%3A%22https%3A//hubcdn.arcgis.com/opendata-ui/assets/engines-dist/layout-editor-engine/assets/engine-vendor-cd30719d6f5f2a853b9953e6dc8be189.js%22%2C%22type%22%3A%22js%22%7D%2C%7B%22uri%22%3A%22https%3A//hubcdn.arcgis.com/opendata-ui/assets/engines-dist/layout-editor-engine/config/environment-2ba46f39a787c56e96da0c9527e9768c.js%22%2C%22type%22%3A%22js%22%7D%5D%7D%2C%22overview-engine%22%3A%7B%22assets%22%3A%5B%7B%22uri%22%3A%22https%3A//hubcdn.arcgis.com/opendata-ui/assets/engines-dist/overview-engine/assets/engine-6c1db3c3410d8c0778c99a3b07a4d38e.js%22%2C%22type%22%3A%22js%22%7D%2C%7B%22uri%22%3A%22https%3A//hubcdn.arcgis.com/opendata-ui/assets/engines-dist/overview-engine/assets/engine-vendor-7197c0ddab24773c8da47c13a5fffe45.js%22%2C%22type%22%3A%22js%22%7D%2C%7B%22uri%22%3A%22https%3A//hubcdn.arcgis.com/opendata-ui/assets/engines-dist/overview-engine/config/environment-68c3737629ab0c2de3e31f06d9059e0a.js%22%2C%22type%22%3A%22js%22%7D%5D%7D%2C%22solutions-engine%22%3A%7B%22assets%22%3A%5B%7B%22uri%22%3A%22https%3A//hubcdn.arcgis.com/opendata-ui/assets/engines-dist/solutions-engine/assets/engine-188cf034bd78a360efaf5cedc89bda2f.js%22%2C%22type%22%3A%22js%22%7D%2C%7B%22uri%22%3A%22https%3A//hubcdn.arcgis.com/opendata-ui/assets/engines-dist/solutions-engine/assets/engine-vendor-bcdcd0627bf8634581b8ee0452748af4.js%22%2C%22type%22%3A%22js%22%7D%2C%7B%22uri%22%3A%22https%3A//hubcdn.arcgis.com/opendata-ui/assets/engines-dist/solutions-engine/config/environment-aabab9b2b5bf2f68596bef4770e6b35b.js%22%2C%22type%22%3A%22js%22%7D%5D%7D%2C%22teams-engine%22%3A%7B%22assets%22%3A%5B%7B%22uri%22%3A%22https%3A//hubcdn.arcgis.com/opendata-ui/assets/engines-dist/teams-engine/assets/engine-0b09a3cc661c75fba3a62d08e76305f3.js%22%2C%22type%22%3A%22js%22%7D%2C%7B%22uri%22%3A%22https%3A//hubcdn.arcgis.com/opendata-ui/assets/engines-dist/teams-engine/assets/engine-vendor-c1387b487912896a47ed725a8e4e02c5.js%22%2C%22type%22%3A%22js%22%7D%2C%7B%22uri%22%3A%22https%3A//hubcdn.arcgis.com/opendata-ui/assets/engines-dist/teams-engine/config/environment-a94411b37004a24ce3971c31ef6db8d1.js%22%2C%22type%22%3A%22js%22%7D%5D%7D%7D%7D">
+
+    <script id="site-injection">
+      window.__SITE="%7B%22site%22%3A%7B%22item%22%3A%7B%22id%22%3A%22d83ad06141fe4acd9a0461020f9d9d8e%22%2C%22owner%22%3A%22iowageoadmin%22%2C%22orgId%22%3A%22vPD5PVLI6sfkZ5E4%22%2C%22created%22%3A1584463483000%2C%22modified%22%3A1633707011000%2C%22guid%22%3Anull%2C%22name%22%3Anull%2C%22title%22%3A%22Iowa%20COVID-19%20Information%22%2C%22type%22%3A%22Hub%20Site%20Application%22%2C%22typeKeywords%22%3A%5B%22Hub%22%2C%22hubSite%22%2C%22hubSolution%22%2C%22JavaScript%22%2C%22Map%22%2C%22Mapping%20Site%22%2C%22Online%20Map%22%2C%22OpenData%22%2C%22Ready%20To%20Use%22%2C%22selfConfigured%22%2C%22Web%20Map%22%2C%22Registered%20App%22%5D%2C%22description%22%3A%22Discover%20the%20latest%20resources%2C%20maps%20and%20information%20about%20the%20coronavirus%20(COVID-19)%20outbreak%20in%20your%20community%22%2C%22tags%22%3A%5B%22Hub%20Site%22%2C%22novel%20coronavirus%22%2C%22COVID-19%22%2C%22covid19%22%2C%22coronavirus%22%5D%2C%22snippet%22%3A%22Discover%20the%20latest%20resources%2C%20maps%2C%20and%20information%20about%20the%20coronavirus%20(COVID-19)%20outbreak%20in%20your%20community.%22%2C%22thumbnail%22%3A%22thumbnail%2Fthumbnail1584486258349.png%22%2C%22documentation%22%3Anull%2C%22extent%22%3A%5B%5D%2C%22categories%22%3A%5B%5D%2C%22spatialReference%22%3Anull%2C%22accessInformation%22%3Anull%2C%22licenseInfo%22%3A%22null%22%2C%22culture%22%3A%22en-us%22%2C%22properties%22%3A%7B%22schemaVersion%22%3A1.4%2C%22children%22%3A%5B%2264125e0b5e1a4273a0d84bb16f74b4cc%22%5D%2C%22parentInitiativeId%22%3A%22eb77e3a551c848048a4d89022d314dd2%22%2C%22collaborationGroupId%22%3A%2265b6b94e53074d19a4af63721c3ca5ea%22%2C%22contentGroupId%22%3A%2208ba56578aaf4bba8c122c3cfebddc23%22%2C%22parentId%22%3A%22be2f171c60464c28937df5ee877d385f%22%2C%22source%22%3A%22be2f171c60464c28937df5ee877d385f%22%2C%22globalNavViewCount%22%3A15%2C%22hasSeenGlobalNav%22%3Atrue%7D%2C%22advancedSettings%22%3Anull%2C%22url%22%3A%22https%3A%2F%2Fcoronavirus.iowa.gov%22%2C%22proxyFilter%22%3Anull%2C%22access%22%3A%22public%22%2C%22size%22%3A66754514%2C%22subInfo%22%3A0%2C%22appCategories%22%3A%5B%5D%2C%22industries%22%3A%5B%5D%2C%22languages%22%3A%5B%5D%2C%22largeThumbnail%22%3Anull%2C%22banner%22%3Anull%2C%22screenshots%22%3A%5B%5D%2C%22listed%22%3Afalse%2C%22commentsEnabled%22%3Afalse%2C%22numComments%22%3A0%2C%22numRatings%22%3A0%2C%22avgRating%22%3A0%2C%22numViews%22%3A9244034%2C%22scoreCompleteness%22%3A91%2C%22groupDesignations%22%3Anull%7D%2C%22data%22%3A%7B%22values%22%3A%7B%22title%22%3A%22Coronavirus%20Response%22%2C%22public%22%3Afalse%2C%22faviconUrl%22%3A%22https%3A%2F%2Fhubcdn.arcgis.com%2Fopendata-ui%2Fassets%2Fassets%2Fimages%2Ffavicon-45a5f6cdc7f23c52b20204d54a7d9ca2.ico%22%2C%22uiVersion%22%3A%222.3%22%2C%22map%22%3A%7B%22basemaps%22%3A%7B%22primary%22%3A%7B%22title%22%3A%22Terrain%20with%20Labels%22%2C%22id%22%3A%22aab054ab883c4a4094c72e949566ad40%22%7D%2C%22type%22%3A%22custom%22%7D%7D%2C%22defaultExtent%22%3A%7B%22spatialReference%22%3A%7B%22wkid%22%3A102100%7D%2C%22xmin%22%3A-11519078.219371624%2C%22ymin%22%3A4770613.724361392%2C%22xmax%22%3A-9420423.170774382%2C%22ymax%22%3A5626708.4411551375%7D%2C%22pages%22%3A%5B%7B%22id%22%3A%2264125e0b5e1a4273a0d84bb16f74b4cc%22%2C%22title%22%3A%22How%20to%20use%20this%20template%22%2C%22slug%22%3A%22how-to-use-this-template%22%7D%2C%7B%22id%22%3A%22ef3bae7255784ea79926c58a82a47af1%22%2C%22title%22%3A%22faqs%22%2C%22slug%22%3A%22faqs%22%7D%2C%7B%22id%22%3A%2224d5bef3dd05440ba05f3f7db0562b9d%22%2C%22title%22%3A%22access%22%2C%22slug%22%3A%22access%22%7D%2C%7B%22id%22%3A%22bffd3f57e6274e67bb916897ec2b8a3c%22%2C%22title%22%3A%22language-access%22%2C%22slug%22%3A%22language-access%22%7D%2C%7B%22id%22%3A%22e2ba22f423214bd3a19bd622930dad6a%22%2C%22title%22%3A%22Resources%22%2C%22slug%22%3A%22resources%22%7D%2C%7B%22id%22%3A%22091361a00622430681b01ad818fbd132%22%2C%22title%22%3A%22Proclamations%22%2C%22slug%22%3A%22proclamations%22%7D%2C%7B%22id%22%3A%22d39fa0526e784f04bb0e534a2e30ac9d%22%2C%22title%22%3A%22Guidance%22%2C%22slug%22%3A%22guidance%22%7D%2C%7B%22id%22%3A%224fc8fa2becaf4780a97488d96e70f4c8%22%2C%22title%22%3A%22FeedingIowa%22%2C%22slug%22%3A%22feedingiowa%22%7D%2C%7B%22id%22%3A%224165c266a4624768b37002352333282f%22%2C%22title%22%3A%22stagingpage%22%2C%22slug%22%3A%22stagingpage%22%7D%2C%7B%22id%22%3A%22c937f1b2593a4d7c8540b25897c39fb4%22%2C%22title%22%3A%22Case%20Counts%22%2C%22slug%22%3A%22case-counts%22%7D%2C%7B%22id%22%3A%221a25cebc0d574ce9877c6530dc1fdd9c%22%2C%22title%22%3A%22Assessments%20archived%22%2C%22slug%22%3A%22assessments-archived%22%7D%2C%7B%22id%22%3A%2208feff16932945fbb0fa9434ed485aac%22%2C%22title%22%3A%22Long%20Term%20Care%20archived%22%2C%22slug%22%3A%22long-term-care-archived%22%7D%2C%7B%22id%22%3A%22c5d5edb5aa0a4a25869f3baaaffae288%22%2C%22title%22%3A%22RMCC%20Data%22%2C%22slug%22%3A%22rmcc-data%22%7D%2C%7B%22id%22%3A%22afd2289060414faebcd25e05bac5aef1%22%2C%22title%22%3A%22Serology%20Testing%20archived%22%2C%22slug%22%3A%22serology-testing-archived%22%7D%2C%7B%22id%22%3A%22d2b30c6e4a8a42a98455cb6ab7431f52%22%2C%22title%22%3A%22photos%22%2C%22slug%22%3A%22photos%22%7D%2C%7B%22id%22%3A%226090e4f694a54f93b2ffd3eef1f1f3f8%22%2C%22title%22%3A%22Test%20Accessibility%20Page%22%2C%22slug%22%3A%22test-accessibility-page%22%7D%2C%7B%22id%22%3A%2205d1424c35db427a8f97a18834366533%22%2C%22title%22%3A%22Testing%22%2C%22slug%22%3A%22testing%22%7D%2C%7B%22id%22%3A%2298d1bda074e249c592bb5d10603d3159%22%2C%22title%22%3A%22Outcome%20Analysis%22%2C%22slug%22%3A%22outcome-analysis%22%7D%2C%7B%22id%22%3A%222f9b2bcf86cf4cd4bf5e1a1440a4147a%22%2C%22title%22%3A%22Outcome%20Analysis%20Deaths%22%2C%22slug%22%3A%22outcome-analysis-deaths%22%7D%2C%7B%22id%22%3A%22ffda8a7a6e42441995fd4819b3dd5206%22%2C%22title%22%3A%22Outcome%20Analysis%20Recovered%20old%22%2C%22slug%22%3A%22outcome-analysis-recovered-old%22%7D%2C%7B%22id%22%3A%22b8b8be48e05e40009f9115aeb9c12a7e%22%2C%22title%22%3A%22Local%20Reimbursement%22%2C%22slug%22%3A%22local-reimbursement%22%7D%2C%7B%22id%22%3A%2222fd63fdf9204cd884248df442d1f9b7%22%2C%22title%22%3A%22Percent%20School%20District%20Positive%20Analysis%20old%22%2C%22slug%22%3A%22percent-school-district-positive-analysis-old%22%7D%2C%7B%22id%22%3A%2257b6ea46537b4e57890936c5b0bf5b16%22%2C%22title%22%3A%22Hospitalization%20Analysis%22%2C%22slug%22%3A%22hospitalization-analysis%22%7D%2C%7B%22id%22%3A%22485aef56cc464a82bc3a9b711fc33387%22%2C%22title%22%3A%22VaccineDashboard%22%2C%22slug%22%3A%22vaccinedashboard%22%7D%2C%7B%22id%22%3A%22f91b30815d2b400f8bb892e266ee0a2e%22%2C%22title%22%3A%22VaccineInformation%22%2C%22slug%22%3A%22vaccineinformation%22%7D%2C%7B%22id%22%3A%22e5eb9946e1e04041b54cf53dfd672a3c%22%2C%22title%22%3A%22VaccineInformation%201%22%2C%22slug%22%3A%22vaccineinformation-1%22%7D%2C%7B%22id%22%3A%22634c099bcd984321aec27e0d06fd1eeb%22%2C%22title%22%3A%22State%20and%20Local%20Fiscal%20Recovery%20Fund%22%2C%22slug%22%3A%22state-and-local-fiscal-recovery-fund%22%7D%2C%7B%22id%22%3A%227d57f9678000466bae2ea23b2efae8d0%22%2C%22title%22%3A%22hospital-data%22%2C%22slug%22%3A%22hospital-data%22%7D%2C%7B%22id%22%3A%22ce890e01983e47d5bea140d059d376af%22%2C%22title%22%3A%22Resource%22%2C%22slug%22%3A%22resource%22%7D%2C%7B%22id%22%3A%227340a46a993f4de1917873b02b315f46%22%2C%22title%22%3A%22testing%20locations%22%2C%22slug%22%3A%22testing-locations%22%7D%2C%7B%22id%22%3A%22e3cab59c150c45449263f917991f1254%22%2C%22title%22%3A%22Summary%20Downloads%22%2C%22slug%22%3A%22summary-downloads%22%7D%5D%2C%22layout%22%3A%7B%22sections%22%3A%5B%7B%22containment%22%3A%22fixed%22%2C%22isFooter%22%3Afalse%2C%22style%22%3A%7B%22background%22%3A%7B%22isFile%22%3Afalse%2C%22isUrl%22%3Atrue%2C%22state%22%3A%22%22%2C%22display%22%3A%7B%7D%2C%22transparency%22%3A0%2C%22position%22%3A%7B%22x%22%3A%22center%22%2C%22y%22%3A%22center%22%7D%2C%22color%22%3A%22%23ebebeb%22%7D%2C%22color%22%3A%22%23292929%22%2C%22rowLayout%22%3A%22box%22%7D%2C%22rows%22%3A%5B%7B%22cards%22%3A%5B%7B%22component%22%3A%7B%22name%22%3A%22markdown-card%22%2C%22settings%22%3A%7B%22markdown%22%3A%22%3Ch1%20style%3D%5C%22text-align%3A%20left%3B%5C%22%3E%3Cstrong%3ESummary%20Dashboard%3C%2Fstrong%3E%3C%2Fh1%3E%3Ch6%20style%3D%5C%22text-align%3A%20left%3B%5C%22%3E%3Cbr%3E%3C%2Fh6%3E%5Cn%22%2C%22schemaVersion%22%3A2.1%7D%7D%2C%22width%22%3A12%7D%5D%7D%5D%2C%22visibility%22%3A%7B%22access%22%3A%22default%22%2C%22groups%22%3A%5B%5D%7D%7D%2C%7B%22containment%22%3A%22fixed%22%2C%22isFooter%22%3Afalse%2C%22style%22%3A%7B%22background%22%3A%7B%22isFile%22%3Afalse%2C%22isUrl%22%3Atrue%2C%22state%22%3A%22%22%2C%22display%22%3A%7B%7D%2C%22transparency%22%3A0%2C%22position%22%3A%7B%22x%22%3A%22center%22%2C%22y%22%3A%22center%22%7D%2C%22color%22%3A%22%232694bb%22%7D%2C%22color%22%3A%22%23fff%22%2C%22rowLayout%22%3A%22box%22%7D%2C%22rows%22%3A%5B%7B%22cards%22%3A%5B%7B%22component%22%3A%7B%22name%22%3A%22markdown-card%22%2C%22settings%22%3A%7B%22schemaVersion%22%3A2.1%2C%22markdown%22%3A%22%3Cspan%20style%3D%5C%22font-weight%3A%20700%3B%20font-size%3A%2016px%3B%5C%22%3EThe%20dashboard%20on%20this%20page%20is%20updated%20every%20Monday%2C%20Wednesday%20and%20Friday.%3Cbr%3EA%20full%20site%20update%20will%20occur%20every%20Wednesday.%26nbsp%3B%3C%2Fspan%3E%22%7D%7D%2C%22width%22%3A12%7D%5D%7D%5D%2C%22visibility%22%3A%7B%22access%22%3A%22default%22%2C%22groups%22%3A%5B%5D%7D%7D%2C%7B%22containment%22%3A%22fixed%22%2C%22isFooter%22%3Afalse%2C%22style%22%3A%7B%22background%22%3A%7B%22isFile%22%3Afalse%2C%22isUrl%22%3Atrue%2C%22state%22%3A%22%22%2C%22display%22%3A%7B%7D%2C%22transparency%22%3A0%2C%22position%22%3A%7B%22x%22%3A%22center%22%2C%22y%22%3A%22center%22%7D%2C%22color%22%3A%22transparent%22%7D%2C%22rowLayout%22%3A%22box%22%7D%2C%22rows%22%3A%5B%7B%22cards%22%3A%5B%7B%22component%22%3A%7B%22name%22%3A%22image-card%22%2C%22settings%22%3A%7B%22src%22%3A%22%22%2C%22fileSrc%22%3A%22covid-dashboard-20211008.png%22%2C%22cropSrc%22%3A%22covid-dashboard-20211008.png%22%2C%22alt%22%3A%22%22%2C%22caption%22%3A%22%22%2C%22captionAlign%22%3A%22center%22%2C%22hyperlink%22%3A%22%22%2C%22hyperlinkTabOption%22%3A%22new%22%2C%22isUrl%22%3Afalse%2C%22isFile%22%3Atrue%2C%22state%22%3A%22valid%22%2C%22display%22%3A%7B%22position%22%3A%7B%22x%22%3A%22center%22%2C%22y%22%3A%22center%22%7D%2C%22reflow%22%3Afalse%7D%7D%7D%2C%22width%22%3A12%7D%5D%7D%5D%2C%22visibility%22%3A%7B%22access%22%3A%22default%22%2C%22groups%22%3A%5B%5D%7D%7D%2C%7B%22containment%22%3A%22fixed%22%2C%22isFooter%22%3Afalse%2C%22style%22%3A%7B%22background%22%3A%7B%22isFile%22%3Afalse%2C%22isUrl%22%3Atrue%2C%22state%22%3A%22%22%2C%22display%22%3A%7B%7D%2C%22transparency%22%3A0%2C%22position%22%3A%7B%22x%22%3A%22center%22%2C%22y%22%3A%22center%22%7D%2C%22color%22%3A%22%23ebebeb%22%7D%2C%22rowLayout%22%3A%22box%22%7D%2C%22rows%22%3A%5B%7B%22cards%22%3A%5B%7B%22component%22%3A%7B%22name%22%3A%22image-card%22%2C%22settings%22%3A%7B%22src%22%3A%22%22%2C%22fileSrc%22%3A%22hub-image-card-crop-i66vq5omg.png%22%2C%22cropSrc%22%3A%22hub-image-card-crop-i66vq5omg.png%22%2C%22alt%22%3A%22%22%2C%22caption%22%3A%22%22%2C%22captionAlign%22%3A%22center%22%2C%22hyperlink%22%3A%22%22%2C%22hyperlinkTabOption%22%3A%22new%22%2C%22isUrl%22%3Afalse%2C%22isFile%22%3Atrue%2C%22state%22%3A%22valid%22%2C%22display%22%3A%7B%22position%22%3A%7B%22x%22%3A%22center%22%2C%22y%22%3A%22center%22%7D%2C%22reflow%22%3Afalse%7D%7D%7D%2C%22width%22%3A6%7D%2C%7B%22component%22%3A%7B%22name%22%3A%22markdown-card%22%2C%22settings%22%3A%7B%22schemaVersion%22%3A2.1%2C%22markdown%22%3A%22%3Ch5%3E%3Cb%3ECOVID-19%20Treatment%20Option%3C%2Fb%3E%3C%2Fh5%3E%3Cdiv%3E%3Cb%3EIowans%20diagnosed%20with%20COVID-19%2C%20may%20be%20able%20to%20reduce%20the%20severity%20of%20symptoms%20and%20prevent%20bad%20outcomes%20by%20receiving%20antibody%20treatment.%20These%20antibodies%20can%20reduce%20the%20amount%20of%20virus%20in%20your%20body.%20Antibodies%20do%20not%20contain%20the%20virus%20that%20causes%20COVID-19.%20It%E2%80%99s%20important%20to%20do%20this%20before%20symptoms%20progress%20to%20ensure%20the%20best%20possible%20outcome.%20Iowans%20should%20talk%20with%20their%20healthcare%20provider%20about%20whether%20this%20is%20an%20option%20for%20them.%20Sites%20can%20be%20located%20here%3A%20%3C%2Fb%3E%3Ca%20href%3D%5C%22https%3A%2F%2Fcovid.infusioncenter.org%2F%5C%22%3E%3Cb%3Ehttps%3A%2F%2Fcovid.infusioncenter.org%2F%3C%2Fb%3E%3C%2Fa%3E%3C%2Fdiv%3E%3Cdiv%3E%3Cb%3E%3Cbr%3E%3C%2Fb%3E%3C%2Fdiv%3E%3Cdiv%3E%3Cb%3EGetting%20vaccinated%20is%20the%20most%20important%20step%20in%20reducing%20the%20risk%20of%20becoming%20ill%20or%20hospitalized%20from%20COVID-19.%20Find%20a%20vaccine%20provider%20at%26nbsp%3B%3C%2Fb%3E%3Ca%20href%3D%5C%22https%3A%2F%2Fvaccinate.iowa.gov%2F%5C%22%3E%3Cb%3Ehttps%3A%2F%2Fvaccinate.iowa.gov%2F%3C%2Fb%3E%3C%2Fa%3E%3C%2Fdiv%3E%22%7D%7D%2C%22width%22%3A6%7D%5D%7D%5D%2C%22visibility%22%3A%7B%22access%22%3A%22default%22%2C%22groups%22%3A%5B%5D%7D%7D%2C%7B%22containment%22%3A%22fixed%22%2C%22isFooter%22%3Afalse%2C%22style%22%3A%7B%22background%22%3A%7B%22isFile%22%3Afalse%2C%22isUrl%22%3Atrue%2C%22state%22%3A%22%22%2C%22display%22%3A%7B%7D%2C%22transparency%22%3A0%2C%22position%22%3A%7B%22x%22%3A%22center%22%2C%22y%22%3A%22center%22%7D%2C%22color%22%3A%22%234475a1%22%7D%2C%22rowLayout%22%3A%22box%22%7D%2C%22rows%22%3A%5B%7B%22cards%22%3A%5B%7B%22component%22%3A%7B%22name%22%3A%22markdown-card%22%2C%22settings%22%3A%7B%22schemaVersion%22%3A2.1%2C%22markdown%22%3A%22%3Cstyle%3E%5Cr%5Cn%5Cr%5Cn.primary-color%20%7B%5Cr%5Cn%20%20color%3A%20%232695bc%3B%5Cr%5Cn%7D%5Cr%5Cn%5Cr%5Cn.primary-fill%20%7B%5Cr%5Cn%20%20fill%3A%20%232695bc%3B%5Cr%5Cn%7D%5Cr%5Cn%5Cr%5Cn.steps-wrapper%20li%3A%3Abefore%20%7B%5Cr%5Cn%20%20color%3A%20%232695bc%3B%5Cr%5Cn%20%20border-color%3A%20%232695bc%3B%5Cr%5Cn%7D%5Cr%5Cn%5Cr%5Cn.steps-wrapper%20li%3A%3Aafter%20%7B%5Cr%5Cn%20%20background-color%3A%20%232695bc%3B%5Cr%5Cn%7D%5Cr%5Cn%5Cr%5Cn%20%5Cr%5Cn%20%20.btn-header%20%7B%20margin-right%3A%2010px%3B%20%20margin-bottom%3A%2010px%3B%20%20font-size%3A%2020px%3B%20font-weight%3A%20bolder%3B%20%7D%5Cr%5Cn%20%20.btn-primary%20%7Bbackground-color%3A%20%23ebebeb%3B%7D%5Cr%5Cn%20%20.hero%20p%20%7B%20font-size%3A%2018px%3B%20color%3A%20%23ffffff%20%7D%5Cr%5Cn%20%20.hero%20p%3Afirst-of-type%20%7B%20font-weight%3A%20bolder%3B%20%7D%5Cr%5Cn%20%20.hero-header%20%7B%20margin%3A%2040px%200%3B%20%7D%5Cr%5Cn%20%20.hero-buttons%20%7B%20margin-top%3A%2035px%3B%20%7D%5Cr%5Cn%20%20a.hidden-anchor%20%7Bdisplay%3A%20block%3B%20position%3A%20relative%3Btop%3A-25px%3Bvisibility%3A%20hidden%3B%7D%5Cr%5Cn%3C%2Fstyle%3E%5Cr%5Cn%5Cr%5Cn%3Cp%3E%3Cbr%3E%3C%2Fp%3E%5Cr%5Cn%5Cr%5Cn%5Cr%5Cn%3Cdiv%20class%3D%5C%22col-md-12%20text-center%20hero-buttons%5C%22%3E%5Cr%5Cn%20%20%3Cbutton%20name%3D%5C%22vaccine-button%5C%22%20id%3D%5C%22vaccine-button%5C%22%20class%3D%5C%22btn%20btn-primary%20btn-header%5C%22%3E%5Cr%5Cn%20%20%20%20%3Ca%20href%3D%5C%22https%3A%2F%2Fcoronavirus.iowa.gov%2Fpages%2Fvaccineinformation%5C%22%3EVaccine%20Information%3C%2Fa%3E%5Cr%5Cn%20%20%3C%2Fbutton%3E%5Cr%5Cn%20%20%3Cbutton%20name%3D%5C%22resources-button%5C%22%20id%3D%5C%22resources-button%5C%22%20class%3D%5C%22btn%20btn-primary%20btn-header%5C%22%3E%5Cr%5Cn%20%20%20%20%20%3Ca%20href%3D%5C%22https%3A%2F%2Fcoronavirus.iowa.gov%2Fpages%2Fcase-counts%5C%22%3EPositive%20Case%20Analysis%3C%2Fa%3E%5Cr%5Cn%20%20%3C%2Fbutton%3E%5Cr%5Cn%3Cbutton%20name%3D%5C%22proclamations-button%5C%22%20id%3D%5C%22proclamations-button%5C%22%20class%3D%5C%22btn%20btn-primary%20btn-header%5C%22%3E%5Cr%5Cn%20%20%20%20%20%3Ca%20href%3D%5C%22https%3A%2F%2Fcoronavirus.iowa.gov%2Fpages%2Fhospital-data%5C%22%3EHospital%20Data%3C%2Fa%3E%5Cr%5Cn%20%20%3C%2Fbutton%3E%5Cr%5Cn%20%20%3Cbutton%20name%3D%5C%22guidance-button%5C%22%20id%3D%5C%22guidance-button%5C%22%20class%3D%5C%22btn%20btn-primary%20btn-header%5C%22%3E%5Cr%5Cn%20%20%20%20%20%3Ca%20href%3D%5C%22https%3A%2F%2Fcoronavirus.iowa.gov%2Fpages%2Foutcome-analysis-deaths%5C%22%3EOutcome%20Analysis%20Deaths%3C%2Fa%3E%5Cr%5Cn%20%20%3C%2Fbutton%3E%5Cr%5Cn%20%20%20%20%3Cbutton%20name%3D%5C%22summary-button%5C%22%20id%3D%5C%22summary-button%5C%22%20class%3D%5C%22btn%20btn-primary%20btn-header%5C%22%3E%5Cr%5Cn%20%20%20%20%20%3Ca%20href%3D%5C%22https%3A%2F%2Fcoronavirus.iowa.gov%2Fpages%2Fsummary-downloads%5C%22%3ESummary%20Download%3C%2Fa%3E%5Cr%5Cn%20%20%3C%2Fbutton%3E%5Cr%5Cn%20%20%3Cbutton%20name%3D%5C%22testiowa-button%5C%22%20id%3D%5C%22testiowa-button%5C%22%20class%3D%5C%22btn%20btn-primary%20btn-header%5C%22%3E%5Cr%5Cn%20%20%20%20%3Ca%20href%3D%5C%22https%3A%2F%2Fwww.testiowa.com%2F%5C%22%20target%3D%5C%22_blank%5C%22%3ETest%20Iowa%3C%2Fa%3E%5Cr%5Cn%20%20%3C%2Fbutton%3E%5Cr%5Cn%20%20%3Cbutton%20name%3D%5C%22testinglocations-button%5C%22%20id%3D%5C%22testlocations-button%5C%22%20class%3D%5C%22btn%20btn-primary%20btn-header%5C%22%3E%5Cr%5Cn%20%20%20%20%3Ca%20href%3D%5C%22https%3A%2F%2Fcoronavirus.iowa.gov%2Fpages%2Ftesting-locations%5C%22%20target%3D%5C%22_blank%5C%22%3ETesting%20Locations%3C%2Fa%3E%5Cr%5Cn%20%20%3C%2Fbutton%3E%5Cr%5Cn%3Cbutton%20name%3D%5C%22localreimbursement-button%5C%22%20id%3D%5C%22localreimbursement-button%5C%22%20class%3D%5C%22btn%20btn-primary%20btn-header%5C%22%3E%5Cr%5Cn%20%20%20%20%3Ca%20href%3D%5C%22https%3A%2F%2Fcoronavirus.iowa.gov%2Fpages%2Fresource%5C%22%3EResources%3C%2Fa%3E%5Cr%5Cn%20%20%3C%2Fbutton%3E%5Cr%5Cn%3C%2Fdiv%3E%22%7D%7D%2C%22width%22%3A12%7D%5D%7D%5D%2C%22visibility%22%3A%7B%22access%22%3A%22default%22%2C%22groups%22%3A%5B%5D%7D%7D%2C%7B%22containment%22%3A%22fixed%22%2C%22isFooter%22%3Afalse%2C%22style%22%3A%7B%22background%22%3A%7B%22isFile%22%3Afalse%2C%22isUrl%22%3Atrue%2C%22state%22%3A%22%22%2C%22display%22%3A%7B%7D%2C%22transparency%22%3A0%2C%22position%22%3A%7B%22x%22%3A%22center%22%2C%22y%22%3A%22center%22%7D%2C%22color%22%3A%22transparent%22%7D%2C%22rowLayout%22%3A%22box%22%7D%2C%22rows%22%3A%5B%7B%22cards%22%3A%5B%7B%22component%22%3A%7B%22name%22%3A%22markdown-card%22%2C%22settings%22%3A%7B%22markdown%22%3A%22%3Cp%20style%3D%5C%22text-align%3A%20left%3B%5C%22%3E%3Ca%20href%3D%5C%22https%3A%2F%2Fpublic.domo.com%2Fembed%2Fpages%2F31wVn%5C%22%3EArchived%20Long-term%20Care%20Outbreak%20Dashboard%3C%2Fa%3E%3Cstrong%20style%3D%5C%22background-color%3A%20initial%3B%20color%3A%20currentcolor%3B%5C%22%3E%3Cfont%20color%3D%5C%22%23137bbe%5C%22%3E%3C%2Ffont%3E%3C%2Fstrong%3E%3Cbr%3E%3C%2Fp%3E%3Cp%20style%3D%5C%22text-align%3A%20left%3B%5C%22%3E%3Ca%20href%3D%5C%22https%3A%2F%2Fpublic.domo.com%2Fembed%2Fpages%2FeV1x9%5C%22%3EArchived%20Serology%20Dashboard%3C%2Fa%3E%3Cstrong%3E%3Cfont%20color%3D%5C%22%23137bbe%5C%22%3E%3C%2Ffont%3E%3C%2Fstrong%3E%3C%2Fp%3E%3Cp%20style%3D%5C%22text-align%3A%20left%3B%5C%22%3E%3Ca%20href%3D%5C%22https%3A%2F%2Fpublic.domo.com%2Fembed%2Fpages%2FaMMY3%5C%22%3EArchived%20Test%20Iowa%20Assessments%20Dashboard%3C%2Fa%3E%3Cstrong%3E%3Cfont%20color%3D%5C%22%23137bbe%5C%22%3E%3C%2Ffont%3E%3C%2Fstrong%3E%3C%2Fp%3E%3Cp%20style%3D%5C%22text-align%3A%20left%3B%5C%22%3E%3Cstrong%3E%3Cfont%20color%3D%5C%22%23137bbe%5C%22%3E%3Ca%20href%3D%5C%22https%3A%2F%2Fcoronavirus.iowa.gov%2Fpages%2Faccess%5C%22%20style%3D%5C%22color%3A%23137BBE%5C%22%3EAccessibility%20Status%20Page%3C%2Fa%3E%3C%2Ffont%3E%3C%2Fstrong%3E%3C%2Fp%3E%3Cp%20style%3D%5C%22text-align%3A%20left%3B%5C%22%3E%3Cstrong%3E%3Ca%20href%3D%5C%22https%3A%2F%2Fdrive.google.com%2Ffile%2Fd%2F1RQbCgZiAQD0C-VcXPldwPzkbA0CcG3lA%2Fview%3Fusp%3Dsharing%5C%22%20style%3D%5C%22color%3A%23137BBE%5C%22%20target%3D%5C%22_blank%5C%22%3EIowa%20Hospitalizations%20by%20County%3C%2Fa%3E%26nbsp%3B(%3C%2Fstrong%3E%3Cspan%20style%3D%5C%22color%3A%20rgb(34%2C%2034%2C%2034)%3B%20font-family%3A%20Arial%2C%20Helvetica%2C%20sans-serif%3B%20font-size%3A%20small%3B%20background-color%3A%20initial%3B%5C%22%3EAs%20of%20July%201%2C%202021%2C%20hospitalization%20data%20by%20county%20will%20be%20updated%20on%20a%20weekly%20basis.%20Updates%20will%20occur%20on%20Thursdays%20each%20week.)%3C%2Fspan%3E%3C%2Fp%3E%22%2C%22schemaVersion%22%3A2.1%7D%7D%2C%22width%22%3A12%7D%5D%7D%5D%2C%22visibility%22%3A%7B%22access%22%3A%22default%22%2C%22groups%22%3A%5B%5D%7D%7D%2C%7B%22containment%22%3A%22fixed%22%2C%22isFooter%22%3Afalse%2C%22style%22%3A%7B%22background%22%3A%7B%22isFile%22%3Afalse%2C%22isUrl%22%3Atrue%2C%22state%22%3A%22%22%2C%22display%22%3A%7B%7D%2C%22transparency%22%3A0%2C%22position%22%3A%7B%22x%22%3A%22center%22%2C%22y%22%3A%22center%22%7D%2C%22color%22%3A%22%23ebebeb%22%2C%22image%22%3A%22%22%7D%2C%22color%22%3A%22%23aN%22%2C%22rowLayout%22%3A%22box%22%7D%2C%22rows%22%3A%5B%7B%22cards%22%3A%5B%7B%22component%22%3A%7B%22name%22%3A%22markdown-card%22%2C%22settings%22%3A%7B%22markdown%22%3A%22%3Ch1%20style%3D%5C%22text-align%3A%20left%3B%5C%22%3E%3Cstrong%3EAdditional%20COVID-19%20Resources%3C%2Fstrong%3E%3C%2Fh1%3E%5Cn%3Cbr%3E%22%2C%22schemaVersion%22%3A1%7D%7D%2C%22width%22%3A12%2C%22showEditor%22%3Afalse%7D%5D%7D%2C%7B%22cards%22%3A%5B%7B%22component%22%3A%7B%22name%22%3A%22spacer-card%22%2C%22settings%22%3A%7B%22height%22%3A100%7D%7D%2C%22settings%22%3A%7B%22height%22%3A100%7D%2C%22width%22%3A1%7D%2C%7B%22component%22%3A%7B%22name%22%3A%22image-card%22%2C%22settings%22%3A%7B%22src%22%3A%22https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F71%2FUS_CDC_logo.svg%2F723px-US_CDC_logo.svg.png%22%2C%22fileSrc%22%3A%22CDC-circle-logo.png%22%2C%22cropSrc%22%3A%22CDC-circle-logo.png%22%2C%22alt%22%3A%22CDC%20logo%22%2C%22caption%22%3A%22%22%2C%22captionAlign%22%3A%22center%22%2C%22hyperlink%22%3A%22https%3A%2F%2Fwww.cdc.gov%2Fcoronavirus%2F2019-nCoV%2Findex.html%22%2C%22hyperlinkTabOption%22%3A%22new%22%2C%22isUrl%22%3Afalse%2C%22isFile%22%3Atrue%2C%22state%22%3A%22valid%22%2C%22display%22%3A%7B%22position%22%3A%7B%22x%22%3A%22center%22%2C%22y%22%3A%22center%22%7D%2C%22reflow%22%3Afalse%7D%7D%7D%2C%22width%22%3A2%7D%2C%7B%22component%22%3A%7B%22name%22%3A%22markdown-card%22%2C%22settings%22%3A%7B%22markdown%22%3A%22%3Ch2%20style%3D%5C%22color%3A%20rgb(38%2C%20148%2C%20187)%3B%5C%22%3ECDC%20Resources%3C%2Fh2%3E%3Cul%3E%3Cli%3E%3Cfont%20color%3D%5C%22%233699f5%5C%22%3E%3Ca%20href%3D%5C%22https%3A%2F%2Fwww.cdc.gov%2Fcoronavirus%2F2019-ncov%2Findex.html%5C%22%20target%3D%5C%22_blank%5C%22%3ECDC%20Coronavirus%20Disease%202019%20(COVID-19)%20Main%20Page%3C%2Fa%3E%3C%2Ffont%3E%3C%2Fli%3E%3C%2Ful%3E%22%2C%22schemaVersion%22%3A2.1%7D%7D%2C%22width%22%3A9%2C%22showEditor%22%3Afalse%7D%5D%7D%2C%7B%22cards%22%3A%5B%7B%22component%22%3A%7B%22name%22%3A%22spacer-card%22%2C%22settings%22%3A%7B%22height%22%3A100%7D%7D%2C%22settings%22%3A%7B%22height%22%3A100%7D%2C%22width%22%3A1%7D%2C%7B%22component%22%3A%7B%22name%22%3A%22image-card%22%2C%22settings%22%3A%7B%22src%22%3A%22https%3A%2F%2Farcgishub.maps.arcgis.com%2Fsharing%2Frest%2Fcontent%2Fitems%2F8794eb16a1ba4a77994b039cf0896979%2Fdata%22%2C%22fileSrc%22%3A%22IDPH-logo.png%22%2C%22cropSrc%22%3A%22IDPH-logo.png%22%2C%22alt%22%3A%22Iowa%20Department%20of%20Public%20Health%20logo%22%2C%22caption%22%3A%22%22%2C%22captionAlign%22%3A%22center%22%2C%22hyperlink%22%3A%22https%3A%2F%2Fidph.iowa.gov%2FEmerging-Health-Issues%2FNovel-Coronavirus%22%2C%22hyperlinkTabOption%22%3A%22new%22%2C%22isUrl%22%3Afalse%2C%22isFile%22%3Atrue%2C%22state%22%3A%22valid%22%2C%22display%22%3A%7B%22position%22%3A%7B%22x%22%3A%22center%22%2C%22y%22%3A%22center%22%7D%2C%22reflow%22%3Afalse%7D%7D%7D%2C%22width%22%3A2%7D%2C%7B%22component%22%3A%7B%22name%22%3A%22markdown-card%22%2C%22settings%22%3A%7B%22markdown%22%3A%22%5Cn%5Ct%3Ch2%20style%3D%5C%22color%3A%20rgb(38%2C%20148%2C%20187)%3B%20font-size%3A%2030px%3B%5C%22%3EIowa%20Dept.%20of%20Public%20Health%20Resources%3C%2Fh2%3E%5Cn%5Ct%3Cul%3E%3Cli%3E%3Ca%20href%3D%5C%22https%3A%2F%2Fidph.iowa.gov%2FEmerging-Health-Issues%2FNovel-Coronavirus%5C%22%20target%3D%5C%22_blank%5C%22%3ELatest%20IDPH%20COVID-19%20Updates%3C%2Fa%3E%3C%2Fli%3E%3C%2Ful%3E%22%2C%22schemaVersion%22%3A2.1%7D%7D%2C%22width%22%3A9%2C%22showEditor%22%3Afalse%7D%5D%7D%5D%2C%22visibility%22%3A%7B%22access%22%3A%22default%22%2C%22groups%22%3A%5B%5D%7D%7D%5D%2C%22header%22%3A%7B%22component%22%3A%7B%22name%22%3A%22site-header%22%2C%22settings%22%3A%7B%22fullWidth%22%3Afalse%2C%22iframeHeight%22%3A%22150px%22%2C%22iframeUrl%22%3A%22%22%2C%22links%22%3A%5B%5D%2C%22logoUrl%22%3A%22%22%2C%22title%22%3A%22Iowa%20Coronavirus%20Information%22%2C%22markdown%22%3A%22%3Cnav%20class%3D%5C%22navbar%20navbar-default%20navbar-static-top%20first-tier%5C%22%3E%5Cn%20%20%3Cdiv%20class%3D%5C%22container%5C%22%3E%5Cn%3Ca%20aria-label%3D%5C%22Home%5C%22%20href%3D%5C%22%2F%5C%22%20id%3D%5C%22ember25%5C%22%20class%3D%5C%22navbar-logo%20active%20ember-view%5C%22%3E%20%20%20%20%20%20%20%20%3Cimg%20src%3D%5C%22https%3A%2F%2Feoc.iowa.gov%2Fphotos%2Fcovid%2Fnew-covid-logo.png%5C%22%20alt%3D%5C%22COVID-19%20in%20Iowa%5C%22%3E%5Cn%3C%2Fa%3E%20%20%20%20%3Cdiv%20class%3D%5C%22navbar-contents%5C%22%3E%5Cn%3C!----%3E%3C!----%3E%3C!----%3E%20%20%20%20%3C%2Fdiv%3E%5Cn%20%20%3C%2Fdiv%3E%3C%2Fnav%3E%5Cn%5Cn%5Cn%5Cn%5Cn%5Cn%5Cn%5Cn%5Cn%5Cn%5Cn%22%2C%22headerType%22%3A%22custom%22%2C%22showLogo%22%3Atrue%2C%22showTitle%22%3Atrue%2C%22logo%22%3A%7B%22display%22%3A%7B%7D%2C%22state%22%3A%22valid%22%2C%22vertical%22%3Afalse%2C%22isFile%22%3Atrue%2C%22isUrl%22%3Afalse%2C%22fileSrc%22%3A%22iowa.png%22%2C%22cropSrc%22%3A%22iowa.png%22%7D%2C%22shortTitle%22%3A%22Coronavirus%22%2C%22menuLinks%22%3A%5B%5D%2C%22socialLinks%22%3A%7B%22facebook%22%3A%7B%22visible%22%3Afalse%2C%22url%22%3A%22https%3A%2F%2Fwww.esri.com%2Fen-us%2Fdisaster-response%2Foverview%22%7D%2C%22twitter%22%3A%7B%22visible%22%3Afalse%2C%22url%22%3A%22https%3A%2F%2Ftwitter.com%2F%3Cinsert%20twit%20handle%3E%22%7D%2C%22instagram%22%3A%7B%7D%2C%22youtube%22%3A%7B%7D%7D%2C%22schemaVersion%22%3A3%2C%22alt%22%3A%22state%20of%20iowa%20logo%22%7D%7D%2C%22showEditor%22%3Afalse%7D%2C%22footer%22%3A%7B%22component%22%3A%7B%22name%22%3A%22site-footer%22%2C%22settings%22%3A%7B%22footerType%22%3A%22custom%22%2C%22markdown%22%3A%22%3Cdiv%20style%3D%5C%22padding-bottom%3A%202em%3B%20background-color%3A%20%232695bc%3B%5C%22%3E%5Cn%20%20%3Cdiv%20class%3D%5C%22container%5C%22%3E%5Cn%20%20%20%20%3Cdiv%20class%3D%5C%22col-sm-6%5C%22%20style%3D%5C%22padding-top%3A%202em%5C%22%3E%5Cn%5Ct%5Ct%5Cn%20%20%20%20%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22col-sm-6%20contact-info-alignment%5C%22%20style%3D%5C%22padding-top%3A%202em%3B%20color%3A%20%23fff%3B%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%3E%5Cn%5Ct%5Ct%5CtCOVID-19%20Questions%20for%20Individuals%3A%20Dial%202-1-1%3Cbr%3E%3Cbr%3E%5Cn%5Ct%5Ct%5CtCOVID-19%20Questions%20for%20Healthcare%20Providers%3A%20800.362.2736%3Cbr%3E%3Cbr%3E%5Cn%5Ct%5Ct%5CtIowa%20Multilingual%20COVID-19%20Phone%20Line%3A%20877.558.2609%3Cbr%3E%3Cbr%3E%5Cn%5Ct%5Ct%5CtLegal%20Information%20Hotline%20for%20COVID-19%3A%20800.332.0419%3Cbr%3E%3Cbr%3E%5Cn%5Ct%5Ct%5CtIowa%20Domestic%20Violence%20Hotline%3A%20800.770.1650%3Cbr%3E%3Cbr%3E%5Cn%5Ct%5Ct%5CtIowa%20Dept.%20of%20Corrections%20COVID-19%20Hotline%3A%20515.373.5457%3Cbr%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Cn%5Ct%5Ct%3Cbr%3E%5Cn%5Ct%5Ct%3Cdiv%3E%5Cn%5Ct%5Ct%5Ct%3Ca%20href%3D%5C%22https%3A%2F%2Fwww.facebook.com%2FIAGovernor%5C%22%3E%3Csvg%20xmlns%3D%5C%22https%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%5C%22%20width%3D%5C%2224%5C%22%20height%3D%5C%2224%5C%22%20viewBox%3D%5C%220%200%2090%2090%5C%22%20style%3D%5C%22fill%3A%20%23FFF%3B%20fill-opacity%3A%20.5%3B%20margin-left%3A%204px%3B%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cpath%20d%3D%5C%22M90%2C15.001C90%2C7.119%2C82.884%2C0%2C75%2C0H15C7.116%2C0%2C0%2C7.119%2C0%2C15.001v59.998%5Cn%5Ct%5Ct%5Ct%5CtC0%2C82.881%2C7.116%2C90%2C15.001%2C90H45V56H34V41h11v-5.844C45%2C25.077%2C52.568%2C16%2C61.875%2C16H74v15H61.875C60.548%2C31%2C59%2C32.611%2C59%2C35.024V41%5Cn%5Ct%5Ct%5Ct%5Cth15v15H59v34h16c7.884%2C0%2C15-7.119%2C15-15.001V15.001z%5C%22%3E%3C%2Fpath%3E%5Cn%5Ct%5Ct%5Ct%3C%2Fsvg%3E%3C%2Fa%3E%5Cn%5Ct%5Ct%5Ct%3Ca%20href%3D%5C%22https%3A%2F%2Ftwitter.com%2FIAGovernor%5C%22%3E%3Csvg%20xmlns%3D%5C%22https%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%5C%22%20width%3D%5C%2224%5C%22%20height%3D%5C%2224%5C%22%20viewBox%3D%5C%220%200%20510%20510%5C%22%20style%3D%5C%22fill%3A%20%23FFF%3B%20fill-opacity%3A%20.5%3B%20margin-left%3A%204px%3B%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cpath%20d%3D%5C%22M459%2C0H51C22.95%2C0%2C0%2C22.95%2C0%2C51v408c0%2C28.05%2C22.95%2C51%2C51%2C51h408c28.05%2C0%2C51-22.95%2C51-51V51C510%2C22.95%2C487.05%2C0%2C459%2C0z%5Cn%5Ct%5Ct%5Ct%5Ct%20M400.35%2C186.15c-2.55%2C117.3-76.5%2C198.9-188.7%2C204C165.75%2C392.7%2C132.6%2C377.4%2C102%2C359.55c33.15%2C5.101%2C76.5-7.649%2C99.45-28.05%5Cn%5Ct%5Ct%5Ct%5Ctc-33.15-2.55-53.55-20.4-63.75-48.45c10.2%2C2.55%2C20.4%2C0%2C28.05%2C0c-30.6-10.2-51-28.05-53.55-68.85c7.65%2C5.1%2C17.85%2C7.65%2C28.05%2C7.65%5Cn%5Ct%5Ct%5Ct%5Ctc-22.95-12.75-38.25-61.2-20.4-91.8c33.15%2C35.7%2C73.95%2C66.3%2C140.25%2C71.4c-17.85-71.4%2C79.051-109.65%2C117.301-61.2%5Cn%5Ct%5Ct%5Ct%5Ctc17.85-2.55%2C30.6-10.2%2C43.35-15.3c-5.1%2C17.85-15.3%2C28.05-28.05%2C38.25c12.75-2.55%2C25.5-5.1%2C35.7-10.2%5Cn%5Ct%5Ct%5Ct%5CtC425.85%2C165.75%2C413.1%2C175.95%2C400.35%2C186.15z%5C%22%3E%3C%2Fpath%3E%5Cn%5Ct%5Ct%5Ct%3C%2Fsvg%3E%3C%2Fa%3E%5Cn%5Ct%5Ct%5Cn%5Ct%5Ct%5Cn%5Ct%5Ct%5Ct%3Ca%20href%3D%5C%22https%3A%2F%2Fwww.youtube.com%2Fchannel%2FUCmISFMoFOM6fo6PeXdHxGDg%5C%22%3E%3Csvg%20xmlns%3D%5C%22https%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%5C%22%20width%3D%5C%2224%5C%22%20height%3D%5C%2224%5C%22%20viewBox%3D%5C%220%200%2024%2024%5C%22%20style%3D%5C%22fill%3A%20%23FFF%3B%20fill-opacity%3A%20.5%3B%20margin-left%3A%204px%3B%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cpath%20d%3D%5C%22M21.6%200C22.92%200%2024%201.08%2024%202.4v19.2c0%201.32-1.08%202.4-2.4%202.4H2.4C1.08%2024%200%2022.92%200%2021.6V2.4C0%201.08%201.08%200%202.4%200zM12%206.6c-2.393%200-4.338.112-5.836.335A1.6%201.6%200%200%200%204.8%208.518v6.905a1.6%201.6%200%200%200%201.387%201.586c1.937.26%203.875.391%205.813.391%201.938%200%203.876-.13%205.813-.391a1.6%201.6%200%200%200%201.387-1.586V8.518a1.6%201.6%200%200%200-1.364-1.583C16.338%206.712%2014.393%206.6%2012%206.6zm-1.2%203l3.6%202.4-3.6%202.4V9.6z%5C%22%3E%3C%2Fpath%3E%5Cn%5Ct%5Ct%5Ct%3C%2Fsvg%3E%3C%2Fa%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3C%2Fdiv%3E%5Cn%20%20%3C%2Fdiv%3E%5Cn%3C%2Fdiv%3E%5Cn%5Cn%3Cstyle%3E%5Cn%5Cn.contact-info-alignment%20%7B%5Cn%20%20text-align%3A%20center%3B%20%20%7D%5Cn%20%20%5Cn.logo-title-alignment%20%7B%5Cn%20%20margin-left%20%3A%20auto%3B%5Cn%20%20margin-right%3A%20auto%3B%20%20%7D%5Cn%5Cn%40media%20(min-width%3A%20768px)%20%7B%5Cn%20%20.contact-info-alignment%20%7B%5Cn%20%20%20%20text-align%3A%20right%3B%5Cn%20%20%7D%5Cn%20%20%5Cn%20%20.logo-title-alignment%20%7B%5Cn%20%20%20%20margin-left%20%3A%20initial%3B%5Cn%20%20%20%20margin-right%3A%20initial%5Cn%20%20%7D%5Cn%7D%5Cn%5Cn%3C%2Fstyle%3E%22%2C%22schemaVersion%22%3A1%7D%7D%2C%22showEditor%22%3Afalse%7D%7D%2C%22theme%22%3A%7B%22header%22%3A%7B%22background%22%3A%22%232694bb%22%2C%22text%22%3A%22%23ffffff%22%7D%2C%22body%22%3A%7B%22background%22%3A%22%23fff%22%2C%22text%22%3A%22%23292929%22%2C%22link%22%3A%22%23043445%22%7D%2C%22button%22%3A%7B%22background%22%3A%22%23ebebeb%22%2C%22text%22%3A%22%23ffffff%22%7D%2C%22logo%22%3A%7B%22small%22%3A%22https%3A%2F%2Fdisasterresponse.maps.arcgis.com%2Fsharing%2Frest%2Fcontent%2Fitems%2F0d189ae6c72d4c8e9e1d6ba33977bef4%2Fdata%22%7D%2C%22fonts%22%3A%7B%22base%22%3A%7B%22url%22%3A%22%22%2C%22family%22%3A%22Avenir%20Next%22%7D%2C%22heading%22%3A%7B%22url%22%3A%22%22%2C%22family%22%3A%22Avenir%20Next%22%7D%7D%2C%22globalNav%22%3A%7B%22background%22%3A%22%232f5e8c%22%2C%22text%22%3A%22%23ffffff%22%7D%7D%2C%22headerSass%22%3A%22.custom-header%20%7B%5Cn%20%20%5Cn%5Cn%5Cn.first-tier%20%7B%5Cn%20%20%20%20height%3A%2040px%3B%5Cn%20%20%20%20margin-bottom%3A%200px%3B%5Cn%20%20%20%20background-color%3A%20%23000000%3B%5Cn%20%20%7D%5Cn%5Cn%5Cn%20%20.first-tier%20.nav%3Eli%3Ea%20%7B%5Cn%20%20%20%20margin-top%3A%205px%3B%5Cn%20%20%20%20padding%3A%203px%206px%3B%5Cn%20%20%20%20color%3A%20%23fff%3B%5Cn%20%20%7D%5Cn%5Cn%20%20.first-tier%20.nav%3Eli%3Ea%3Afocus%2C%5Cn%20%20.first-tier%20.nav%3Eli%3Ea%3Ahover%20%7B%5Cn%20%20%20%20background-color%3A%20%23136fbf%3B%5Cn%20%20%20%20color%3A%20%23fff%3B%5Cn%20%20%7D%5Cn%5Cn%20%20.first-tier%20.site-logo%20img%20%7B%5Cn%20%20%20%20vertical-align%3A%20middle%3B%5Cn%20%20%7D%5Cn%5Cn%20%20.first-tier%20h1%20%7B%5Cn%20%20%20%20display%3A%20inline%3B%5Cn%20%20%20%20font-size%3A%2025px%3B%5Cn%20%20%7D%5Cn%5Cn%20%20.second-tier%20%7B%5Cn%20%20%20%20margin-bottom%3A%200px%3B%5Cn%20%20%20%20background-color%3A%20%2305466c%3B%5Cn%20%20%7D%20%5Cn%5Cn%20.site-header%20.navbar-header%20img%20%7B%5Cn%20%20%20%20vertical-align%3A%20middle%3B%5Cn%20%20%20%20height%3A%2050px%3B%5Cn%20%20%20%20padding%3A%205px%3B%5Cn%20%20%7D%5Cn%5Cn%20%20.header-container%20%7B%5Cn%20%20%20%20top%3A%2040px%3B%5Cn%20%20%20%20margin%3A%200%20auto%3B%5Cn%20%20%20%20max-width%3A%201440px%3B%5Cn%20%20%20%20position%3A%20absolute%3B%5Cn%20%20%20%20width%3A%20100%25%3B%5Cn%20%20%20%20transform%3A%20translateX(-50%25)%3B%5Cn%20%20%20%20left%3A%2050%25%3B%5Cn%20%20%20%20z-index%3A%2010%3B%5Cn%20%20%20%20transition%3A%20max-width%20250ms%20linear%3B%5Cn%20%20%7D%20%5Cn%5Cn%20%20.header-container%20.navbar%20.container-fluid%20%7B%5Cn%20%20%20%20display%3A%20flex%3B%5Cn%20%20%7D%5Cn%5Cn%20%20.header-container%20.navbar.navbar-default%20%7B%5Cn%20%20%20%20background-color%3A%20%23fff%3B%5Cn%20%20%20%20border-color%3A%20transparent%20!important%3B%5Cn%20%20%20%20border-radius%3A%200%3B%5Cn%20%20%7D%5Cn%5Cn%20%20.header-container%20.navbar.navbar-default%20.navbar-collapse.collapse%20%7B%5Cn%20%20%20%20display%3A%20flex%20!important%3B%5Cn%20%20%20%20flex%3A%201%3B%5Cn%20%20%20%20padding-right%3A%200%3B%5Cn%20%20%7D%5Cn%5Cn%20%20.header-container%20.navbar.navbar-default%20.navbar-brand%20%7B%5Cn%20%20%20%20color%3A%20%23333%3B%5Cn%20%20%20%20height%3A%20auto%3B%5Cn%20%20%20%20padding%3A%201rem%3B%5Cn%20%20%7D%5Cn%5Cn%20%20.header-container%20.navbar.navbar-default%20.navbar-brand-img%20%7B%5Cn%20%20%20%20display%3A%20inline-block%3B%5Cn%20%20%7D%5Cn%5Cn%20%20.header-container%20.navbar.navbar-default%20.navbar-nav%20%7B%5Cn%20%20%20%20flex%3A%202%3B%5Cn%20%20%20%20align-items%3A%20center%3B%5Cn%20%20%20%20justify-content%3A%20center%3B%5Cn%20%20%20%20margin%3A%20auto%3B%5Cn%20%20%20%20float%3A%20none%3B%5Cn%20%20%7D%5Cn%5Cn%20%20.header-container%20.navbar.navbar-default%20.navbar-nav%3Eli%20%7B%5Cn%20%20%20%20float%3A%20none%3B%5Cn%20%20%20%20display%3A%20inline-block%3B%5Cn%20%20%7D%5Cn%5Cn%20%20.header-container%20.navbar.navbar-default%20.navbar-nav%3Eli%3Ea%20%7B%5Cn%20%20%20%20background%3A%20transparent%3B%5Cn%20%20%20%20color%3A%20%23333%3B%5Cn%20%20%20%20font-size%3A%2015px%3B%5Cn%20%20%20%20transition%3A%20all%20250ms%20linear%3B%5Cn%20%20%7D%5Cn%5Cn%20%20.header-container%20.navbar.navbar-default%20.navbar-nav%3Eli%3Ea%3Afocus%2C%5Cn%20%20.header-container%20.navbar.navbar-default%20.navbar-nav%3Eli%3Ea%3Ahover%20%7B%5Cn%20%20%20%20background%3A%20%233276AE%3B%5Cn%20%20%20%20color%3A%20%23fff%3B%5Cn%20%20%7D%5Cn%5Cn%20%20.header-container%20.navbar.navbar-default%20.navbar-right%20%7B%5Cn%20%20%20%20margin-right%3A%200%3B%5Cn%20%20%20%20flex%3A%201%3B%5Cn%20%20%20%20text-align%3A%20right%3B%5Cn%20%20%7D%5Cn%5Cn%20%20.is-sticky%20%7B%5Cn%20%20%20%20position%3A%20relative%3B%5Cn%20%20%20%20z-index%3A%2010%3B%5Cn%20%20%7D%5Cn%5Cn%20%20.is-sticky%20.header-container%20%7B%5Cn%20%20%20%20max-width%3A%20100%25%3B%5Cn%20%20%7D%5Cn%5Cn%20%20%40media%20screen%20and%20(max-width%3A%20768px)%20%7B%5Cn%20%20%20%20.header-container%20.navbar-header%20%7B%5Cn%20%20%20%20%20%20width%3A%20100%25%3B%5Cn%20%20%20%20%7D%5Cn%20%20%20%20.header-container%20.navbar-default%20.navbar-toggle%20%7B%5Cn%20%20%20%20%20%20margin-top%3A%2018px%3B%5Cn%20%20%20%20%7D%5Cn%20%20%20%20.header-container%20.navbar%20.container-fluid%20%7B%5Cn%20%20%20%20%20%20display%3A%20block%20!important%3B%5Cn%20%20%20%20%7D%5Cn%20%20%20%20.header-container%20.navbar.navbar-default%20.navbar-collapse.collapse%20%7B%5Cn%20%20%20%20%20%20overflow%3A%20hidden%3B%5Cn%20%20%20%20%20%20display%3A%20none%20!important%3B%5Cn%20%20%20%20%7D%5Cn%20%20%20%20.header-container%20.navbar.navbar-default%20.navbar-collapse.collapse.in%20%7B%5Cn%20%20%20%20%20%20display%3A%20block%20!important%3B%5Cn%20%20%20%20%7D%5Cn%20%20%20%20.header-container%20.navbar.navbar-default%20.navbar-nav%20%7B%5Cn%20%20%20%20%20%20display%3A%20inherit%3B%5Cn%20%20%20%20%20%20padding%3A%200%200%201rem%200%3B%5Cn%20%20%20%20%7D%5Cn%20%20%20%20.header-container%20.navbar.navbar-default%20.navbar-nav%20%3E%20li%20%7B%5Cn%20%20%20%20%20%20display%3A%20block%3B%5Cn%20%20%20%20%7D%5Cn%20%20%7D%5Cn%5Cn%2F*%20Editor%20adjustment%20for%20absolute%20positioned%20header%20*%2F%5Cn%20%20header%20~%20.body-editor%20section%3Afirst-child%20%7B%20padding-top%3A%20100px%3B%7D%5Cn%5Cn%20%20%7D%22%2C%22footerSass%22%3A%22.custom-footer%20%7B%5Cn%5Cn%7D%22%2C%22defaultHostname%22%3A%22coronavirus-response-iowa.hub.arcgis.com%22%2C%22subdomain%22%3A%22coronavirus-response%22%2C%22updatedAt%22%3A%222021-10-08T15%3A30%3A09.975Z%22%2C%22updatedBy%22%3A%22jwarming_iowa%22%2C%22capabilities%22%3A%5B%22pages%22%2C%22my_data%22%2C%22social_logins%22%2C%22json_chart_card%22%2C%22document_iframes%22%2C%22items_view%22%2C%22app_page%22%2C%22siteTranslation%22%5D%2C%22clientId%22%3A%22k3HwjY5jXQrW7q5w%22%2C%22siteId%22%3A%22%22%2C%22customHostname%22%3A%22coronavirus.iowa.gov%22%2C%22externalUrl%22%3A%22coronavirus.iowa.gov%22%2C%22gacode%22%3A%22UA-164492259-1%22%2C%22searchCategories%22%3A%5B%7B%22key%22%3A%22components.search.category_tabs.sites%22%2C%22queryParams%22%3A%7B%22collection%22%3A%22Site%22%7D%2C%22hidden%22%3Atrue%2C%22title%22%3A%22Sites%22%2C%22overrideText%22%3A%22Sites%22%7D%2C%7B%22key%22%3A%22components.search.category_tabs.data%22%2C%22queryParams%22%3A%7B%22collection%22%3A%22Dataset%22%7D%2C%22title%22%3A%22Data%22%2C%22overrideText%22%3A%22Data%22%7D%2C%7B%22key%22%3A%22components.search.category_tabs.documents%22%2C%22queryParams%22%3A%7B%22collection%22%3A%22Document%22%7D%2C%22title%22%3A%22Documents%22%2C%22overrideText%22%3A%22Documents%22%7D%2C%7B%22key%22%3A%22components.search.category_tabs.apps_and_maps%22%2C%22queryParams%22%3A%7B%22collection%22%3A%22App%2CMap%22%7D%2C%22title%22%3A%22Apps%20%26%20Maps%22%2C%22overrideText%22%3A%22Apps%20%26%20Maps%22%7D%5D%2C%22telemetry%22%3A%7B%22consentNotice%22%3A%7B%22isTheme%22%3Atrue%2C%22consentText%22%3A%22%22%2C%22policyURL%22%3A%22%22%7D%2C%22customAnalytics%22%3A%7B%22ga%22%3A%7B%22customerTracker%22%3A%7B%22enabled%22%3Afalse%7D%7D%7D%7D%2C%22contentViews%22%3A%7B%22sidePanelOpen%22%3A%7B%22app%22%3Atrue%2C%22map%22%3Atrue%2C%22dataset%22%3Atrue%2C%22document%22%3Atrue%2C%22feedback%22%3Atrue%7D%7D%7D%2C%22catalog%22%3A%7B%22groups%22%3A%5B%22a982006ec8b0438a81ffb247749c5248%22%2C%2272030e275b4c40438a211ba0f01aeecd%22%2C%2208ba56578aaf4bba8c122c3cfebddc23%22%5D%7D%2C%22source%22%3A%22be2f171c60464c28937df5ee877d385f%22%2C%22feeds%22%3A%7B%7D%7D%2C%22domainInfo%22%3A%7B%22id%22%3A%2248254%22%2C%22hostname%22%3A%22coronavirus.iowa.gov%22%2C%22siteId%22%3A%22d83ad06141fe4acd9a0461020f9d9d8e%22%2C%22clientKey%22%3A%22k3HwjY5jXQrW7q5w%22%2C%22orgKey%22%3A%22iowa%22%2C%22siteTitle%22%3A%22Iowa%20Coronavirus%20Information%22%2C%22orgId%22%3A%22vPD5PVLI6sfkZ5E4%22%2C%22orgTitle%22%3A%22State%20of%20Iowa%22%2C%22createdAt%22%3A%222020-03-17T18%3A28%3A08.000Z%22%2C%22updatedAt%22%3A%222020-03-17T18%3A28%3A08.000Z%22%2C%22sslOnly%22%3Atrue%2C%22permanentRedirect%22%3Afalse%2C%22domain%22%3A%22coronavirus.iowa.gov%22%7D%2C%22injected%22%3Atrue%2C%22status%22%3A200%7D%2C%22status%22%3A200%7D"
+    </script>
+    <script id="domain-injection">
+      window.__DOMAIN={"domainInfo":{"id":"48254","hostname":"coronavirus.iowa.gov","siteId":"d83ad06141fe4acd9a0461020f9d9d8e","clientKey":"k3HwjY5jXQrW7q5w","orgKey":"iowa","siteTitle":"Iowa Coronavirus Information","orgId":"vPD5PVLI6sfkZ5E4","orgTitle":"State of Iowa","createdAt":"2020-03-17T18:28:08.000Z","updatedAt":"2020-03-17T18:28:08.000Z","sslOnly":true,"permanentRedirect":false,"domain":"coronavirus.iowa.gov"}}
+    </script>    
+    <script id="ga-injection">
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-47337822-2', 'auto', {siteSpeedSampleRate: 100});ga('set', 'anonymizeIp', true);
+    </script>
+
+    <style>
+      #base-loader{display:block;fill:none;stroke:#009af2;animation:loader-color-shift 2s alternate-reverse infinite linear;height:54px;margin-top:75px}#base-loader svg.loader-square{position:absolute;left:0;right:0;margin-left:auto;margin-right:auto;width:54px;height:54px;stroke-width:6px;stroke-dashoffset:0;fill:none}#base-loader svg.loader-square.loader-square-1{stroke-dasharray:50% 350%;animation:loader-clockwise 2s infinite linear}#base-loader svg.loader-square.loader-square-2{stroke-dasharray:100% 225% 50% 25%;animation:loader-clockwise 1s infinite linear}#base-loader svg.loader-square.loader-square-3{stroke-dasharray:50% 50% 75% 225%;animation:loader-clockwise 1.85s infinite linear}@keyframes loader-color-shift{0%{stroke:#009af2}100%{stroke:#00619b}}@keyframes loader-clockwise{0%{stroke-dashoffset:0}100%{stroke-dashoffset:-400%}}#base-loader .loader-bars{display:none}@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){#base-loader svg,.active#base-loader svg{display:none}#base-loader .loader-bars,.active#base-loader .loader-bars{display:block}}@supports (-ms-ime-align:auto){#base-loader svg,.active#base-loader svg{display:none}#base-loader .loader-bars,.active#base-loader .loader-bars{display:block}}#base-loader .loader-bars,#base-loader .loader-bars:after,#base-loader .loader-bars:before{background:#0079c1;animation:load .8s infinite ease-in-out;width:8.5px;height:20px}#base-loader .loader-bars:after,#base-loader .loader-bars:before{position:absolute;top:0;content:""}#base-loader .loader-bars{text-indent:-9999em;margin:auto;position:absolute;right:calc(50% - 4.25px);animation-delay:.16s}#base-loader .loader-bars:before{left:-12.5px}#base-loader .loader-bars:after{left:12.5px;animation-delay:.32s}@keyframes load{0%,100%,80%{opacity:.75;box-shadow:0 0 #0079c1;height:20px}40%{opacity:1;box-shadow:0 -5px #0079c1;height:25px}}
+    </style>
+  <meta name="ember-cli-head-start">
+  <meta name="application-name" content="Iowa COVID-19 Information" id="ember6" class="ember-view">
+  <meta name="hub-components-assets-url" content="https://hubcdn.arcgis.com/opendata-ui/assets/hub-components/assets/i18n" id="ember8" class="ember-view">
+  <link rel="icon" href="https://hubcdn.arcgis.com/opendata-ui/assets/assets/images/favicon-45a5f6cdc7f23c52b20204d54a7d9ca2.ico" id="ember10" class="ember-view" type="image/vnd.microsoft.icon">
+
+<script class="jsonld_sitelinks" type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https://coronavirus.iowa.gov",
+  "name": "Iowa COVID-19 Information",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://coronavirus.iowa.gov/datasets?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}</script>
+
+
+  <link rel="stylesheet" href="https://hubcdn.arcgis.com/opendata-ui/assets/assets/opendata-28250c9a7d3cea104225f2482d4d182e.css">
+  <style>
+    
+    body.calcite {
+      background-color: #fff;
+      color: #292929;
+      font-family: 'Avenir Next', Avenir Next;
+      font-size: 14px;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Avenir Next', Avenir Next;
+    }
+    h1 { font-size: 36px;}
+    h2 { font-size: 30px;}
+    h3 { font-size: 28px;}
+    h4 { font-size: 24px;}
+    h5 { font-size: 22px;}
+    h6 { font-size: 16px;}
+    .extra-small { font-size: 10px;}
+    .small { font-size: 12px;}
+    .mid-small { font-size: undefinedpx;}
+    .standard { font-size: undefinedpx;}
+    .large { font-size: 18px;}
+    .extra-large { font-size: 20px;}
+    a,
+    .btn-link {
+      color: #043445;
+    }
+    a:hover,
+    .btn-link:focus,
+    a:focus,
+    .btn-link:hover {
+      color: #011015;
+      outline-color: #043445;
+    }
+    a.disabled,
+    a[disabled],
+    .btn-link.disabled,
+    .btn-link[disabled] {
+      color: #043445;
+    }
+    input.form-control:focus {
+      border-color: #043445;
+    }
+    button:focus,
+    .btn:focus,
+    input:focus,
+    .form-control:focus {
+      outline-color: #043445;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(4,52,69, 0.6);
+    }
+    .algolia-autocomplete .hub-search-highlight {
+      color: #ffffff;
+    }
+    .aa-dropdown-menu {
+      background-color: #2694bb;
+      color: #ffffff;
+      border-color: #ffffff;
+    }
+    .algolia-autocomplete-v3 .aa-footer,
+    .algolia-autocomplete-v3 .aa-footer:hover {
+      background-color: #2694bb;
+      color: #ffffff;
+      border-color: #ffffff;
+    }
+    .algolia-autocomplete-v3 .aa-footer code,
+    .algolia-autocomplete-v3 .aa-footer code:hover,
+        .algolia-autocomplete-v3 .aa-footer:hover code,
+    .algolia-autocomplete-v3 .aa-footer:hover code:hover{
+      color: #ffffff;
+    }
+    .algolia-autocomplete .aa-suggestion:hover,
+    .algolia-autocomplete .aa-suggestion:focus {
+      background-color: #ffffff;
+      color: #2694bb;
+    }
+    .algolia-autocomplete .aa-suggestion:hover .hub-search-highlight,
+    .algolia-autocomplete .aa-suggestion:focus .hub-search-highlight{
+      color: #2694bb;
+    }
+    .algolia-autocomplete-v3 .aa-dropdown-menu svg {
+      fill: #ffffff;
+    }
+    .algolia-autocomplete-v3 .aa-suggestion div,
+    .algolia-autocomplete-v3 .aa-menu-row-v3 .hub-search-highlight {
+      color: #ffffff;
+    }
+    .algolia-autocomplete-v3 .aa-menu-row-v3 .aa-row-icon svg {
+      fill: #ffffff;
+    }
+    .algolia-autocomplete-v3 .aa-cursor {
+      background-color: transparent;
+      box-shadow: inset 0 0 5px #ffffff;
+    }
+    .algolia-autocomplete-v3 .aa-suggestion:hover div,
+    .algolia-autocomplete-v3 .aa-suggestion:focus div {
+      color: #2694bb;
+      background-color: #ffffff;
+    }
+    .algolia-autocomplete-v3 .aa-suggestion:hover .hub-search-highlight,
+    .algolia-autocomplete-v3 .aa-suggestion:focus .hub-search-highlight{
+      color: #2694bb;
+      outline-color: #043445;
+    }
+    .algolia-autocomplete-v3 .aa-suggestion:hover .aa-row-icon svg,
+    .algolia-autocomplete-v3 .aa-suggestion:focus .aa-row-icon svg {
+      fill: #2694bb;
+    }
+    .api-inspector .panel-heading {
+      background-color: #ebebeb;
+      color: #ffffff;
+    }
+    .api-inspector .panel-heading a,
+    .api-inspector .panel-heading a:hover,
+    .api-inspector .panel-heading a:focus,
+    .api-inspector .panel-heading:hover  {
+      color: #ffffff;
+    }
+    .api-inspector #where-selector .form-group:focus{
+      border-color: #043445;
+      -webkit-box-shadow: inset 0 1px 1px rgba(#cccccc, 0.075), 0 0 8px rgba(#043445, 0.6);
+      box-shadow: inset 0 1px 1px rgba(#cccccc, 0.075), 0 0 8px rgba(#043445, 0.6);
+    }
+    .api-inspector .simple-input-checkboxes input[type="checkbox"]:checked + span::before {
+      border-color: #043445;
+    }
+    .api-inspector .simple-input-checkboxes input[type="checkbox"]:focus + span::after {
+      box-shadow: 0 0 0 3px #043445;
+    }
+    .api-inspector .simple-input-radios input[type="radio"]:checked + span::before {
+      background: #043445;
+    }
+    .api-inspector .simple-input-radios input[type="radio"]:checked + span::after {
+      box-shadow: 0 0 0 2px #043445;
+    }
+    .a11y-chart .a11y-chart-actions button {
+      color: #043445;
+    }
+    .bottom-drawer {
+      background-color: #fff;
+      color: #292929;
+    }
+    .bottom-drawer .swipe-handle-container swipe-handle {
+      background-color: #292929;
+    }
+    .bottom-drawer.is-fully-open .bottom-drawer-header {
+      box-shadow: 0px 16px 0px -15px hsla(0, 0%, 16%, 0.08);
+    }
+    .content-view-banner {
+      background-color: #2694bb;
+      background: linear-gradient(#2694bb, #fff);
+    }
+    .btn-primary {
+      border-color: #ebebeb;
+      background-color: #ebebeb;
+      color: #ffffff;
+      fill: #ffffff;
+    }
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active,
+    .btn-primary:active:focus,
+    .open > .btn-primary.dropdown-toggle {
+      border-color: #d1d1d1;
+      background-color: #d1d1d1;
+      color: #ffffff;
+      fill: #ffffff;
+    }
+    a.btn.btn-primary.disabled,
+    a.btn.btn-primary[disabled],
+    button.btn.btn-primary.disabled,
+    button.btn.btn-primary[disabled] {
+      border-color: #d1d1d1;
+      background-color: #d1d1d1;
+      color: #ffffff;
+      fill: #ffffff;
+    }
+    .btn-default {
+      border: 1px solid #043445;
+      color: #043445;
+      background-color: #fff;
+      fill: #043445;
+    }
+    a.btn-default:hover,
+    a.btn-default:focus,
+    button.btn-default:active,
+    button.btn-default:active:focus,
+    button.btn-default:hover,
+    button.btn-default:focus,
+    .btn-default:active,
+    .btn-default:active:focus,
+    .btn-default:hover,
+    .btn-defaut:focus {
+      border-color: #011015;
+      color: #fff;
+      fill: #fff;
+      background-color: #011015;
+    }
+    a.btn.btn-default.disabled,
+    a.btn.btn-default[disabled],
+    button.btn.btn-default.disabled,
+    button.btn.btn-default[disabled] {
+      border: 1px solid #043445;
+      color: #043445;
+      background-color: #fff;
+      fill: #043445;
+    }
+    .btn-diagonal {
+        background-color: #ebebeb;
+        background: -webkit-linear-gradient(-30deg, #ebebeb 50%, #d1d1d1 50%);
+        background: -ms-linear-gradient(-30deg, #ebebeb 50%, #d1d1d1 50%);
+        background: -moz-linear-gradient(-30deg, #ebebeb 50%, #d1d1d1 50%);
+        background: linear-gradient(-30deg, #ebebeb 50%, #d1d1d1 50%);
+        color: #ffffff;
+        border: 1px solid #d1d1d1;
+    }
+    .btn-diagonal:hover,
+    .btn-diagonal:focus {
+        color: #ffffff;
+        background-color: #d1d1d1;
+        background: -webkit-linear-gradient(-30deg, #d1d1d1 50%, #ebebeb 50%);
+        background: -ms-linear-gradient(-30deg, #d1d1d1 50%, #ebebeb 50%);
+        background: -moz-linear-gradient(-30deg, #d1d1d1 50%, #ebebeb 50%);
+        background: linear-gradient(-30deg, #d1d1d1 50%, #ebebeb 50%);
+        border: 1px solid #d1d1d1;
+    }
+    .btn-info {
+      background-color: transparent;
+      color: #292929;
+      fill: #292929;
+    }
+    .btn-info:hover,
+    .btn-info:focus,
+    .btn-info:active {
+      background-color: rgba(#292929, 0.1);
+    }
+    a.btn.btn-info.disabled,
+    a.btn.btn-info[disabled],
+    button.btn.btn-info.disabled,
+    button.btn.btn-info[disabled] {
+      border: 0;
+      color: #292929;
+      fill: #292929;
+    }
+    .btn-info svg {
+      fill: #292929;
+    }
+    .btn.btn-svg svg {
+      fill: #043445;
+    }
+    .back-button a,
+    .back-button button,
+    .back-button svg {
+      fill: #292929;
+      color: #292929;
+    }
+    .callout-alert.theme {
+      background-color: #fff;
+      border-left-color: #ebebeb;
+    }
+    .callout-alert.theme svg {
+      fill: #ebebeb;
+    }
+    .callout-alert.theme .content h6 {
+      color: #292929;
+    }
+    .calendar-text {
+      color: #043445;
+    }
+    .category-panel a:focus {
+      outline-color: #043445;
+    }
+    .category-panel .panel-footer a {
+      color: #043445;
+    }
+    .category-panel .category-card:hover,
+    .category-panel .category-card:focus {
+      outline-color: #043445;
+    }
+    .connected-content .nav-tabs a {
+      background-color: #043445;
+      color: undefined;
+      border: 1px solid #043445;
+    }
+    .connected-content .nav-tabs a:hover,
+    .connected-content .nav-tabs a:focus {
+      background-color: #011015;
+      color: undefined;
+      border: 1px solid #011015;
+    }
+    .connected-content .nav-tabs a.active,
+    .connected-content .nav-tabs li.active > a {
+      background-color: #fff;
+      color: #292929;
+    }
+    .connected-content .nav-tabs a.active:hover{
+      color: #292929;
+    }
+    .connected-content .connected-card {
+      background-color: #fff;
+    }
+    .connected-content .connected-card .divider {
+      background-color: #0ca1d6;
+    }
+    .connected-content .connected-card .left-pane{
+      color: #292929;
+    }
+    .connected-content .connected-card .left-pane button {
+      background-color: #fff;
+      color: #292929;
+    }
+    .connected-content .connected-card .text-fade {
+      box-shadow: inset 0px -30px 40px -20px #fff;
+    }
+    .connected-content .circle {
+      background: #011015;
+    }
+    .hub-chips.border li {
+      color: #292929;
+      border: solid 1px #292929;
+      background-color: #fff;
+    }
+    .content-categories li {
+      background: rgba(41,41,41, 0.08);
+      color: #292929;
+    }
+    .content-categories li a {
+      color: #292929;
+    }
+    .content-hero {
+      background-color: #fff;
+      border-color: hsla(0, 0%, 16%, 0.5);
+    }
+    .content-key-information {
+      color: #ebebeb;
+    }
+    .content-hero .content-hero-footer.is-stuck .sticky-only {
+      background-color: #fff;
+      box-shadow: 0px 2px 4px rgba(41,41,41, 0.08);
+    }
+    .content-license svg {
+      fill: #292929;
+    }
+    .content-license:hover svg {
+      fill: #043445;
+    }
+    .content-metadata-list .metadata-item .svgstore-image {
+      fill: #292929;
+    }
+    .content-owner img {
+      border-color: rgba(41,41,41, 0.1);
+    }
+    .content-owner .user-value svg,
+    .content-owner svg {
+      fill: #292929;
+    }
+    .content-owner .user-value .btn-link {
+      color: #043445;
+    }
+    .content-search-nearby {
+      background-color: #fff;
+      border-color: rgba(41,41,41, 0.15);
+    }
+    .content-search-nearby:hover,
+    .content-search-nearby:focus-within {
+      border-color: #043445;
+      box-shadow: 0px 1px 6px rgba(41,41,41, 0.2);
+    }
+    .content-search-nearby .title, .content-search-nearby .subtitle {
+      color: #292929;
+    }
+    .content-search-nearby svg {
+      fill: #292929;
+    }
+    .content-view-divider {
+      border-color: rgba(41,41,41, 0.08);
+    }
+    .content-view-body {
+      background-color: #fff;
+    }
+    .content-view-body .view-in-ago {
+      color: #292929;
+      fill: #292929;
+    }
+    .content-view-body .responsive-tabs.themed .responsive-tabs-nav {
+      border-color: rgba(41,41,41, 0.08);
+    }
+    .content-status.authoritative {
+      color: #ebebeb;
+      background-color: hsla(0, 0%, 92%, 0.08);
+      border: 1px solid #ebebeb;
+      fill: #ebebeb;
+    }
+    .content-status.deprecated {
+      color: #292929;
+      background-color: hsla(0, 0%, 16%, 0.08);
+      border: 1px solid #292929;
+      fill: #292929;
+    }
+    .content-action-card {
+      background: #fff;
+      border-color: rgba(41,41,41, 0.15);
+    }
+    .content-action-card:hover,
+    .content-action-card:focus-within {
+      border-color: #043445;
+      box-shadow: 0px 1px 6px rgba(41,41,41, 0.2);
+    }
+    .content-action-card > a h6,
+    .content-action-card > a span,
+    .content-action-card > button h6,
+    .content-action-card > button span {
+      color: #292929;
+    }
+    .content-action-card .content-action-card h6 {
+      color: #043445;
+    }
+    .content-action-card > a .svgstore-image,
+    .content-action-card > button .svgstore-image {
+      fill: #292929;
+    }
+    .dataset-attribute-selector li {
+      color: #292929;
+      border-color: #8f8f8f;
+    }
+    .dataset-attribute-selector ul li.selected-attribute,
+    .dataset-attribute-selector ul li:hover {
+      border-color: #043445;
+    }
+    .dataset-attribute-selector svg{
+      fill: #292929;
+    }
+    .dataset-attribute-selector .overflow-fade {
+      border-color: #043445;
+    }
+    .dataset-attribute-selector .overflow-fade.scroll-up:before {
+      background: linear-gradient(0deg, #fff00 0%, #fff 100%);
+    }
+    .dataset-attribute-selector .overflow-fade.scroll-down:after {
+      background: linear-gradient(0deg, #fff 0%, #fff00 100%);
+    }
+    .dataset-attribute-selector ul div span:nth-of-type(2) {
+      color: #424242;
+    }
+    .dataset-attribute-value-selector .simple-input-checkboxes input[type="checkbox"]:checked + span::before {
+      border-color: #043445;
+    }
+    .dataset-attribute-value-selector button svg {
+      fill: #043445;
+    }
+    .dataset-attribute-value-selector .histogram-slider,
+    .dataset-attribute-value-selector .esri-slider__min .esri-slider__min--interactive:focus-visible,
+    .dataset-attribute-value-selector .esri-slider__max .esri-slider__max--interactive:focus-visible {
+      outline-color: #043445;
+      color: #292929;
+    }
+    .dataset-attribute-value-selector .esri-slider__range-input,
+    .dataset-attribute-value-selector .esri-slider__segment .esri-slider__segment--interactive,
+    .dataset-attribute-value-selector .esri-slider__max--interactive:hover,
+    .dataset-attribute-value-selector .esri-slider__min--interactive:hover,
+    .dataset-attribute-value-selector .esri-slider__min .esri-slider__min--interactive:focus-visible
+    .dataset-attribute-value-selector .esri-slider__max .esri-slider__max--interactive:focus-visible {
+      background-color: transparent;
+      color: #292929;
+    }
+    .dataset-attribute-value-selector .histogram-slider .esri-slider__segment {
+      background-color: #043445;
+    }
+    .dataset-attribute-value-selector .histogram-slider .esri-slider__thumb {
+      background-color: #fff;
+      border-color: #043445;
+    }
+    .dataset-attribute-value-selector .aa-cursor {
+      background-color: #292929;
+      color: #fff;
+    }
+    .dataset-attribute-selector ul input[type="checkbox"]:checked + span::before {
+      border-color: #043445;
+    }
+    .dataset-attribute-selector ul input[type="checkbox"]:focus + span::after {
+      box-shadow: 0 0 0 3px #043445;
+    }
+    .dataset-attribute-selector ul input[type="radio"]:checked + span::before {
+      background: #043445;
+    }
+    .dataset-attribute-selector ul input[type="radio"]:checked + span::after {
+      box-shadow: 0px 0px 0px 1px #043445;
+    }
+    .dataset-attribute-selector ul input[type="radio"]:focus + span::after {
+      box-shadow: 0px 0px 0px 3px #043445;
+    }
+    .dataset-attribute-selector ul div span:first-of-type {
+      color: #292929;
+    }
+    .dataset-attribute-value-selector {
+      color: #292929;
+    }
+    .dataset-filter-component .slider-handle {
+      background-color: #043445;
+      background-image: -webkit-linear-gradient(top, #043445 0%, #043445 100%);
+      background-image: -o-linear-gradient(top, #043445 0%, #043445 100%);
+      background: -ms-linear-gradient(top, #043445 0%, #043445 100%);
+      background: -moz-linear-gradient(top, #043445 0%, #043445 100%);
+      background-image: linear-gradient(top, #043445 0%, #043445 100%);
+    }
+    .dataset-filter-component .open > .btn-default.dropdown-toggle {
+      color: #fff;
+      background-color: #011015;
+    }
+    #dataset-column-right a,
+    .dataset-sites .glyphicon,
+    .dataset-storymap-component,
+    .dataset-summary .btn-link {
+     color: #043445;
+    }
+    #dataset-column-right a:hover,
+    .dataset-storymap-component:hover {
+      color: #011015;
+    }
+    #dataset-column-right div pre {
+      background-color: #fff;
+    }
+    .date-filter .spacer {
+      color: #292929;
+    }
+    #download-activity li {
+      background-color: #fff;
+    }
+    .download-activity-header span {
+      color: #292929;
+    }
+    .draw-option {
+      border-color: #fff;
+    }
+    .edit-mode-page .edit-mode-page-searchbar form.search-form input.form-control {
+      color: #292929;
+      background-color: transparent;
+    }
+    .edit-mode-page .edit-mode-page-seachbar form.search-form .form-control::-moz-placeholder {
+      color: #424242;
+    }
+    .edit-mode-page .edit-mode-page-searchbar form.search-form .form-control:-ms-input-placeholder {
+      color: #424242;
+    }
+    .edit-mode-page .edit-mode-page-searchbar form.search-form .form-control::-webkit-input-placeholder {
+      color: #424242;
+    }
+    .edit-mode-page .edit-mode-page-searchbar form.search-form svg {
+      fill: #292929;
+    }
+    .event-card {
+      color: #292929;
+      background-color: #fff;
+    }
+    .event-card .event-heading:before {
+      border-top: 2px solid #292929;
+    }
+    .event-card .event-heading h4 {
+      color: #292929;
+      background-color: #fff;
+    }
+    .event-details-panel > div > div.event-detail-panel,
+    .event-details-panel > div > div.event-action-buttons > div.event-attendance {
+      color: #292929;
+    }
+    .event-list-card a {
+      color: #043445;
+    }
+    .ember-power-calendar ol.day-grid li.has-event {
+      border-color: #043445;
+      color: #043445;
+    }
+    .ember-power-calendar ol.day-grid li.has-event:active {
+      background-color: #043445;
+      border-color: #043445;
+      color: #043445;
+    }
+    .ember-basic-dropdown-content.ember-power-datepicker-content .ember-basic-dropdown-content.ember-power-datepicker-content {
+      color: #043445;
+    }
+    .event-title-component .event-list-date .stacked-month,
+    .event-details-panel a {
+      color: #043445;
+    }
+    .event-initiative-card .event-initative-card-title {
+      color: #043445;
+    }
+    .favorites-tab .glyphicon-star {
+      color: #292929;
+    }
+    .follow-initiative-card .btn-primary:hover svg,
+    .follow-initiative-card .btn-primary:focus svg {
+      fill: #ffffff;
+    }
+    .gallery-card .type-icon.btn-link{
+      color: #043445;
+    }
+    .hero .attribution,
+    .hero .attribution a {
+        color: #ffffff;
+    }
+    .hub-notifications .no-notifications-msg svg {
+      fill: #292929;
+    }
+
+    .hub-notifications .close .btn-svg svg {
+      fill: #292929;
+    }
+
+    .hub-profile .edit-link a,
+    .hub-profile .add-photo a {
+      color :#043445;
+    }
+
+    .hub-profile .name-block a {
+      color: #043445;
+    }
+
+    .hub-map-survey.hub-map-survey-panel .body-content,
+    .hub-map-survey.hub-map-survey-panel .body-content *:not(.btn):not(a),
+    .hub-map-survey.hub-map-survey-drawer .bottom-drawer-content,
+    .hub-map-survey.hub-map-survey-drawer .bottom-drawer-content *:not(.btn):not(a):not(svg) {
+      color: #292929;
+    }
+
+    .hub-map-survey .survey-meta .sub-header,
+    .hub-map-survey .survey-meta .sub-header *:not(a) {
+      color: #292929 !important;
+    }
+
+    .hub-map-survey .map-question .geolocation-required svg {
+      fill: #292929;
+    }
+
+    .my-data-favorites .my-data-item .sidebar-item-name {
+      color: #043445;
+    }
+
+    .my-data-favorites ul.notifications .favorite-desc,
+    .my-data-favorites ul.notifications .download-type {
+      color: #292929;
+    }
+
+    .my-data-favorites ul.notifications .my-data-item .favorite-controls .favorite-control {
+      color: #043445;
+      border-right-color:#043445;
+      border-left-color:#043445;
+      border-top-color: #043445;
+      border-bottom-color: #043445;
+    }
+
+    .item-card .type-icon.btn-link{
+      color: #ebebeb;
+    }
+    .layout-section-editor .empty {
+        color: #292929;
+        outline: 2px dashed #292929;
+    }
+    .layout-editor .pagination > li.active > a {
+      background-color: #0079c1;
+      color: #fff;
+    }
+    .list-card,
+    .list-card .hub-search-highlight {
+      color: #292929;
+    }
+    .list-card,
+    .list-card .divider {
+      border-color: #8f8f8f;
+    }
+    .list-card .title {
+      color: #043445;
+    }
+    .list-card .category-icon {
+      fill: #292929;
+    }
+    .modal .modal-dialog .modal-content .modal-header .close {
+      color: #043445;
+      fill: #043445;
+      stroke: #043445;
+    }
+    .modal .modal-dialog .modal-content {
+      background-color: #fff;
+      color: #292929;
+    }
+    .tab-content .filter-by-view .toggle-switch input[type=checkbox]:checked {
+      border-color: #043445;
+    }
+    .tab-content .filter-by-view .toggle-switch input[type=checkbox]:checked:after {
+      background-color: #043445;
+    }
+    .themed-responsive-tabs.responsive-tabs-nav li > a {
+      color: #292929;
+    }
+    .themed-responsive-tabs.responsive-tabs-nav > li:not(.dropdown) > a:focus,
+    .themed-responsive-tabs.responsive-tabs-nav > li:not(.dropdown) > a:hover,
+    .themed-responsive-tabs.responsive-tabs-nav > li:not(.dropdown).active:not(.disabled) > a,
+    .themed-responsive-tabs.responsive-tabs-nav > li:not(.dropdown).active:not(.disabled) > a:hover,
+    .themed-responsive-tabs.responsive-tabs-nav > li:not(.dropdown).active:not(.disabled) > a:focus {
+      color: #043445;
+      background-image: linear-gradient(to bottom, #04344500 92%, #043445 93%, #043445 100%);
+    }
+    #my-data-container .my-data-item,
+    .favorites-tab .my-data-item {
+      background: #fff;
+    }
+    #my-data-container #favorite-sort input{
+      background-color: #fff;
+      color: #292929;
+    }
+    #my-data-container #favorite-sort input {
+      border-color: #043445;
+    }
+
+    .my-data-favorites {
+      color: #000000;
+    }
+
+    .my-data-tab-container .nav-tabs-container .responsive-tabs-nav li > a {
+      color: #043445;
+    }
+
+    .my-data-tab-container .nav-tabs-container .responsive-tabs-nav li.dropdown ul {
+      background: #2694bb;
+      border-color: #2694bb;
+    }
+
+    .my-data-tab-container .nav-tabs-container .responsive-tabs-nav > li:not(.dropdown) > a:hover,
+    .my-data-tab-container .nav-tabs-container .responsive-tabs-nav > li:not(.dropdown) > a:focus,
+    .my-data-tab-container .nav-tabs-container .responsive-tabs-nav > li:not(.dropdown) > a.active,
+    .my-data-tab-container .nav-tabs-container .responsive-tabs-nav > li:not(.dropdown).active > a,
+    .my-data-tab-container .nav-tabs-container .responsive-tabs-nav > li:not(.dropdown) > a.active:not(.disabled){
+      color: #043445 ;
+      background-image: linear-gradient(to bottom, #04344500 92%, #043445 93%, #043445 100%);
+    }
+    .my-data-tab-container .tab-content .my-data-events .event-subnav li a {
+      color: #292929;
+    }
+    .my-data-tab-container .tab-content .my-data-events .event-subnav li a:hover,
+    .my-data-tab-container .tab-content .my-data-events .event-subnav li a:focus {
+      color: #043445;
+    }
+    .my-data-tab-container .tab-content .my-data-events .event-subnav li a.active {
+      border-color: #043445;
+    }
+    .nav > li > a:hover,
+    .nav > li > a:focus {
+      color: #fff;
+      background-color: #043445;
+      outline-color: #043445;
+    }
+    .nav > .notification-badge .notification-badge-link svg {
+      fill: #ffffff;
+    }
+    .navbar.navbar-smart .navbar-social svg {
+      fill: #ffffff;
+    }
+    .navbar.navbar-smart.navbar-default [class*='container'] .navbar-menu .responsive-tabs .responsive-tabs-nav li > a {
+      color: #ffffff;
+    }
+    .navbar.navbar-smart.navbar-default [class*='container'] .navbar-menu.navbar-mobile,
+    .navbar.navbar-smart.navbar-default [class*='container'] .navbar-menu .responsive-tabs .responsive-tabs-nav li.dropdown ul {
+      background: #2694bb;
+      border-color: #2694bb;
+    }
+    .navbar.navbar-smart.navbar-default [class*='container'] .navbar-menu.navbar-mobile li a.active {
+      background: #ffffff;
+      color: #2694bb;
+    }
+    .navbar.navbar-smart.navbar-default [class*='container'] .navbar-menu .responsive-tabs .responsive-tabs-nav > li:not(.dropdown) > a:hover,
+    .navbar.navbar-smart.navbar-default [class*='container'] .navbar-menu .responsive-tabs .responsive-tabs-nav > li:not(.dropdown) > a:focus,
+    .navbar.navbar-smart.navbar-default [class*='container'] .navbar-menu .responsive-tabs .responsive-tabs-nav > li:not(.dropdown) > a.active,
+    .navbar.navbar-smart.navbar-default [class*='container'] .navbar-menu .responsive-tabs .responsive-tabs-nav > li:not(.dropdown).active > a {
+      color: #ffffff;
+      outline-color: #ffffff;
+      background-image: linear-gradient(to bottom, #ffffff00 92%, #ffffff 93%, #ffffff 100%);
+    }
+    .navbar.navbar-smart.navbar-default [class*='container'] .navbar-menu .responsive-tabs .overflowing-left {
+      left: 0;
+      background: linear-gradient(to right, #fff 0%, rgba(255,255,255, 0.5) 70%, rgba(255,255,255, 0) 100%);
+      background: -webkit-linear-gradient(to right, #fff 0%, rgba(255,255,255, 0.5) 70%, rgba(255,255,255, 0) 100%);
+    }
+    .navbar.navbar-smart.navbar-default [class*='container'] .navbar-menu .responsive-tabs .overflowing-right {
+      right: 0;
+      background: linear-gradient(to left, #fff 0%, rgba(255,255,255, 0.5) 70%, rgba(255,255,255, 0) 100%);
+      background: -webkit-linear-gradient(to left, #fff 0%, rgba(255,255,255, 0.5) 70%, rgba(255,255,255, 0) 100%);
+    }
+    .nav-search-form.no-global-nav .form-control {
+      background-color: #fff;
+    }
+    .nav-search-form.no-global-nav .form-group input {
+      border: solid 1px #292929;
+      color: #292929;
+    }
+    .nav-search-form.no-global-nav .form-group input:-ms-input-placeholder,
+    .nav-search-form.no-global-nav .form-group input::-ms-input-placeholder,
+    .nav-search-form.no-global-nav .form-group input::placeholder {
+      color: #292929;
+    }
+    .nav-search-form.no-global-nav input:focus {
+       outline-color: #292929;
+    }
+    .nav-search-form.no-global-nav > button svg,
+    .nav-search-form.no-global-nav .form-group .button-svg {
+      fill: #292929;
+    }
+    .no-results-found svg {
+      fill: #292929;
+    }
+    .overflow-toggle .more-button svg {
+      fill: #043445;
+    }
+    .mirror-header-theme {
+      background-color: #2694bb;
+      color: #ffffff;
+      fill: #ffffff;
+    }
+    .mirror-header-theme a,
+    .mirror-header-theme a:hover,
+    .mirror-header-theme a:focus {
+      color: #ffffff;
+      fill: #ffffff;
+    }
+    header.navbar-fixed-top,
+    .site-header-thin,
+    .site-header,
+    .site-header .navbar-default {
+      background-color: #2694bb;
+      color: #ffffff;
+    }
+    .site-header-thin .burger-menu svg,
+    .site-header-thin .search-link svg {
+      fill: #ffffff;
+      stroke: #ffffff;
+    }
+    .search-facets-checkboxes table {
+      color: #292929;
+    }
+    .search-facets-checkboxes svg {
+      fill: #043445;
+    }
+    .site-header-thin a,
+    .site-header-thin a:hover,
+    .site-header-thin a:focus,
+    .site-header-thin button.dropdown-toggle,
+    .site-header .navbar-default a,
+    .site-header .navbar-default a:focus,
+    .site-header .navbar-default a:hover {
+      color: #ffffff;
+    }
+    .site-header .navbar-default a:focus {
+      outline-color: #ffffff;
+    }
+    .site-header .navbar-default .navbar-brand,
+    .site-header .navbar-default .navbar-brand:hover,
+    .site-header .navbar-default .navbar-brand:focus {
+      color: #ffffff;
+    }
+    .site-header .navbar-default .navbar-nav > li > a {
+      background-color: #2694bb;
+      color: #ffffff;
+    }
+    .site-header .navbar-default .navbar-nav > li > a:hover,
+    .site-header .navbar-default .navbar-nav > li > a:focus,
+    .site-header .navbar-default .navbar-nav > li.active > a,
+    .site-header .navbar-default .navbar-nav > li.active > a:hover {
+      color: #ffffff;
+      background-image: linear-gradient(to bottom, #ffffff00 92%, #ffffff 93%, #ffffff 100%);
+    }
+    .site-header .navbar-default .navbar-nav ul.dropdown-menu > li > a {
+      color: #4c4c4c;
+    }
+    .site-header .navbar-default .navbar-nav > li.open a {
+      color: #043445;
+    }
+    .sort-control svg {
+      fill: #043445;
+    }
+    .svgstore-image.themed {
+      fill: #043445;
+    }
+    .toast-alert {
+      color: #292929;
+      background-color: #fff;
+      border-color: rgba(41,41,41, 0.1);
+    }
+    .custom-header .second-tier.navbar-inverse {
+      background-color: #1c6c88;
+      color: #ffffff;
+    }
+    .link-svg svg {
+      fill: #ffffff;
+    }
+    .nav-tabs[role="tablist"] > li > a {
+      background-color: #043445;
+      color: #fff;
+    }
+    .nav-tabs[role="tablist"] > li > a:hover,
+    .nav-tabs[role="tablist"] > li > a:focus,
+    .nav-tabs[role="tablist"] > li > a.focus {
+      background-color: #011015;
+      color: #fff;
+      border-bottom-color: #011015;
+    }
+    .nav-tabs[role="tablist"] > li.active > a,
+    .nav-tabs[role="tablist"] > li.active > a:focus,
+    .nav-tabs[role="tablist"] > li.active > a:hover {
+      background-color:  #fff;
+      color: #292929;
+      border-bottom-color: #fff;
+    }
+    .page-layout-editor {
+      background-color: #fff;
+      color: #292929;
+    }
+    .pagination > li > a {
+      color: #043445;
+    }
+    .pagination > li > a:hover,
+    .pagination > li > a:focus,
+    .pagination > li.active > a,
+    .pagination > li.active > a:hover,
+    .pagination > li.active > a:focus{
+      background-color: #043445;
+      color: #fff;
+    }
+    .pagination > .disabled > a {
+      color: #f8f8f8;
+    }
+    .page-maps-map-explore .filter-by-view label svg {
+      fill: #292929;
+    }
+    .page-datasets-dataset-explore .filter-by-view .toggle-switch input[type=checkbox]:checked:after {
+      background-color: #043445;
+    }
+    .page-datasets-dataset-explore .filter-by-view .toggle-switch input[type=checkbox]:checked {
+      border-color: #043445;
+    }
+    .dataset-attribute-value-selector .simple-input-checkboxes input[type="checkbox"]:focus {
+      outline-color: #043445;
+      box-shadow: 0 0 0 3px #043445;
+    }
+    .page-datasets-dataset-explore .filter-by-view label svg.tooltip-info-icon {
+      fill: #292929;
+    }
+    .page-datasets-dataset-explore .responsive-tabs-nav li > a {
+      color: #292929;
+    }
+    .page-datasets-dataset-explore .responsive-tabs-nav > li:not(.dropdown) > a:focus,
+    .page-datasets-dataset-explore .responsive-tabs-nav > li:not(.dropdown) > a:hover,
+    .page-datasets-dataset-explore .responsive-tabs-nav > li:not(.dropdown).active:not(.disabled) > a,
+    .page-datasets-dataset-explore .responsive-tabs-nav > li:not(.dropdown).active:not(.disabled) > a:hover,
+    .page-datasets-dataset-explore .responsive-tabs-nav > li:not(.dropdown).active:not(.disabled) > a:focus,
+    .page-datasets-dataset-explore .responsive-tabs-nav > li:not(.dropdown) > a:hover:not([disabled]) {
+      color: #043445;
+      background-image: linear-gradient(to bottom, #04344500 92%, #043445 93%, #043445 100%);
+    }
+    .page-people-user-my-data-events .event-subnav li a {
+      color: #292929;
+    }
+    .page-people-user-my-data-events .event-subnav li a:hover,
+    .page-people-user-my-data-events .event-subnav li a:focus {
+      color: #043445;
+    }
+    .page-people-user-my-data-events .event-subnav li.active a {
+      color: #292929;
+      border-bottom-color: #043445;
+    }
+    .primary-style-background {
+      background-color: #ebebeb;
+    }
+    .primary-style-border {
+      border-color: #ebebeb;
+    }
+    .primary-style-fill {
+      fill: #ebebeb;
+    }
+    .primary-style-text {
+      color: #ebebeb;
+    }
+    .people-card.thumbnail-accent .thumbnail-container > img {
+      border-color: #043445
+    }
+    .people-card .result-item-user {
+      border-color: #696969;
+    }
+    .register-card.btn-primary[disabled],
+    .register-card.btn-primary[disabled]:hover,
+    .register-card.btn-primary[disabled]:focus {
+        background-color: #ebebeb;
+        color: #ffffff;
+    }
+
+    .results-list-component .result-item {
+      color: #292929;
+    }
+    .results-list-component .result-item .body-header .list-item-type,
+    .results-list-component .result-item .body-header .list-item-status,
+    .results-list-component .result-item .body-subtitle,
+    .results-list-component .result-item .body-description {
+      color: #292929;
+    }
+    .result-item .body-header .list-item-type svg {
+      fill: #292929;
+    }
+    .results-list-component .result-item .body-footer {
+      box-shadow: 0 -1px: #292929;
+    }
+    .results-list-component .result-item .body-footer .meta {
+      color: #292929;
+    }
+
+    #sidebar-left .filter-search-results .checkbox label {
+      color: #043445;
+    }
+    #sidebar-left .filter-search-results .checkbox label:hover {
+      color: #011015;
+    }
+    #sidebar-left .filter-search-results .filter-headings,
+    #sidebar-left #view-filter-header {
+      border-color: #8f8f8f;
+    }
+    #sidebar-left .filter-search-results label.selected-checkbox {
+      background-color: #23bcf2;
+      color: #000000;
+      border-left-color: #011015;
+    }
+    #sidebar-left h2 {
+      color: #292929;
+    }
+    .edit-mode-facet.themed .simple-input-checkboxes input[type="checkbox"]:checked + span::before {
+      border-color: #043445;
+    }
+    .editor-panel-header .control-header-title span {
+      color: #043445;
+    }
+    .editor-panel-header .control-header-title svg {
+      fill: #043445;
+    }
+    .edit-mode-facet.themed .simple-input-checkboxes input[type="checkbox"]:focus + span::after {
+      box-shadow: 0 0 0 3px #043445;
+    }
+    .sidebar-navigation .edit-mode-facet .bs-accordion-panel .accordion-caret svg {
+      fill: #292929;
+    }
+    .sidebar-navigation .edit-mode-facet .bs-accordion-panel .accordion-caret {
+      fill: #292929;
+    }
+    .sidebar-navigation .edit-mode-facet .bs-accordion-panel .panel-heading span[data-tooltip="bs-accordion-tooltip"] svg {
+      fill: #292929;
+    }
+    .search-results .line-separator {
+      background: linear-gradient(#29292900 48%, #292929 50%, #29292900 52%);
+    }
+    .search-results .line-separator span {
+      color: #292929;
+      background-color: #fff;
+    }
+    .search-results .link-color-primary {
+      color: #fff;
+      background-color: #043445;
+    }
+    .search-results .link-color-primary:hover {
+      background-color: #011015;
+    }
+    .search-results .link-color-primary:focus {
+      background-color: #011015;
+    }
+    #search-results-header a {
+      color: #043445;
+    }
+    .search-result img {
+      border-color: #292929;
+    }
+    .search-result span i {
+      color: #292929;
+    }
+    #search-results-header #search-results-top a {
+      color: #043445;
+    }
+    #search-results-header #search-results-top a:hover {
+      background-color: #043445;
+      color: #fff;
+      border-color: transparent;
+    }
+    #search-results-top span i {
+      color: #292929;
+    }
+    #search-results-header #search-results-top a {
+      border-color: #043445;
+    }
+    #search-results-header #search-results-top span.disabled a:hover {
+      background-color: #fff;
+    }
+    .search-side-panel .panel-header {
+      background-color: #2694bb;
+    }
+    .search-side-panel.has-global-nav .panel-header {
+      background-color: #2f5e8c;
+    }
+    .side-panel-container.themed .side-panel-header .back {
+      color: #043445;
+    }
+    .side-panel-container.themed .side-panel-header .back svg {
+      fill: #043445;
+    }
+    .site-header .btn-link,
+    .site-header .btn-link:hover,
+    .site-header .btn-link:focus {
+      color: #ffffff;
+    }
+    .site-header .skip-nav {
+      background-color: #fff;
+      color: #043445;
+    }
+    .snackbar-alerts-item-theme {
+      fill: #292929;
+      color: #292929;
+      background: #fff;
+    }
+    .snackbar-alerts-container .alert-body-main .content .message button.btn-link {
+      color: #043445;
+    }
+    .snackbar-alerts-item-theme .alert-body button.dismiss:hover {
+      background: #ffffff;
+    }
+    .snackbar-alerts-item-theme-inverse {
+      fill: #ffffff;
+      color: #fff;
+      background: #292929;
+    }
+    .snackbar-alerts-item-theme-inverse .alert-body button.dismiss:hover {
+      background: #000000;
+    }
+    .hub-side-panel.subroute-side-panel .side-panel-inner,
+    .hub-side-panel.subroute-side-panel .side-panel-nested-content {
+      background-color: #fff;
+    }
+    .responsive-tabs.themed .responsive-tabs-nav {
+      border-color: #8f8f8f;
+    }
+    .responsive-tabs.themed .responsive-tabs-nav li > a {
+      color: #043445;
+    }
+    .responsive-tabs.themed .responsive-tabs-nav li.dropdown ul {
+      background: #2694bb;
+      border-color: #2694bb;
+    }
+    .responsive-tabs.themed .responsive-tabs-nav > li:not(.dropdown) > a:hover,
+    .responsive-tabs.themed .responsive-tabs-nav > li:not(.dropdown) > a:focus,
+    .responsive-tabs.themed .responsive-tabs-nav > li:not(.dropdown) > a.active,
+    .responsive-tabs.themed .responsive-tabs-nav > li:not(.dropdown).active > a {
+      color: #043445;
+      background-image: linear-gradient(to bottom, #04344500 92%, #043445 93%, #043445 100%);
+    }
+    .responsive-tabs.themed .responsive-tabs-nav > li:not(.dropdown) > a[disabled] {
+      color: #043445;
+    }
+    .responsive-tabs.themed .responsive-tabs-nav > li:not(.dropdown) > a[disabled]:hover {
+      background-image: none;
+    }
+    .responsive-tabs.themed .responsive-tabs-nav > li:not(.dropdown) > a[disabled]:focus {
+      background-image: linear-gradient(to bottom, #04344500 92%, #043445 93%, #043445 100%);
+    }
+    .responsive-tabs.themed .overflowing-left {
+      left: 0;
+      background: linear-gradient(to right, #fff 0%, rgba(255,255,255, 0.5) 70%, rgba(255,255,255, 0) 100%);
+      background: -webkit-linear-gradient(to right, #fff 0%, rgba(255,255,255, 0.5) 70%, rgba(255,255,255, 0) 100%);
+    }
+    .responsive-tabs.themed .overflowing-right {
+      right: 0;
+      background: linear-gradient(to left, #fff 0%, rgba(255,255,255, 0.5) 70%, rgba(255,255,255, 0) 100%);
+      background: -webkit-linear-gradient(to left, #fff 0%, rgba(255,255,255, 0.5) 70%, rgba(255,255,255, 0) 100%);
+    }
+    .dataset-attribute-value-selector .simple-input-checkboxes input[type="checkbox"]:focus {
+      outline-color: #043445;
+      box-shadow: 0 0 0 3px #043445;
+    }
+
+    /* ---- [KS 12/2018] Global Navigation needs to overwrite existing styles without breaking existing customers so it's at the end, but everything else in this file should be alphabetical order or we'll never keep it straight in the future. */
+
+    header.global-navbar {
+      background-color: #2f5e8c;
+      color: #ffffff;
+      border-bottom-color: #2694bb;
+    }
+    .gateway-splash h4 {
+      color: #292929;
+    }
+    .gateway-splash p {
+      color: #0f0f0f
+    }
+    .global-navbar nav .nav-inner > ul > li > a {
+      background-color: #2f5e8c;
+      color: #ffffff;
+    }
+    .global-navbar .nav-inner .right-nav .od-signin-component a {
+      color: #ffffff;
+    }
+    .global-navbar .nav-search-form .form-control {
+      background-color: #2f5e8c;
+    }
+    .global-navbar .nav-inner .right-nav .nav-search-form .form-group input {
+      border: solid 1px #ffffff;
+    }
+    .global-navbar .burger-button svg,
+    .global-navbar .cancel-button svg
+    {
+      fill: #ffffff;
+      stroke: #ffffff;
+    }
+    .global-navbar .nav-inner .navbar-title a {
+      color: #ffffff;
+    }
+    .global-navbar .nav-search-icon {
+      fill: #ffffff;
+      stroke: #ffffff;
+    }
+    .global-navbar .nav-search-form .form-group input {
+      color: #ffffff;
+    }
+    .global-navbar .nav-search-form .form-group input:-ms-input-placeholder {
+      color: #ffffff;
+    }
+    .global-navbar .nav-search-form .form-group input::-ms-input-placeholder {
+      color: #ffffff;
+    }
+    .global-navbar .nav-search-form .form-group input::placeholder {
+      color: #ffffff;
+    }
+    .global-navbar .global-nav-search input:focus,
+    .global-navbar .nav-inner button:focus {
+       outline-color: #ffffff;
+    }
+    .global-navbar .nav-inner .dropdown-toggle:focus {
+      outline: auto;
+    }
+    .global-navbar .global-nav-search > button svg,
+    .global-navbar .global-nav-search .nav-search-form .form-group .button-svg {
+      fill: #ffffff;
+    }
+    .global-navbar .notification-badge .notification-badge-link svg,
+    .global-navbar svg.notification-badge {
+      fill: #ffffff;
+    }
+    .global-navbar .notification-badge a:focus {
+      outline: auto;
+      outline-color: #ffffff;
+    }
+    .global-navbar .right-nav a.dropdown > button.dropdown-toggle {
+      background-color: #2f5e8c;
+      color: #ffffff;
+    }
+    .global-navbar .site-header nav {
+      /* this is not a mistake - this should use header color */
+      background-color: #2694bb;
+      color: #ffffff;
+    }
+    .global-navbar .algolia-autocomplete .hub-search-highlight {
+      color: #ffffff;
+    }
+    .global-navbar .aa-dropdown-menu {
+      background-color: #2f5e8c;
+      color: #ffffff;
+      border-color: #ffffff;
+    }
+    .global-navbar .algolia-autocomplete-v3 .aa-footer,
+    .global-navbar .algolia-autocomplete-v3 .aa-footer:hover {
+      background-color: #2f5e8c;
+      color: #ffffff;
+      border-color: #ffffff;
+    }
+    .global-navbar .algolia-autocomplete-v3 .aa-footer code,
+    .global-navbar .algolia-autocomplete-v3 .aa-footer code:hover,
+    .global-navbar .algolia-autocomplete-v3 .aa-footer:hover code,
+    .global-navbar .algolia-autocomplete-v3 .aa-footer:hover code:hover {
+      color: #ffffff;
+    }
+    .global-navbar .algolia-autocomplete .aa-suggestion:hover,
+    .global-navbar .algolia-autocomplete .aa-suggestion:focus {
+      background-color: #ffffff;
+      color: #2f5e8c;
+    }
+    .global-navbar .algolia-autocomplete .aa-suggestion:hover .hub-search-highlight,
+    .global-navbar .algolia-autocomplete .aa-suggestion:focus .hub-search-highlight {
+      color: #2f5e8c;
+    }
+    .global-navbar .algolia-autocomplete-v3 .aa-dropdown-menu svg {
+      fill: #ffffff;
+    }
+    .global-navbar .algolia-autocomplete-v3 .aa-suggestion div,
+    .global-navbar .algolia-autocomplete-v3 .aa-menu-row-v3 .hub-search-highlight {
+      color: #ffffff;
+    }
+    .global-navbar .algolia-autocomplete-v3 .aa-menu-row-v3 .aa-row-icon svg {
+      fill: #ffffff;
+    }
+    .global-navbar .algolia-autocomplete-v3 .aa-cursor {
+      background-color: transparent;
+      box-shadow: inset 0 0 5px #ffffff;
+    }
+    .global-navbar .algolia-autocomplete-v3 .aa-suggestion:hover div,
+    .global-navbar .algolia-autocomplete-v3 .aa-suggestion:focus div {
+      color: #2f5e8c;
+      background-color: #ffffff;
+    }
+    .global-navbar .algolia-autocomplete-v3 .aa-suggestion:hover .aa-row-icon svg,
+    .global-navbar .algolia-autocomplete-v3 .aa-suggestion:focus .aa-row-icon svg {
+      fill: #2f5e8c;
+    }
+    .universal-edit nav a,
+    .hub-side-panel .side-panel-tab-controls a,
+    .hub-side-panel .side-panel-tab-controls button {
+      background-color: #043445;
+      border-right-color: #043445;
+    }
+    .universal-edit nav a svg,
+    .hub-side-panel .side-panel-tab-controls a svg,
+    .hub-side-panel .side-panel-tab-controls button svg {
+      fill: #fff;
+    }
+    .universal-edit nav a:hover,
+    .hub-side-panel .side-panel-tab-controls a:hover,
+    .hub-side-panel .side-panel-tab-controls a:focus,
+    .hub-side-panel .side-panel-tab-controls button:focus,
+    .hub-side-panel .side-panel-tab-controls button:hover {
+      background-color: #011015;
+      border-right-color: #fff;
+    }
+    .hub-side-panel .side-panel-tab-controls a[disabled],
+    .hub-side-panel .side-panel-tab-controls button[disabled] {
+      background-color: #011015;
+      border-right-color: #011015;
+    }
+    .hub-side-panel .side-panel-tab-controls a.is-active,
+    .hub-side-panel .side-panel-tab-controls a.active,
+    .hub-side-panel .side-panel-tab-controls button.is-active,
+    .hub-side-panel .side-panel-tab-controls button.active {
+      background-color: #fff;
+      border-right-color: #043445;
+    }
+    .hub-side-panel .side-panel-tab-controls button .number-badge {
+      color: #043445;
+      background: #fff;
+    }
+    .hub-side-panel .side-panel-tab-controls button.active .number-badge {
+      color: #fff;
+      background: #043445;
+    }
+    .hub-side-panel .side-panel-tab-controls a.is-active svg,
+    .hub-side-panel .side-panel-tab-controls a.active svg,
+    .hub-side-panel .side-panel-tab-controls button.is-active svg,
+    .hub-side-panel .side-panel-tab-controls button.active svg {
+      fill: #043445;
+    }
+    .hub-side-panel > .side-panel-inner  {
+      background-color:  #2f5e8c;
+    }
+    #hub-toolbar .hub-toolbar.no-shadow {
+      border-top-color: hsla(0, 0%, 16%, 0.08);
+    }
+    .global-nav-drawer,
+    .global-nav-drawer .global-nav-drawer-header .btn-link *,
+    .global-nav-drawer .global-nav-drawer-content .menu li a,
+    .global-nav-drawer .global-nav-drawer-content .menu li .btn-link {
+      color:  #ffffff;
+    }
+    .global-nav-drawer .global-nav-drawer-content .menu .user-profile-link {
+      color:  #ffffff;
+    }
+    .global-nav-drawer svg {
+      fill:  #ffffff;
+    }
+    .global-nav-drawer .global-nav-drawer-footer button svg {
+      fill:  #ffffff;
+    }
+    .global-nav-drawer .download-activity li {
+      background-color:  #2f5e8c;
+      border: solid 1px #ffffff;
+      color:  #ffffff;
+    }
+    .global-nav-drawer .download-activity li a {
+      color:  #ffffff;
+    }
+    .global-nav-drawer .download-activity li .type-icon .glyphicon-download-alt {
+      color: #ffffff;
+    }
+    .global-nav-drawer .download-activity .card-footer {
+      background-color: #ffffff;
+      color: #2f5e8c;
+    }
+    .map-sheet-modal .modal-footer {
+      background: #fff;
+    }
+
+    /* KS [04/2019]: Stop! Are you pasting new styles at the end "just because"? Are they related to global navigation? If not, please put your styles in rough alphabetical order in the upper part of this file. This helps maintain sanity in this file. */
+     .site-header .custom-header .first-tier{height: 40px;    margin-bottom: 0px;    background-color: #000000;}.site-header .custom-header .first-tier .nav>li>a{margin-top: 5px;    padding: 3px 6px;    color: #fff;}.site-header .custom-header .first-tier .nav>li>a:focus, .site-header .custom-header  .first-tier .nav>li>a:hover{background-color: #136fbf;    color: #fff;}.site-header .custom-header .first-tier .site-logo img{vertical-align: middle;}.site-header .custom-header .first-tier h1{display: inline;    font-size: 25px;}.site-header .custom-header .second-tier{margin-bottom: 0px;    background-color: #05466c;}.site-header .custom-header .site-header .navbar-header img{vertical-align: middle;    height: 50px;    padding: 5px;}.site-header .custom-header .header-container{top: 40px;    margin: 0 auto;    max-width: 1440px;    position: absolute;    width: 100%;    transform: translateX(-50%);    left: 50%;    z-index: 10;    transition: max-width 250ms linear;}.site-header .custom-header .header-container .navbar .container-fluid{display: flex;}.site-header .custom-header .header-container .navbar.navbar-default{background-color: #fff;    border-color: transparent !important;    border-radius: 0;}.site-header .custom-header .header-container .navbar.navbar-default .navbar-collapse.collapse{display: flex !important;    flex: 1;    padding-right: 0;}.site-header .custom-header .header-container .navbar.navbar-default .navbar-brand{color: #333;    height: auto;    padding: 1rem;}.site-header .custom-header .header-container .navbar.navbar-default .navbar-brand-img{display: inline-block;}.site-header .custom-header .header-container .navbar.navbar-default .navbar-nav{flex: 2;    align-items: center;    justify-content: center;    margin: auto;    float: none;}.site-header .custom-header .header-container .navbar.navbar-default .navbar-nav>li{float: none;    display: inline-block;}.site-header .custom-header .header-container .navbar.navbar-default .navbar-nav>li>a{background: transparent;    color: #333;    font-size: 15px;    transition: all 250ms linear;}.site-header .custom-header .header-container .navbar.navbar-default .navbar-nav>li>a:focus, .site-header .custom-header  .header-container .navbar.navbar-default .navbar-nav>li>a:hover{background: #3276AE;    color: #fff;}.site-header .custom-header .header-container .navbar.navbar-default .navbar-right{margin-right: 0;    flex: 1;    text-align: right;}.site-header .custom-header .is-sticky{position: relative;    z-index: 10;}.site-header .custom-header .is-sticky .header-container{max-width: 100%;}@media screen and (max-width: 768px) {.site-header .custom-header .header-container .navbar-header{width: 100%;}.site-header .custom-header .header-container .navbar-default .navbar-toggle{margin-top: 18px;}.site-header .custom-header .header-container .navbar .container-fluid{display: block !important;}.site-header .custom-header .header-container .navbar.navbar-default .navbar-collapse.collapse{overflow: hidden;      display: none !important;}.site-header .custom-header .header-container .navbar.navbar-default .navbar-collapse.collapse.in{display: block !important;}.site-header .custom-header .header-container .navbar.navbar-default .navbar-nav{display: inherit;      padding: 0 0 1rem 0;}.site-header .custom-header .header-container .navbar.navbar-default .navbar-nav > li{display: block;}}header ~ .body-editor section:first-child .site-header .custom-header{padding-top: 100px;} </style>
+<meta name="ember-cli-head-end">
+<style id="erd_scroll_detection_scrollbar_style">/* Created by the element-resize-detector library. */
+.erd_scroll_detection_container > div::-webkit-scrollbar { display: none; }
+
+.erd_scroll_detection_container_animation_active { -webkit-animation-duration: 0.1s; animation-duration: 0.1s; -webkit-animation-name: erd_scroll_detection_container_animation; animation-name: erd_scroll_detection_container_animation; }
+@-webkit-keyframes erd_scroll_detection_container_animation { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes erd_scroll_detection_container_animation { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 1; } }</style><link type="text/css" rel="stylesheet" charset="UTF-8" href="https://translate.googleapis.com/translate_static/css/translateelement.css"><script type="text/javascript" charset="UTF-8" src="https://translate.googleapis.com/translate_static/js/element/main.js"></script></head>
+  <body class="calcite ember-application">
+    
+    
+    <script>
+      if (typeof customElements !== 'undefined') {
+        customElements.efineday = customElements.define;
+      }
+    </script>
+    <!-- crossorigin options added because otherwise we cannot see error messages from unhandled errors and rejections -->
+    <script crossorigin="anonymous" src="https://hubcdn.arcgis.com/opendata-ui/assets/assets/vendor-c4dd10aa0ad3c0cd3c74b496637f5da5.js"></script>
+    <script crossorigin="anonymous" src="https://hubcdn.arcgis.com/opendata-ui/assets/assets/opendata-ui-01a5d313fd3d0fe1fa17d9270ab5c456.js"></script>
+
+    <div id="ember-basic-dropdown-wormhole"></div>
+
+    <!-- opendata-ui version: 5.171.0+6ac420726b - Tue, 05 Oct 2021 18:03:32 GMT -->
+  
+
+<script async="" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>  <div id="ember12" class="svg-sprite ember-view"><!---->
+</div>
+  <div id="ember13" class="svg-sprite ember-view"><!---->
+</div>
+  <div id="ember14" class="svg-sprite ember-view"><!---->
+</div>
+  <div id="ember15" class="svg-sprite ember-view"><!---->
+</div>
+<!---->
+<a href="#main-region" class="skip-nav">Skip Navigation</a>
+
+<div id="ember16" class="hub-side-panel show-underlay ember-view"><div role="complementary" tabindex="-1" style="" aria-hidden="true" id="ember17" class="side-panel-inner ember-view"><div class="side-panel-content" data-test="side-panel-content">
+  <nav id="ember18" class="global-nav-drawer ember-view"><div id="ember20" class="liquid-container ember-view" style=""><div id="ember23" class="liquid-child ember-view" style="top: 0px; left: 0px;">    <div class="side-panel-header global-nav-drawer-header">
+      <div class="toggle-button-container">
+        <button tabindex="-1" aria-expanded="true" aria-label="Global Nav Menu" type="button" data-ember-action="" data-ember-action-24="24">
+          <svg draggable="auto" aria-hidden="true" style="" id="ember25" class="svgstore-image ember-view"><!----><use xlink:href="#ember-arcgis-hub-components-hub-icons-exit"></use>
+<!----></svg>
+          <span class="sr-only">
+            Close
+          </span>
+        </button>
+      </div>
+        <div hidden="" id="ember26" class="notification-badge ember-view"><!----></div>
+    </div>
+
+    <nav class="global-nav-drawer-content">
+      <ul class="menu">
+        <li class="bottom-buffer">
+          <a style="touch-action: manipulation; -ms-touch-action: manipulation; cursor: pointer;" tabindex="-1" href="https://www.arcgis.com/sharing/rest/oauth2/authorize?client_id=undefined&amp;response_type=token&amp;redirect_uri=https%3A%2F%2Fcoronavirus.iowa.gov%2Fpages%2Faccess" id="ember27" class="user-profile-link ember-view">  Sign In
+</a>
+        </li>
+      </ul>
+        <div class="bottom-buffer">
+          <h3 data-test-id="categories-heading">Explore</h3>
+          <ul class="menu">
+              <li class="category-link" data-test-id="Dataset">
+                <div class="icon-container">
+                  <svg draggable="auto" aria-hidden="true" style="" id="ember29" class="svgstore-image ember-view"><!----><use xlink:href="#ember-arcgis-hub-components-hub-icons-data"></use>
+<!----></svg>
+                </div>
+<a tabindex="-1" href="/search?collection=Dataset" id="ember30" class="ember-view">                  Data
+</a>              </li>
+              <li class="category-link" data-test-id="Document">
+                <div class="icon-container">
+                  <svg draggable="auto" aria-hidden="true" style="" id="ember32" class="svgstore-image ember-view"><!----><use xlink:href="#ember-arcgis-hub-components-hub-icons-file-2"></use>
+<!----></svg>
+                </div>
+<a tabindex="-1" href="/search?collection=Document" id="ember33" class="ember-view">                  Documents
+</a>              </li>
+              <li class="category-link" data-test-id="App,Map">
+                <div class="icon-container">
+                  <svg draggable="auto" aria-hidden="true" style="" id="ember35" class="svgstore-image ember-view"><!----><use xlink:href="#ember-arcgis-hub-components-card-icons-webmap-card"></use>
+<!----></svg>
+                </div>
+<a tabindex="-1" href="/search?collection=App%2CMap" id="ember36" class="ember-view">                  Apps &amp; Maps
+</a>              </li>
+          </ul>
+        </div>
+      <ul class="menu">
+        <li>
+          <button tabindex="-1" class="btn-link" type="button" data-ember-action="" data-ember-action-37="37">Recent Downloads</button>
+        </li>
+<!---->      </ul>
+      
+    </nav>
+    <div class="global-nav-drawer-footer">
+<!---->    </div>
+</div></div></nav>
+</div></div><div id="ember38" class="side-panel-outlet ember-view">    <div class="page-pages-index page-pages">
+<header id="ember39" class="navbar-fixed-top skinny ember-view"><!---->
+<!---->
+<!---->
+
+            <div id="ember40" class="site-header ember-view">  <div id="ember41" class="custom-header markdown-card ember-view">  <nav class="navbar navbar-default navbar-static-top first-tier">
+  <div class="container">
+<a aria-label="Home" href="/" id="ember25" class="navbar-logo active ember-view">        <img src="https://eoc.iowa.gov/photos/covid/new-covid-logo.png" alt="COVID-19 in Iowa">
+</a>    <div class="navbar-contents">
+<!----><!----><!---->    </div>
+  </div></nav>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<!----><!----></div>
+
+</header>      <div id="ember42" class="hub-side-panel should-squish ember-view subroute-side-panel ">
+        <div role="complementary" tabindex="-1" style="" aria-hidden="true" id="ember43" class="side-panel-inner ember-view"><div class="side-panel-content" data-test="side-panel-content">
+  
+          <div class="side-panel-ref"></div>
+        
+</div></div>
+        <div id="ember44" class="side-panel-tab-controls ember-view">
+          <div id="hub-toolbar"></div>
+                <nav aria-label="In-page actions" id="ember156" class="actions-menu ember-view">  <span class="hub-tooltip-wrapper">
+    <button class="google-translate-button" type="button" aria-describedby="tooltip_rhcmk4ymc9">
+  <svg draggable="auto" style="" id="ember158" class="svgstore-image ember-view">  <title>Translate</title>
+<use xlink:href="#ember-arcgis-hub-components-hub-icons-translate-hollow"></use>
+<!----></svg>
+  <span id="ember159" class="hub-tooltip__target"><!----></span>
+<!----></button>
+<div class="translation-container hide"></div>
+
+<!---->  <div class="hub-tooltip" role="tooltip" id="tooltip_rhcmk4ymc9" aria-hidden="true" x-placement="right" style="position: fixed; visibility: hidden; transform: translate3d(44px, 17px, 0px); top: 0px; left: 0px; will-change: transform;">
+                        <div class="tooltip__arrow" style="top: 0px;"></div>
+                        <div class="tooltip__inner" id="ember159-render-target"><span></span>      Translate
+</div>
+                      </div></span>
+
+<!----></nav>
+
+        </div>
+        <div id="ember46" class="side-panel-outlet ember-view">
+          <div id="main-region" class="container-fluid" role="main">
+            <div id="ember47" class="ember-view">    <section style="color:#4c4c4c;background-color:transparent;" id="ember49" class="layout-section ember-view">  <div class="container  ">
+      <div id="ember51" class="bs-row row ember-view">  <div id="ember53" class="col-sm-12 ember-view">  <div id="ember54" class="markdown-card ember-view">  <h1 id="our-community"><strong>Current Cases Accessibility&nbsp;Page</strong></h1><p><span style="background-color: initial;"><span style="color: currentcolor;"><strong>This page is designed to work with screen reader technology. </strong></span></span></p><p><span style="color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;"><strong>Note the change in update time. Data is published every Wednesday.</strong></span><br></p>
+</div>
+</div>
+</div>
+      <div id="ember56" class="bs-row row ember-view">  <div id="ember58" class="col-sm-3 ember-view">  <div id="ember59" class="summary-statistic-card ember-view">  <div class="ss-title-row text-left" title="Data as of">
+    <span class="ss-title">Data as of</span>
+  </div>
+  <hr class="ss-title-spacer">
+    <div aria-label="loading" id="ember160" class="medium loader active ember-view"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-1">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-2">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-3">
+  <rect width="56" height="56"></rect>
+</svg>
+<div class="loader-bars"></div>
+</div>
+  <div class="text-left">
+    <div class="trailingText"></div>
+  </div>
+<!----></div>
+</div>
+  <div id="ember61" class="col-sm-9 ember-view">  <div id="ember62" class="markdown-card ember-view">  <!---->
+</div>
+</div>
+</div>
+  </div>
+</section>
+    <section style="background-color:transparent;" id="ember64" class="layout-section ember-view">  <div class="container  ">
+      <div id="ember66" class="bs-row row ember-view">  <div id="ember68" class="col-sm-3 ember-view">  <div id="ember69" class="summary-statistic-card ember-view">  <div class="ss-title-row text-left" title="Total Confirmed Cases">
+    <span class="ss-title">Total Confirmed Cases</span>
+  </div>
+  <hr class="ss-title-spacer">
+    <div aria-label="loading" id="ember161" class="medium loader active ember-view"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-1">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-2">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-3">
+  <rect width="56" height="56"></rect>
+</svg>
+<div class="loader-bars"></div>
+</div>
+  <div class="text-left">
+    <div class="trailingText"></div>
+  </div>
+<!----></div>
+</div>
+  <div id="ember71" class="col-sm-3 ember-view">  <div id="ember72" class="summary-statistic-card ember-view">  <div class="ss-title-row text-left" title="Deceased">
+    <span class="ss-title">Deceased</span>
+  </div>
+  <hr class="ss-title-spacer">
+    <div aria-label="loading" id="ember162" class="medium loader active ember-view"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-1">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-2">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-3">
+  <rect width="56" height="56"></rect>
+</svg>
+<div class="loader-bars"></div>
+</div>
+  <div class="text-left">
+    <div class="trailingText"></div>
+  </div>
+<!----></div>
+</div>
+  <div id="ember74" class="col-sm-3 ember-view">  <div id="ember75" class="summary-statistic-card ember-view">  <div class="ss-title-row text-left" title="Hospitalized">
+    <span class="ss-title">Hospitalized</span>
+  </div>
+  <hr class="ss-title-spacer">
+    <div aria-label="loading" id="ember163" class="medium loader active ember-view"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-1">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-2">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-3">
+  <rect width="56" height="56"></rect>
+</svg>
+<div class="loader-bars"></div>
+</div>
+  <div class="text-left">
+    <div class="trailingText"></div>
+  </div>
+<!----></div>
+</div>
+  <div id="ember77" class="col-sm-3 ember-view">  <div id="ember78" class="summary-statistic-card ember-view">  <div class="ss-title-row text-left" title="Recovering">
+    <span class="ss-title">Recovering</span>
+  </div>
+  <hr class="ss-title-spacer">
+    <div aria-label="loading" id="ember164" class="medium loader active ember-view"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-1">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-2">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-3">
+  <rect width="56" height="56"></rect>
+</svg>
+<div class="loader-bars"></div>
+</div>
+  <div class="text-left">
+    <div class="trailingText"></div>
+  </div>
+<!----></div>
+</div>
+</div>
+      <div id="ember80" class="bs-row row ember-view">  <div id="ember82" class="col-sm-3 ember-view">  <div id="ember83" class="summary-statistic-card ember-view">  <div class="ss-title-row text-left" title="Child Cases (0-17)">
+    <span class="ss-title">Child Cases (0-17)</span>
+  </div>
+  <hr class="ss-title-spacer">
+    <div aria-label="loading" id="ember165" class="medium loader active ember-view"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-1">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-2">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-3">
+  <rect width="56" height="56"></rect>
+</svg>
+<div class="loader-bars"></div>
+</div>
+  <div class="text-left">
+    <div class="trailingText"></div>
+  </div>
+<!----></div>
+</div>
+  <div id="ember85" class="col-sm-3 ember-view">  <div id="ember86" class="summary-statistic-card ember-view">  <div class="ss-title-row text-left" title="Adult Cases (18-40)">
+    <span class="ss-title">Adult Cases (18-40)</span>
+  </div>
+  <hr class="ss-title-spacer">
+    <div aria-label="loading" id="ember166" class="medium loader active ember-view"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-1">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-2">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-3">
+  <rect width="56" height="56"></rect>
+</svg>
+<div class="loader-bars"></div>
+</div>
+  <div class="text-left">
+    <div class="trailingText"></div>
+  </div>
+<!----></div>
+</div>
+  <div id="ember88" class="col-sm-3 ember-view">  <div id="ember89" class="summary-statistic-card ember-view">  <div class="ss-title-row text-left" title="Middle Aged Cases (41-60)">
+    <span class="ss-title">Middle Aged Cases (41-60)</span>
+  </div>
+  <hr class="ss-title-spacer">
+    <div aria-label="loading" id="ember167" class="medium loader active ember-view"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-1">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-2">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-3">
+  <rect width="56" height="56"></rect>
+</svg>
+<div class="loader-bars"></div>
+</div>
+  <div class="text-left">
+    <div class="trailingText"></div>
+  </div>
+<!----></div>
+</div>
+  <div id="ember91" class="col-sm-3 ember-view">  <div id="ember92" class="summary-statistic-card ember-view">  <div class="ss-title-row text-left" title="Older Adult Cases (61-80)">
+    <span class="ss-title">Older Adult Cases (61-80)</span>
+  </div>
+  <hr class="ss-title-spacer">
+    <div aria-label="loading" id="ember168" class="medium loader active ember-view"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-1">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-2">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-3">
+  <rect width="56" height="56"></rect>
+</svg>
+<div class="loader-bars"></div>
+</div>
+  <div class="text-left">
+    <div class="trailingText"></div>
+  </div>
+<!----></div>
+</div>
+</div>
+      <div id="ember94" class="bs-row row ember-view">  <div id="ember96" class="col-sm-3 ember-view">  <div id="ember97" class="summary-statistic-card ember-view">  <div class="ss-title-row text-left" title="Elderly Cases (81 or Older)">
+    <span class="ss-title">Elderly Cases (81 or Older)</span>
+  </div>
+  <hr class="ss-title-spacer">
+    <div aria-label="loading" id="ember169" class="medium loader active ember-view"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-1">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-2">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-3">
+  <rect width="56" height="56"></rect>
+</svg>
+<div class="loader-bars"></div>
+</div>
+  <div class="text-left">
+    <div class="trailingText"></div>
+  </div>
+<!----></div>
+</div>
+  <div id="ember99" class="col-sm-3 ember-view">  <div id="ember100" class="summary-statistic-card ember-view">  <div class="ss-title-row text-left" title="Male Cases">
+    <span class="ss-title">Male Cases</span>
+  </div>
+  <hr class="ss-title-spacer">
+    <div aria-label="loading" id="ember170" class="medium loader active ember-view"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-1">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-2">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-3">
+  <rect width="56" height="56"></rect>
+</svg>
+<div class="loader-bars"></div>
+</div>
+  <div class="text-left">
+    <div class="trailingText"></div>
+  </div>
+<!----></div>
+</div>
+  <div id="ember102" class="col-sm-3 ember-view">  <div id="ember103" class="summary-statistic-card ember-view">  <div class="ss-title-row text-left" title="Female Cases">
+    <span class="ss-title">Female Cases</span>
+  </div>
+  <hr class="ss-title-spacer">
+    <div aria-label="loading" id="ember171" class="medium loader active ember-view"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-1">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-2">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-3">
+  <rect width="56" height="56"></rect>
+</svg>
+<div class="loader-bars"></div>
+</div>
+  <div class="text-left">
+    <div class="trailingText"></div>
+  </div>
+<!----></div>
+</div>
+  <div id="ember105" class="col-sm-3 ember-view">  <div id="ember106" class="summary-statistic-card ember-view">  <div class="ss-title-row text-left" title="Individuals Tested">
+    <span class="ss-title">Individuals Tested</span>
+  </div>
+  <hr class="ss-title-spacer">
+    <div aria-label="loading" id="ember172" class="medium loader active ember-view"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-1">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-2">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-3">
+  <rect width="56" height="56"></rect>
+</svg>
+<div class="loader-bars"></div>
+</div>
+  <div class="text-left">
+    <div class="trailingText"></div>
+  </div>
+<!----></div>
+</div>
+</div>
+      <div id="ember108" class="bs-row row ember-view">  <div id="ember110" class="col-sm-3 ember-view">  <div id="ember111" class="summary-statistic-card ember-view">  <div class="ss-title-row text-left" title="COVID-19 Patients Admitted in last 24 hrs">
+    <span class="ss-title">COVID-19 Patients Admitted in last 24 hrs</span>
+  </div>
+  <hr class="ss-title-spacer">
+    <div aria-label="loading" id="ember173" class="medium loader active ember-view"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-1">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-2">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-3">
+  <rect width="56" height="56"></rect>
+</svg>
+<div class="loader-bars"></div>
+</div>
+  <div class="text-left">
+    <div class="trailingText"></div>
+  </div>
+<!----></div>
+</div>
+  <div id="ember113" class="col-sm-3 ember-view">  <div id="ember114" class="summary-statistic-card ember-view">  <div class="ss-title-row text-left" title="COVID-19 Patients in ICU">
+    <span class="ss-title">COVID-19 Patients in ICU</span>
+  </div>
+  <hr class="ss-title-spacer">
+    <div aria-label="loading" id="ember174" class="medium loader active ember-view"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-1">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-2">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-3">
+  <rect width="56" height="56"></rect>
+</svg>
+<div class="loader-bars"></div>
+</div>
+  <div class="text-left">
+    <div class="trailingText"></div>
+  </div>
+<!----></div>
+</div>
+  <div id="ember116" class="col-sm-3 ember-view">  <div id="ember117" class="summary-statistic-card ember-view">  <div class="ss-title-row text-left" title="Total Ventilators Available ">
+    <span class="ss-title">Total Ventilators Available </span>
+  </div>
+  <hr class="ss-title-spacer">
+    <div aria-label="loading" id="ember175" class="medium loader active ember-view"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-1">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-2">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-3">
+  <rect width="56" height="56"></rect>
+</svg>
+<div class="loader-bars"></div>
+</div>
+  <div class="text-left">
+    <div class="trailingText"></div>
+  </div>
+<!----></div>
+</div>
+  <div id="ember119" class="col-sm-3 ember-view">  <div id="ember120" class="summary-statistic-card ember-view">  <div class="ss-title-row text-left" title="COVID-19 Patients on Ventilators">
+    <span class="ss-title">COVID-19 Patients on Ventilators</span>
+  </div>
+  <hr class="ss-title-spacer">
+    <div aria-label="loading" id="ember176" class="medium loader active ember-view"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-1">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-2">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-3">
+  <rect width="56" height="56"></rect>
+</svg>
+<div class="loader-bars"></div>
+</div>
+  <div class="text-left">
+    <div class="trailingText"></div>
+  </div>
+<!----></div>
+</div>
+</div>
+      <div id="ember122" class="bs-row row ember-view">  <div id="ember124" class="col-sm-12 ember-view">  <div id="ember125" class="markdown-card ember-view">  <table border="0" width="930" cellspacing="0" cellpadding="0"><colgroup><col span="5" width="186">     </colgroup>     <tbody><tr><td width="186" height="20"><strong>County</strong></td><td width="186"><strong>Individuals Tested</strong></td> <td width="186"><strong>Individuals Positive</strong></td> <td width="186"><strong>Total Recovered</strong></td> <td width="186"><strong>Total Deaths</strong></td> </tr> <tr><td>Polk</td><td>342874</td><td>72521</td><td>64879</td><td>709</td></tr><tr><td>Linn</td><td>146834</td><td>28135</td><td>24393</td><td>375</td></tr><tr><td>Scott</td><td>107586</td><td>24169</td><td>22289</td><td>270</td></tr><tr><td>Black Hawk</td><td>86808</td><td>19873</td><td>18499</td><td>345</td></tr><tr><td>Woodbury</td><td>71508</td><td>18415</td><td>16277</td><td>241</td></tr><tr><td>Johnson</td><td>101464</td><td>17613</td><td>16078</td><td>98</td></tr><tr><td>Dubuque</td><td>67749</td><td>15262</td><td>14094</td><td>226</td></tr><tr><td>Pottawattamie</td><td>57078</td><td>13841</td><td>12593</td><td>192</td></tr><tr><td>Dallas</td><td>66965</td><td>13672</td><td>12397</td><td>102</td></tr><tr><td>Story</td><td>66144</td><td>12590</td><td>11606</td><td>48</td></tr><tr><td>Warren</td><td>34317</td><td>7425</td><td>6549</td><td>96</td></tr><tr><td>Webster</td><td>25450</td><td>6794</td><td>6050</td><td>106</td></tr><tr><td>Cerro Gordo</td><td>30144</td><td>6693</td><td>6000</td><td>107</td></tr><tr><td>Clinton</td><td>28439</td><td>6659</td><td>5957</td><td>99</td></tr><tr><td>Des Moines</td><td>26400</td><td>6463</td><td>5684</td><td>88</td></tr><tr><td>Marshall</td><td>26243</td><td>6247</td><td>5430</td><td>83</td></tr><tr><td>Muscatine</td><td>26826</td><td>6224</td><td>5474</td><td>113</td></tr><tr><td>Wapello</td><td>23066</td><td>5649</td><td>4715</td><td>134</td></tr><tr><td>Jasper</td><td>22795</td><td>5598</td><td>4923</td><td>76</td></tr><tr><td>Sioux</td><td>18831</td><td>5568</td><td>5290</td><td>76</td></tr><tr><td>Lee</td><td>20677</td><td>5533</td><td>4924</td><td>86</td></tr><tr><td>Marion</td><td>20140</td><td>4888</td><td>4212</td><td>89</td></tr><tr><td>Buena Vista</td><td>17889</td><td>4866</td><td>4626</td><td>43</td></tr><tr><td>Plymouth</td><td>15212</td><td>4540</td><td>4171</td><td>87</td></tr><tr><td>Henry</td><td>13621</td><td>3713</td><td>3291</td><td>42</td></tr><tr><td>Jones</td><td>12184</td><td>3570</td><td>3174</td><td>59</td></tr><tr><td>Washington</td><td>15511</td><td>3551</td><td>2908</td><td>55</td></tr><tr><td>Bremer</td><td>14857</td><td>3469</td><td>3120</td><td>66</td></tr><tr><td>Benton</td><td>15797</td><td>3447</td><td>2932</td><td>56</td></tr><tr><td>Carroll</td><td>13249</td><td>3384</td><td>3026</td><td>53</td></tr><tr><td>Boone</td><td>16896</td><td>3378</td><td>2949</td><td>36</td></tr><tr><td>Crawford</td><td>10465</td><td>3346</td><td>3111</td><td>45</td></tr><tr><td>Mahaska</td><td>13194</td><td>3047</td><td>2568</td><td>56</td></tr><tr><td>Dickinson</td><td>12143</td><td>2914</td><td>2594</td><td>51</td></tr><tr><td>Clay</td><td>10182</td><td>2710</td><td>2310</td><td>29</td></tr><tr><td>Kossuth</td><td>9644</td><td>2656</td><td>2358</td><td>72</td></tr><tr><td>Jackson</td><td>11164</td><td>2651</td><td>2353</td><td>45</td></tr><tr><td>Buchanan</td><td>11686</td><td>2651</td><td>2231</td><td>39</td></tr><tr><td>Hardin</td><td>10723</td><td>2603</td><td>2130</td><td>48</td></tr><tr><td>Tama</td><td>10117</td><td>2585</td><td>2250</td><td>75</td></tr><tr><td>Delaware</td><td>9690</td><td>2498</td><td>2254</td><td>44</td></tr><tr><td>Fayette</td><td>11434</td><td>2466</td><td>2083</td><td>47</td></tr><tr><td>Cedar</td><td>11139</td><td>2393</td><td>2115</td><td>25</td></tr><tr><td>Page</td><td>7872</td><td>2381</td><td>2155</td><td>24</td></tr><tr><td>Wright</td><td>9316</td><td>2346</td><td>2088</td><td>44</td></tr><tr><td>Winneshiek</td><td>12398</td><td>2272</td><td>2072</td><td>37</td></tr><tr><td>Hamilton</td><td>9321</td><td>2262</td><td>2018</td><td>53</td></tr><tr><td>O'Brien</td><td>7769</td><td>2193</td><td>2038</td><td>63</td></tr><tr><td>Harrison</td><td>7709</td><td>2131</td><td>1870</td><td>77</td></tr><tr><td>Madison</td><td>9645</td><td>2099</td><td>1878</td><td>23</td></tr><tr><td>Floyd</td><td>9458</td><td>2098</td><td>1773</td><td>43</td></tr><tr><td>Clayton</td><td>8902</td><td>2067</td><td>1833</td><td>58</td></tr><tr><td>Poweshiek</td><td>10915</td><td>2026</td><td>1718</td><td>39</td></tr><tr><td>Butler</td><td>8491</td><td>2000</td><td>1826</td><td>37</td></tr><tr><td>Iowa</td><td>10047</td><td>1995</td><td>1668</td><td>27</td></tr><tr><td>Mills</td><td>8949</td><td>1940</td><td>1798</td><td>26</td></tr><tr><td>Jefferson</td><td>10769</td><td>1929</td><td>1572</td><td>38</td></tr><tr><td>Cherokee</td><td>7114</td><td>1896</td><td>1693</td><td>41</td></tr><tr><td>Allamakee</td><td>7617</td><td>1892</td><td>1653</td><td>52</td></tr><tr><td>Lyon</td><td>5758</td><td>1874</td><td>1666</td><td>41</td></tr><tr><td>Calhoun</td><td>6436</td><td>1825</td><td>1582</td><td>13</td></tr><tr><td>Winnebago</td><td>7701</td><td>1825</td><td>1574</td><td>32</td></tr><tr><td>Cass</td><td>7581</td><td>1821</td><td>1465</td><td>56</td></tr><tr><td>Hancock</td><td>7380</td><td>1812</td><td>1606</td><td>39</td></tr><tr><td>Appanoose</td><td>7550</td><td>1711</td><td>1375</td><td>50</td></tr><tr><td>Shelby</td><td>6606</td><td>1692</td><td>1435</td><td>39</td></tr><tr><td>Louisa</td><td>6824</td><td>1677</td><td>1448</td><td>51</td></tr><tr><td>Grundy</td><td>6943</td><td>1650</td><td>1505</td><td>37</td></tr><tr><td>Emmet</td><td>6127</td><td>1604</td><td>1397</td><td>42</td></tr><tr><td>Franklin</td><td>6800</td><td>1601</td><td>1413</td><td>26</td></tr><tr><td>Humboldt</td><td>5719</td><td>1593</td><td>1388</td><td>26</td></tr><tr><td>Mitchell</td><td>6477</td><td>1580</td><td>1354</td><td>43</td></tr><tr><td>Union</td><td>7768</td><td>1569</td><td>1361</td><td>37</td></tr><tr><td>Sac</td><td>6330</td><td>1535</td><td>1400</td><td>23</td></tr><tr><td>Chickasaw</td><td>6669</td><td>1523</td><td>1342</td><td>18</td></tr><tr><td>Guthrie</td><td>7131</td><td>1491</td><td>1320</td><td>33</td></tr><tr><td>Palo Alto</td><td>5387</td><td>1393</td><td>1224</td><td>30</td></tr><tr><td>Clarke</td><td>6084</td><td>1383</td><td>1180</td><td>27</td></tr><tr><td>Montgomery</td><td>5333</td><td>1361</td><td>1127</td><td>41</td></tr><tr><td>Keokuk</td><td>5510</td><td>1345</td><td>1082</td><td>34</td></tr><tr><td>Monroe</td><td>4380</td><td>1287</td><td>1073</td><td>34</td></tr><tr><td>Howard</td><td>5520</td><td>1217</td><td>1107</td><td>22</td></tr><tr><td>Ida</td><td>4087</td><td>1145</td><td>993</td><td>40</td></tr><tr><td>Davis</td><td>4427</td><td>1123</td><td>972</td><td>25</td></tr><tr><td>Greene</td><td>5104</td><td>1116</td><td>908</td><td>12</td></tr><tr><td>Lucas</td><td>4852</td><td>1088</td><td>870</td><td>24</td></tr><tr><td>Pocahontas</td><td>4131</td><td>1067</td><td>915</td><td>23</td></tr><tr><td>Monona</td><td>4379</td><td>1051</td><td>894</td><td>35</td></tr><tr><td>Worth</td><td>4736</td><td>1029</td><td>898</td><td>8</td></tr><tr><td>Adair</td><td>4256</td><td>1009</td><td>908</td><td>34</td></tr><tr><td>Osceola</td><td>2959</td><td>887</td><td>814</td><td>17</td></tr><tr><td>Fremont</td><td>3406</td><td>810</td><td>717</td><td>11</td></tr><tr><td>Van Buren</td><td>3535</td><td>810</td><td>650</td><td>21</td></tr><tr><td>Decatur</td><td>4248</td><td>795</td><td>717</td><td>12</td></tr><tr><td>Taylor</td><td>3034</td><td>770</td><td>707</td><td>12</td></tr><tr><td>Wayne</td><td>3174</td><td>708</td><td>609</td><td>24</td></tr><tr><td>Ringgold</td><td>2811</td><td>654</td><td>593</td><td>27</td></tr><tr><td>Audubon</td><td>3259</td><td>631</td><td>558</td><td>14</td></tr><tr><td>Adams</td><td>1962</td><td>481</td><td>374</td><td>4</td></tr><tr><td>Pending Investigation</td><td>3257</td><td>12</td><td>4</td><td>0</td></tr> </tbody></table>
+</div>
+</div>
+</div>
+  </div>
+</section>
+    <section style="background-color:transparent;" id="ember127" class="layout-section ember-view">  <div class="container-fluid  wideRowClass">
+      <div id="ember129" class="bs-row row ember-view">  <div id="ember131" class="col-sm-12 ember-view">  <div id="ember132" class="app-card ember-view">  <div aria-label="loading" id="ember133" class="loader active ember-view"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-1">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-2">
+  <rect width="56" height="56"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="loader-square loader-square-3">
+  <rect width="56" height="56"></rect>
+</svg>
+<div class="loader-bars"></div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</section>
+    <section style="background-color:#2f5e8c;" id="ember135" class="layout-section ember-view">  <div class="container  ">
+      <div id="ember137" class="bs-row row ember-view">  <div id="ember139" class="col-sm-12 ember-view">  <div id="ember140" class="markdown-card ember-view">  <style>
+
+.primary-color {
+  color: #2695bc;
+}
+
+.primary-fill {
+  fill: #2695bc;
+}
+
+.steps-wrapper li::before {
+  color: #2695bc;
+  border-color: #2695bc;
+}
+
+.steps-wrapper li::after {
+  background-color: #2695bc;
+}
+
+ 
+  .btn-header { margin-right: 10px;  margin-bottom: 10px;  font-size: 20px; font-weight: bolder; }
+  .btn-primary {background-color: #ebebeb;}
+  .hero p { font-size: 18px; color: #ffffff }
+  .hero p:first-of-type { font-weight: bolder; }
+  .hero-header { margin: 40px 0; }
+  .hero-buttons { margin-top: 35px; }
+  a.hidden-anchor {display: block; position: relative;top:-25px;visibility: hidden;}
+</style>
+
+<p><br></p>
+
+
+<div class="col-md-12 text-center hero-buttons">
+  <button name="vaccine-button" id="vaccine-button" class="btn btn-primary btn-header">
+    <a href="https://coronavirus.iowa.gov/pages/vaccineinformation">Vaccine Information</a>
+  </button>
+  <button name="resources-button" id="resources-button" class="btn btn-primary btn-header">
+     <a href="https://coronavirus.iowa.gov/pages/case-counts">Positive Case Analysis</a>
+  </button>
+<button name="proclamations-button" id="proclamations-button" class="btn btn-primary btn-header">
+     <a href="https://coronavirus.iowa.gov/pages/hospital-data">Hospital Data</a>
+  </button>
+  <button name="guidance-button" id="guidance-button" class="btn btn-primary btn-header">
+     <a href="https://coronavirus.iowa.gov/pages/outcome-analysis-deaths">Outcome Analysis Deaths</a>
+  </button>
+    <button name="summary-button" id="summary-button" class="btn btn-primary btn-header">
+     <a href="https://coronavirus.iowa.gov/pages/summary-downloads">Summary Download</a>
+  </button>
+<button name="testiowa-button" id="testiowa-button" class="btn btn-primary btn-header">
+    <a href="https://www.testiowa.com/" target="_blank">Test Iowa</a>
+  </button>
+<button name="localreimbursement-button" id="localreimbursement-button" class="btn btn-primary btn-header">
+    <a href="https://coronavirus.iowa.gov/pages/resource">Resources</a>
+  </button>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</section>
+</div>
+
+  
+
+  
+
+
+
+          </div>
+            <footer id="ember143" class="site-footer ember-view">  <div class="custom-footer">
+    <div id="ember144" class="markdown-card ember-view">  <div style="padding-bottom: 2em; background-color: #2695bc;">
+  <div class="container">
+    <div class="col-sm-6" style="padding-top: 2em">
+		
+    </div>
+	<div class="col-sm-6 contact-info-alignment" style="padding-top: 2em; color: #fff;">
+		<div>
+			COVID-19 Questions for Individuals: Dial 2-1-1<br><br>
+			COVID-19 Questions for Healthcare Providers: 800.362.2736<br><br>
+			Iowa Multilingual COVID-19 Phone Line: 877.558.2609<br><br>
+			Legal Information Hotline for COVID-19: 800.332.0419<br><br>
+			Iowa Domestic Violence Hotline: 800.770.1650<br><br>
+			Iowa Dept. of Corrections COVID-19 Hotline: 515.373.5457<br>
+		</div>
+
+		<br>
+		<div>
+			<a href="https://www.facebook.com/IAGovernor"><svg xmlns="https://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 90 90" style="fill: #FFF; fill-opacity: .5; margin-left: 4px;">
+				<path d="M90,15.001C90,7.119,82.884,0,75,0H15C7.116,0,0,7.119,0,15.001v59.998
+				C0,82.881,7.116,90,15.001,90H45V56H34V41h11v-5.844C45,25.077,52.568,16,61.875,16H74v15H61.875C60.548,31,59,32.611,59,35.024V41
+				h15v15H59v34h16c7.884,0,15-7.119,15-15.001V15.001z"></path>
+			</svg></a>
+			<a href="https://twitter.com/IAGovernor"><svg xmlns="https://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 510 510" style="fill: #FFF; fill-opacity: .5; margin-left: 4px;">
+				<path d="M459,0H51C22.95,0,0,22.95,0,51v408c0,28.05,22.95,51,51,51h408c28.05,0,51-22.95,51-51V51C510,22.95,487.05,0,459,0z
+				 M400.35,186.15c-2.55,117.3-76.5,198.9-188.7,204C165.75,392.7,132.6,377.4,102,359.55c33.15,5.101,76.5-7.649,99.45-28.05
+				c-33.15-2.55-53.55-20.4-63.75-48.45c10.2,2.55,20.4,0,28.05,0c-30.6-10.2-51-28.05-53.55-68.85c7.65,5.1,17.85,7.65,28.05,7.65
+				c-22.95-12.75-38.25-61.2-20.4-91.8c33.15,35.7,73.95,66.3,140.25,71.4c-17.85-71.4,79.051-109.65,117.301-61.2
+				c17.85-2.55,30.6-10.2,43.35-15.3c-5.1,17.85-15.3,28.05-28.05,38.25c12.75-2.55,25.5-5.1,35.7-10.2
+				C425.85,165.75,413.1,175.95,400.35,186.15z"></path>
+			</svg></a>
+		
+		
+			<a href="https://www.youtube.com/channel/UCmISFMoFOM6fo6PeXdHxGDg"><svg xmlns="https://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: #FFF; fill-opacity: .5; margin-left: 4px;">
+				<path d="M21.6 0C22.92 0 24 1.08 24 2.4v19.2c0 1.32-1.08 2.4-2.4 2.4H2.4C1.08 24 0 22.92 0 21.6V2.4C0 1.08 1.08 0 2.4 0zM12 6.6c-2.393 0-4.338.112-5.836.335A1.6 1.6 0 0 0 4.8 8.518v6.905a1.6 1.6 0 0 0 1.387 1.586c1.937.26 3.875.391 5.813.391 1.938 0 3.876-.13 5.813-.391a1.6 1.6 0 0 0 1.387-1.586V8.518a1.6 1.6 0 0 0-1.364-1.583C16.338 6.712 14.393 6.6 12 6.6zm-1.2 3l3.6 2.4-3.6 2.4V9.6z"></path>
+			</svg></a>
+		</div>
+	</div>
+  </div>
+</div>
+
+<style>
+
+.contact-info-alignment {
+  text-align: center;  }
+  
+.logo-title-alignment {
+  margin-left : auto;
+  margin-right: auto;  }
+
+@media (min-width: 768px) {
+  .contact-info-alignment {
+    text-align: right;
+  }
+  
+  .logo-title-alignment {
+    margin-left : initial;
+    margin-right: initial
+  }
+}
+
+</style>
+</div>
+  </div>
+</footer>
+        </div>
+      </div>
+      <div>
+<!---->  
+            <div class="info-banner product-footer" data-privacy-consent="all" role="region" aria-label="Legal Footer" style="">
+    
+  <div class="hub-branding">
+      <a href="https://hub.arcgis.com">
+        Built with
+        <svg draggable="auto" aria-hidden="true" style="" id="ember145" class="svgstore-image ember-view">  <title>ArcGIS Hub</title>
+<use xlink:href="#ember-arcgis-hub-components-hub-icons-hub-logo"></use>
+<!----></svg>
+        ArcGIS Hub
+      </a>
+  </div>
+  
+            <button style="touch-action: manipulation; -ms-touch-action: manipulation; cursor: pointer;" id="ember146" class="btn btn-link manage-privacy-link ember-view" type="button"><!----><!---->  Manage Privacy
+</button>
+          
+
+  </div>
+
+      
+</div>
+      <!---->
+          <div aria-labelledby="ember177-modal-label" role="dialog" tabindex="-1" id="ember177" class="modal fade ember-view"><div class="modal-dialog " role="document">
+<!----></div></div>
+
+    </div>
+</div></div>
+<!---->
+<!---->
+      <div id="ember178" class="mobile-toolbar is-empty ember-view"><div class="mobile-toolbar-spacer">
+</div>
+
+    <nav aria-label="In-page actions" id="ember179" class="actions-menu ember-view mobile-toolbar-content" data-privacy-consent="mobile">  <span class="hub-tooltip-wrapper">
+    <button class="google-translate-button" type="button" aria-describedby="tooltip_uj4j636noc">
+  <svg draggable="auto" style="" id="ember180" class="svgstore-image ember-view">  <title>Translate</title>
+<use xlink:href="#ember-arcgis-hub-components-hub-icons-translate-hollow"></use>
+<!----></svg>
+  <span id="ember181" class="hub-tooltip__target"><!----></span>
+    <div class="toolbar-item-label">
+      Translate
+    </div>
+</button>
+<div class="translation-container hide"></div>
+
+<!---->  <div class="hub-tooltip" role="tooltip" id="tooltip_uj4j636noc" aria-hidden="true" x-placement="right" x-out-of-boundaries="" style="position: fixed; visibility: hidden; transform: translate3d(5px, 0px, 0px); top: 0px; left: 0px; will-change: transform;">
+                        <div class="tooltip__arrow" style="top: 0px;"></div>
+                        <div class="tooltip__inner" id="ember181-render-target"><span></span>      Translate
+</div>
+                      </div></span>
+
+<!----></nav>
+  
+</div>
+
+
+    <div aria-labelledby="ember182-modal-label" role="dialog" tabindex="-1" id="ember182" class="modal mobile-toolbar-sheet-modal fade ember-view"><div class="modal-dialog  " role="document">
+<!----></div></div>
+
+<div id="ember149" class="ember-view"><div class="bottom-panel-spacer" style="height: 0px;">
+</div>
+<div class="bottom-panel" style="height: 0px;">
+<!----></div>
+</div>
+<!---->
+<div class="modal-holder">
+</div>
+
+<!---->
+<!----></body></html>
+
+
