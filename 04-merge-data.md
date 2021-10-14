@@ -72,7 +72,7 @@ Let’s read in the NYT data:
 nyt_data <- vroom(path(dirs$source_nyt, "nyt-iowa.csv"))
 ```
 
-    ## Rows: 55770 Columns: 5
+    ## Rows: 55870 Columns: 5
 
     ## ── Column specification ────────────────────────────────────────────────────────
     ## Delimiter: ","
@@ -232,20 +232,20 @@ merged <-
   print()
 ```
 
-    ## # A tibble: 55,886 × 8
-    ##    date        fips county        cases deaths  tests recovered active_cases
-    ##    <date>     <dbl> <chr>         <dbl>  <dbl>  <dbl>     <dbl>        <dbl>
-    ##  1 2021-10-12 19153 Polk          73698    716 346188     66985         5997
-    ##  2 2021-10-12 19113 Linn          28680    379 148361     25404         2897
-    ##  3 2021-10-12 19163 Scott         24441    271 108500     22792         1378
-    ##  4 2021-10-12 19013 Black Hawk    20130    355  87563     18833          942
-    ##  5 2021-10-12 19193 Woodbury      18854    242  72265     16810         1802
-    ##  6 2021-10-12 19103 Johnson       17800    100 102488     16502         1198
-    ##  7 2021-10-12 19061 Dubuque       15577    228  68399     14346         1003
-    ##  8 2021-10-12 19155 Pottawattamie 14073    197  57593     12957          919
-    ##  9 2021-10-12 19049 Dallas        13894    107  67632     12686         1101
-    ## 10 2021-10-12 19169 Story         12751     48  66657     11843          860
-    ## # … with 55,876 more rows
+    ## # A tibble: 55,986 × 8
+    ##    date        fips county        cases deaths tests recovered active_cases
+    ##    <date>     <dbl> <chr>         <dbl>  <dbl> <dbl>     <dbl>        <dbl>
+    ##  1 2021-10-13 19153 Polk          73744    716    NA        NA           NA
+    ##  2 2021-10-13 19113 Linn          28700    379    NA        NA           NA
+    ##  3 2021-10-13 19163 Scott         24459    271    NA        NA           NA
+    ##  4 2021-10-13 19013 Black Hawk    20150    355    NA        NA           NA
+    ##  5 2021-10-13 19193 Woodbury      18878    242    NA        NA           NA
+    ##  6 2021-10-13 19103 Johnson       17809    100    NA        NA           NA
+    ##  7 2021-10-13 19061 Dubuque       15590    228    NA        NA           NA
+    ##  8 2021-10-13 19155 Pottawattamie 14078    197    NA        NA           NA
+    ##  9 2021-10-13 19049 Dallas        13904    107    NA        NA           NA
+    ## 10 2021-10-13 19169 Story         12754     48    NA        NA           NA
+    ## # … with 55,976 more rows
 
 Let’s write this out:
 
